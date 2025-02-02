@@ -18,10 +18,12 @@
 #' @examples
 #' \dontrun{
 #' # perform request
-#' calculate_isqtls(cellType = "Neutrophils",
-#'                  tissueSiteDetailId = "Whole_Blood",
-#'                  phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
-#'                  variantId = "chr1_1099341_T_C_b38")
+#' calculate_isqtls(
+#'   cellType = "Neutrophils",
+#'   tissueSiteDetailId = "Whole_Blood",
+#'   phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
+#'   variantId = "chr1_1099341_T_C_b38"
+#' )
 #' }
 calculate_isqtls <-
   function(cellType,
@@ -31,11 +33,14 @@ calculate_isqtls <-
            datasetId = "gtex_v8") {
     gtex_query(endpoint = "association/dynisqtl", return_raw = TRUE) |>
       purrr::imap(\(x, idx) ifelse(is.list(x),
-                                   tibble::tibble(
-                                     data = purrr::map_depth(x,
-                                                             purrr::pluck_depth(x) - 2,
-                                                             unlist)
-                                   ),
-                                   x)) |>
+        tibble::tibble(
+          data = purrr::map_depth(
+            x,
+            purrr::pluck_depth(x) - 2,
+            unlist
+          )
+        ),
+        x
+      )) |>
       tibble::as_tibble()
   }

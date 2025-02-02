@@ -18,31 +18,33 @@
 #'
 #' @examples
 #' \dontrun{
-#'  # "adult-gtex" (default `project_id` value) and "egtex" both return results
-#'  get_downloads_page_data()
-#'  egtex <- get_downloads_page_data("egtex")
-#'  egtex
+#' # "adult-gtex" (default `project_id` value) and "egtex" both return results
+#' get_downloads_page_data()
+#' egtex <- get_downloads_page_data("egtex")
+#' egtex
 #'
-#'  # ..."gtex" does not
-#'  get_downloads_page_data("gtex")
+#' # ..."gtex" does not
+#' get_downloads_page_data("gtex")
 #'
-#'  # get details for whole blood methylation data, including download URL
-#'  purrr::pluck(
-#'    egtex$children,
-#'    1,
-#'    "folders",
-#'    "Methylation - EPIC Array",
-#'    "children",
-#'    "folders",
-#'    "mQTLs",
-#'    "children",
-#'    "files",
-#'    "WholeBlood.mQTLs.regular.txt.gz"
-#'  )
+#' # get details for whole blood methylation data, including download URL
+#' purrr::pluck(
+#'   egtex$children,
+#'   1,
+#'   "folders",
+#'   "Methylation - EPIC Array",
+#'   "children",
+#'   "folders",
+#'   "mQTLs",
+#'   "children",
+#'   "files",
+#'   "WholeBlood.mQTLs.regular.txt.gz"
+#' )
 #' }
 get_downloads_page_data <- function(project_id = "adult-gtex") {
-  result <- gtex_query(endpoint = "dataset/openAccessFilesMetadata",
-             return_raw = TRUE)
+  result <- gtex_query(
+    endpoint = "dataset/openAccessFilesMetadata",
+    return_raw = TRUE
+  )
 
   result |>
     purrr::map(name_unnamed_items, name_item = "displayName") |>
@@ -52,7 +54,6 @@ get_downloads_page_data <- function(project_id = "adult-gtex") {
 }
 
 name_unnamed_items <- function(x, name_item) {
-
   if (inherits(x, "list")) {
     if (is.null(names(x))) {
       names(x) <- purrr::map_chr(x, \(item) item[[name_item]])

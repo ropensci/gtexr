@@ -15,27 +15,27 @@
 #'
 #' @examples
 #' \dontrun{
-#'  get_sample_datasets_endpoints()
+#' get_sample_datasets_endpoints()
 #' }
 get_sample_datasets_endpoints <- function(datasetId = "gtex_v8",
-                       sampleIds = NULL,
-                       tissueSampleIds = NULL,
-                       subjectIds = NULL,
-                       ageBrackets = NULL,
-                       sex = NULL,
-                       pathCategory = NULL,
-                       tissueSiteDetailId = NULL,
-                       aliquotIds = NULL,
-                       autolysisScores = NULL,
-                       hardyScales = NULL,
-                       ischemicTime = NULL,
-                       ischemicTimeGroups = NULL,
-                       rin = NULL,
-                       uberonIds = NULL,
-                       dataTypes = NULL,
-                       sortBy = NULL,
-                       sortDirection = NULL,
-                       page = NULL,
-                       itemsPerPage = NULL){
+                                          sampleIds = NULL,
+                                          tissueSampleIds = NULL,
+                                          subjectIds = NULL,
+                                          ageBrackets = NULL,
+                                          sex = NULL,
+                                          pathCategory = NULL,
+                                          tissueSiteDetailId = NULL,
+                                          aliquotIds = NULL,
+                                          autolysisScores = NULL,
+                                          hardyScales = NULL,
+                                          ischemicTime = NULL,
+                                          ischemicTimeGroups = NULL,
+                                          rin = NULL,
+                                          uberonIds = NULL,
+                                          dataTypes = NULL,
+                                          sortBy = NULL,
+                                          sortDirection = NULL,
+                                          page = NULL,
+                                          itemsPerPage = NULL) {
   gtex_query(endpoint = "dataset/sample")
 }

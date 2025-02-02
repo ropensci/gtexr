@@ -17,12 +17,14 @@
 #' get_single_nucleus_gex_summary()
 #'
 #' # filter for specific tissue
-#' get_single_nucleus_gex_summary(tissueSiteDetailIds = c("Breast_Mammary_Tissue",
-#'                                                        "Skin_Sun_Exposed_Lower_leg"))
+#' get_single_nucleus_gex_summary(tissueSiteDetailIds = c(
+#'   "Breast_Mammary_Tissue",
+#'   "Skin_Sun_Exposed_Lower_leg"
+#' ))
 #' }
 get_single_nucleus_gex_summary <- function(datasetId = "gtex_snrnaseq_pilot",
                                            tissueSiteDetailIds = NULL,
                                            page = 0,
-                                           itemsPerPage = 250){
+                                           itemsPerPage = 250) {
   gtex_query(endpoint = "expression/singleNucleusGeneExpressionSummary")
 }

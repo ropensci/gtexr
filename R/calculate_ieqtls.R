@@ -18,10 +18,12 @@
 #' @examples
 #' \dontrun{
 #' # perform request
-#' calculate_ieqtls(cellType = "Adipocytes",
-#'                  tissueSiteDetailId = "Adipose_Subcutaneous",
-#'                  gencodeId = "ENSG00000203782.5",
-#'                  variantId = "chr1_1099341_T_C_b38")
+#' calculate_ieqtls(
+#'   cellType = "Adipocytes",
+#'   tissueSiteDetailId = "Adipose_Subcutaneous",
+#'   gencodeId = "ENSG00000203782.5",
+#'   variantId = "chr1_1099341_T_C_b38"
+#' )
 #' }
 calculate_ieqtls <-
   function(cellType,
@@ -31,11 +33,14 @@ calculate_ieqtls <-
            datasetId = "gtex_v8") {
     gtex_query(endpoint = "association/dynieqtl", return_raw = TRUE) |>
       purrr::imap(\(x, idx) ifelse(is.list(x),
-                                   tibble::tibble(
-                                     data = purrr::map_depth(x,
-                                                             purrr::pluck_depth(x) - 2,
-                                                             unlist)
-                                   ),
-                                   x)) |>
+        tibble::tibble(
+          data = purrr::map_depth(
+            x,
+            purrr::pluck_depth(x) - 2,
+            unlist
+          )
+        ),
+        x
+      )) |>
       tibble::as_tibble()
   }

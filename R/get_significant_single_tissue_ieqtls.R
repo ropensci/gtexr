@@ -18,14 +18,16 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_significant_single_tissue_ieqtls(c("ENSG00000132693.12",
-#'                                        "ENSG00000203782.5"))
+#' get_significant_single_tissue_ieqtls(c(
+#'   "ENSG00000132693.12",
+#'   "ENSG00000203782.5"
+#' ))
 #' }
 get_significant_single_tissue_ieqtls <- function(gencodeIds,
                                                  variantIds = NULL,
                                                  tissueSiteDetailIds = NULL,
                                                  datasetId = "gtex_v8",
                                                  page = 0,
-                                                 itemsPerPage = 250){
+                                                 itemsPerPage = 250) {
   gtex_query(endpoint = "association/singleTissueIEqtl")
 }

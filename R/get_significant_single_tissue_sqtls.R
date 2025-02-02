@@ -21,12 +21,14 @@
 #' @examples
 #' \dontrun{
 #' # search by gene
-#' get_significant_single_tissue_sqtls(gencodeIds = c("ENSG00000065613.9",
-#'                                                    "ENSG00000203782.5"))
+#' get_significant_single_tissue_sqtls(gencodeIds = c(
+#'   "ENSG00000065613.9",
+#'   "ENSG00000203782.5"
+#' ))
 #' }
 get_significant_single_tissue_sqtls <- function(gencodeIds,
                                                 variantIds = NULL,
                                                 tissueSiteDetailIds = NULL,
-                                                datasetId = "gtex_v8"){
+                                                datasetId = "gtex_v8") {
   gtex_query(endpoint = "association/singleTissueSqtl")
 }

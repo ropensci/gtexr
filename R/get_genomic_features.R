@@ -30,8 +30,10 @@ get_genomic_features <- function(.featureId, datasetId = "gtex_v8") {
   validate_featureId(.featureId)
 
   # perform query
-  gtex_query(endpoint = paste0("reference/features/", .featureId),
-             return_raw = TRUE) |>
+  gtex_query(
+    endpoint = paste0("reference/features/", .featureId),
+    return_raw = TRUE
+  ) |>
     process_get_genomic_features_resp_json(.featureId = .featureId)
 }
 

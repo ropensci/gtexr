@@ -20,12 +20,16 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_clustered_median_exon_expression(c("ENSG00000203782.5",
-#'                                        "ENSG00000132693.12"))
+#' get_clustered_median_exon_expression(c(
+#'   "ENSG00000203782.5",
+#'   "ENSG00000132693.12"
+#' ))
 #'
 #' # clustering data is stored as an attribute "clusters"
-#' result <- get_clustered_median_exon_expression(c("ENSG00000203782.5",
-#'                                                  "ENSG00000132693.12"))
+#' result <- get_clustered_median_exon_expression(c(
+#'   "ENSG00000203782.5",
+#'   "ENSG00000132693.12"
+#' ))
 #' attr(result, "clusters")
 #'
 #' # process clustering data with the ape package

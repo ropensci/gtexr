@@ -19,13 +19,15 @@
 #' @examples
 #' \dontrun{
 #' # median exon expression values for CRP, filtered for whole blood
-#' get_median_exon_expression(gencodeIds = "ENSG00000132693.12",
-#'                            tissueSiteDetailIds = "Whole_Blood")
+#' get_median_exon_expression(
+#'   gencodeIds = "ENSG00000132693.12",
+#'   tissueSiteDetailIds = "Whole_Blood"
+#' )
 #' }
 get_median_exon_expression <- function(gencodeIds,
                                        datasetId = "gtex_v8",
                                        tissueSiteDetailIds = NULL,
                                        page = 0,
-                                       itemsPerPage = 250){
+                                       itemsPerPage = 250) {
   gtex_query(endpoint = "expression/medianExonExpression")
 }

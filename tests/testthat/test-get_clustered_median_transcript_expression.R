@@ -3,7 +3,8 @@ test_that(
   {
     skip_if_offline()
     result <- get_clustered_median_transcript_expression(c("ENSG00000203782.5", "ENSG00000132693.12"),
-                                                         tissueSiteDetailIds = "Bladder")
+      tissueSiteDetailIds = "Bladder"
+    )
 
     expect_s3_class(result, "tbl_df")
 

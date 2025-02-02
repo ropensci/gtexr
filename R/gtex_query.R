@@ -1,7 +1,5 @@
-
 gtex_query <- function(endpoint = NULL,
                        return_raw = FALSE) {
-
   # build request
   gtex_request <- httr2::request("https://gtexportal.org/api/v2/") |>
     httr2::req_user_agent("gtexr (https://github.com/rmgpanw/gtexr)")
@@ -23,24 +21,31 @@ gtex_query <- function(endpoint = NULL,
 
   if (!is.null(query_params)) {
     # exclude arguments starting with "."
-    query_params <- subset(query_params,
-                           !grepl("^\\.", query_params))
+    query_params <- subset(
+      query_params,
+      !grepl("^\\.", query_params)
+    )
 
     # create a named list of argument-value pairs
-    query_params <- rlang::env_get_list(env = rlang::caller_env(n = 1),
-                                        nms = query_params)
+    query_params <- rlang::env_get_list(
+      env = rlang::caller_env(n = 1),
+      nms = query_params
+    )
 
     query_params <- query_params |>
       purrr::map(process_na_and_zero_char_query_params) |>
       purrr::compact()
 
-    query_params <- validate_args(arguments = query_params,
-                  call = rlang::caller_env())
+    query_params <- validate_args(
+      arguments = query_params,
+      call = rlang::caller_env()
+    )
 
     # convert these to query parameters
     gtex_request <- gtex_request |>
       httr2::req_url_query(!!!query_params,
-                           .multi = "explode")
+        .multi = "explode"
+      )
   }
 
   gtex_response_body <- perform_gtex_request(gtex_request, call = rlang::caller_env()) |>
@@ -52,34 +57,31 @@ gtex_query <- function(endpoint = NULL,
   }
 
   if (!is.null(gtex_response_body[["paging_info"]])) {
-
     paging_info_messages(gtex_response_body)
 
     result <- gtex_response_body$data |>
       purrr::map(\(x) x |>
-                   purrr::compact() |>
-                   tibble::as_tibble()) |>
+        purrr::compact() |>
+        tibble::as_tibble()) |>
       dplyr::bind_rows()
-
   } else {
     result <- gtex_response_body |>
       tibble::as_tibble()
   }
 
   return(result)
-
 }
 
 perform_gtex_request <- function(gtex_request, call) {
   gtex_response <- gtex_request |>
     httr2::req_error(is_error = \(resp) ifelse(!resp$status_code %in% c(200L, 422L, 400L, 404L),
-                                               TRUE,
-                                               FALSE)) |>
+      TRUE,
+      FALSE
+    )) |>
     httr2::req_perform()
 
   # handle http errors
-  switch(
-    as.character(gtex_response$status_code),
+  switch(as.character(gtex_response$status_code),
     "422" = gtex_response |>
       httr2::resp_body_json() |>
       handle_status_422(call = call),
@@ -103,7 +105,6 @@ convert_null_to_na <- function(x) {
 paging_info_messages <- function(gtex_response_body) {
   # warn user if not all available results fit on one page
   if ((gtex_response_body$paging_info$totalNumberOfItems > gtex_response_body$paging_info$maxItemsPerPage)) {
-
     warning_message <-
       c(
         "!" = cli::format_inline(
@@ -113,7 +114,8 @@ paging_info_messages <- function(gtex_response_body) {
       )
 
     cli::cli_warn(warning_message,
-                  message_unformatted = warning_message)
+      message_unformatted = warning_message
+    )
   }
 
   # print paging info
@@ -132,4 +134,3 @@ process_na_and_zero_char_query_params <- function(x) {
     return(x)
   }
 }
-

@@ -16,6 +16,6 @@
 #' get_dataset_info()
 #' }
 get_dataset_info <- function(datasetId = "gtex_v8",
-                      organizationName = "GTEx Consortium") {
+                             organizationName = "GTEx Consortium") {
   gtex_query(endpoint = "metadata/dataset")
 }

@@ -1,6 +1,6 @@
-#'Get Independent Eqtl
+#' Get Independent Eqtl
 #'
-#'@description Retrieve Independent eQTL Data
+#' @description Retrieve Independent eQTL Data
 #'
 #' - Finds and returns `Independent eQTL Data` data for the provided list of genes
 #' - By default, this endpoint fetches data from the latest `GTEx` version
@@ -9,28 +9,36 @@
 #'
 #' [GTEx portal API documentation](https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_independent_eqtl_api_v2_association_independentEqtl_get)
 #'
-#'@inheritParams gtexr_arguments
+#' @inheritParams gtexr_arguments
 #'
-#'@return A tibble.
-#'@export
-#'@family Static Association Endpoints
+#' @return A tibble.
+#' @export
+#' @family Static Association Endpoints
 #'
 #' @examples
 #' \dontrun{
 #' # search by gene
-#' get_independent_eqtl(gencodeIds = c("ENSG00000132693.12",
-#'                                "ENSG00000203782.5"))
+#' get_independent_eqtl(gencodeIds = c(
+#'   "ENSG00000132693.12",
+#'   "ENSG00000203782.5"
+#' ))
 #'
 #' # optionally filter for a single variant and/or one or more tissues
-#' get_independent_eqtl(gencodeIds = c("ENSG00000132693.12",
-#'                                     "ENSG00000203782.5"),
-#'                      tissueSiteDetailIds = c("Whole_Blood",
-#'                                              "Thyroid"))
+#' get_independent_eqtl(
+#'   gencodeIds = c(
+#'     "ENSG00000132693.12",
+#'     "ENSG00000203782.5"
+#'   ),
+#'   tissueSiteDetailIds = c(
+#'     "Whole_Blood",
+#'     "Thyroid"
+#'   )
+#' )
 #' }
 get_independent_eqtl <- function(gencodeIds,
                                  tissueSiteDetailIds = NULL,
                                  datasetId = "gtex_v8",
                                  page = 0,
-                                 itemsPerPage = 250){
+                                 itemsPerPage = 250) {
   gtex_query(endpoint = "association/independentEqtl")
 }

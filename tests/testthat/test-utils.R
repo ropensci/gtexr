@@ -2,16 +2,18 @@ test_that(
   "`process_resp_body_linkage_disequilibrium()` handles both valid and empty responses",
   {
     # empty response
-    expect_equal(process_resp_body_linkage_disequilibrium(list(
-      data = list(),
-      paging_info = list(
-        numberOfPages = 0,
-        page = 0,
-        maxItemsPerPage = 250,
-        totalNumberOfItems = 0
-      )
-    )),
-    tibble::tibble())
+    expect_equal(
+      process_resp_body_linkage_disequilibrium(list(
+        data = list(),
+        paging_info = list(
+          numberOfPages = 0,
+          page = 0,
+          maxItemsPerPage = 250,
+          totalNumberOfItems = 0
+        )
+      )),
+      tibble::tibble()
+    )
 
     # valid response (`get_linkage_disequilibrium_by_variant_data("chr1_153209639_T_C_b38")`)
     expect_equal(
@@ -39,8 +41,10 @@ test_that(
 )
 
 test_that("`process_resp_body_clustered_expression()` raises expected error with invalid `expression_item_name` argument values", {
-  resp_body <- list(clusters = "clusters",
-                    medianExonExpression = "medianExonExpression")
+  resp_body <- list(
+    clusters = "clusters",
+    medianExonExpression = "medianExonExpression"
+  )
 
   expect_error(
     process_resp_body_clustered_expression(resp_body, expression_item_name = "medianExonExpression_invalid"),

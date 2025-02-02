@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood")
+#' get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood")
 #' }
 get_sample_biobank_data <- function(draw = NULL,
                                     materialTypes = NULL,
@@ -78,7 +78,7 @@ process_get_sample_biobank_data_resp_json <- function(resp_json) {
 
   resp_json$sample |>
     purrr::map(\(x) x |>
-                 purrr::compact() |>
-                 tibble::as_tibble()) |>
+      purrr::compact() |>
+      tibble::as_tibble()) |>
     dplyr::bind_rows()
 }

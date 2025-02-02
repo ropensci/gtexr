@@ -18,13 +18,15 @@
 #'
 #' @examples
 #' \dontrun{
-#'  get_annotation()
+#' get_annotation()
 #' }
 get_annotation <- function(datasetId = "gtex_v8",
                            page = 0,
-                           itemsPerPage = 250){
-  result <- gtex_query(endpoint = "dataset/annotation",
-             return_raw = TRUE)
+                           itemsPerPage = 250) {
+  result <- gtex_query(
+    endpoint = "dataset/annotation",
+    return_raw = TRUE
+  )
 
   paging_info_messages(gtex_response_body = result)
 

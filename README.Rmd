@@ -58,6 +58,8 @@ get_eqtl_genes("Whole_Blood")
 Retrieve significant eQTLs for one or more genes:
 
 ```{r get-significant-single-tissue-eqtls}
-get_significant_single_tissue_eqtls(gencodeId = c("ENSG00000132693.12",
-                                                  "ENSG00000203782.5"))
+get_significant_single_tissue_eqtls(gencodeId = c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 ```

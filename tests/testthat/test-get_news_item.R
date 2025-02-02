@@ -4,6 +4,8 @@ test_that("`get_news_item()` returns tibble with expected colnames", {
 
   expect_s3_class(result, "tbl_df")
 
-  expect_identical(names(result),
-                   c("title", "newsText", "rank", "dateCreated", "release", "id"))
+  expect_identical(
+    names(result),
+    c("title", "newsText", "rank", "dateCreated", "release", "id")
+  )
 })

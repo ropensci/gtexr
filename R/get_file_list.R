@@ -19,8 +19,8 @@
 #'
 #' # Get "GTEx Analysis V9" file list
 #' gtex_v9_files <- get_file_list() |>
-#'                    dplyr::filter(name == "GTEx Analysis V9") |>
-#'                    dplyr::pull(filesets)
+#'   dplyr::filter(name == "GTEx Analysis V9") |>
+#'   dplyr::pull(filesets)
 #'
 #' # "GTEx Analysis V9" filesets
 #' names(gtex_v9_files[[1]])
@@ -31,20 +31,22 @@
 get_file_list <- function() {
   result <- gtex_query(endpoint = "dataset/fileList", return_raw = TRUE)
   result |>
-    purrr::map(\(x) x |>
-                 purrr::map_at("filesets", list) |>
-                 tibble::as_tibble(),
-               .progress = TRUE) |>
+    purrr::map(
+      \(x) x |>
+        purrr::map_at("filesets", list) |>
+        tibble::as_tibble(),
+      .progress = TRUE
+    ) |>
     dplyr::bind_rows() |>
     # add names to lists ('filesets' and 'files')
     dplyr::mutate("filesets" = purrr::map(.data[["filesets"]], \(x) {
       names(x) <- purrr::map_chr(x, \(y) y$name)
       x <- x |>
         purrr::map(\(x) x |>
-                     purrr::map_at("files", \(y) {
-                       names(y) <- purrr::map_chr(y, \(z) z$name)
-                       y
-                     }))
+          purrr::map_at("files", \(y) {
+            names(y) <- purrr::map_chr(y, \(z) z$name)
+            y
+          }))
       x
     }))
 }

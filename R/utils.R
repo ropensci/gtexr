@@ -17,7 +17,6 @@ process_resp_body_linkage_disequilibrium <- function(resp_body) {
 }
 
 process_resp_body_clustered_expression <- function(resp_body, expression_item_name) {
-
   if (!expression_item_name %in% names(resp_body)) {
     cli::cli_abort(
       c(

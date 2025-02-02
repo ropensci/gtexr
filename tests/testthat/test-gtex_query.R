@@ -17,6 +17,8 @@ test_that("`convert_null_to_na()` works", {
 })
 
 test_that("`process_na_and_zero_char_query_params()` works", {
-  expect_identical(purrr::map(list(NA, "", 1L), process_na_and_zero_char_query_params),
-                   list(NULL, NULL, 1L))
+  expect_identical(
+    purrr::map(list(NA, "", 1L), process_na_and_zero_char_query_params),
+    list(NULL, NULL, 1L)
+  )
 })

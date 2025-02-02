@@ -13,9 +13,11 @@ handle_status_422 <- function(resp_body, call) {
 
   cli::cli_abort(
     class = "httr2_http_422",
-    message = c("!" = "HTTP 422 Validation Error",
-                invalid_args,
-                msgs),
+    message = c(
+      "!" = "HTTP 422 Validation Error",
+      invalid_args,
+      msgs
+    ),
     call = call
   )
 }
@@ -23,8 +25,10 @@ handle_status_422 <- function(resp_body, call) {
 handle_status_400 <- function(resp_body, call) {
   cli::cli_abort(
     class = "httr2_http_400",
-    message = c("!" = "HTTP 400 Illegal Query Input",
-                "x" = resp_body$detail),
+    message = c(
+      "!" = "HTTP 400 Illegal Query Input",
+      "x" = resp_body$detail
+    ),
     call = call
   )
 }

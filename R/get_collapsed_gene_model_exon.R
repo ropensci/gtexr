@@ -18,11 +18,11 @@
 #'
 #' @examples
 #' \dontrun{
-#'  get_collapsed_gene_model_exon(gencodeId = "ENSG00000132693.12")
+#' get_collapsed_gene_model_exon(gencodeId = "ENSG00000132693.12")
 #' }
 get_collapsed_gene_model_exon <- function(gencodeId,
                                           datasetId = "gtex_v8",
                                           page = 0,
-                                          itemsPerPage = 250){
+                                          itemsPerPage = 250) {
   gtex_query(endpoint = "dataset/collapsedGeneModelExon")
 }

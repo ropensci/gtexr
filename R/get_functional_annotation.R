@@ -13,13 +13,13 @@
 #'
 #' @examples
 #' \dontrun{
-#'   get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
+#' get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
 #' }
 get_functional_annotation <- function(datasetId = "gtex_v8",
                                       chromosome,
                                       start,
                                       end,
                                       page = 0,
-                                      itemsPerPage = 250){
+                                      itemsPerPage = 250) {
   gtex_query(endpoint = "dataset/functionalAnnotation")
 }

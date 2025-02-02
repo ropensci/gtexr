@@ -1,14 +1,14 @@
-
 test_that("get_sample_biobank_data() runs without error", {
   skip_if_offline()
-  expect_equal(get_sample_biobank_data(itemsPerPage = 1) |>
-                 suppressWarnings() |>
-                 nrow(),
-               1)
+  expect_equal(
+    get_sample_biobank_data(itemsPerPage = 1) |>
+      suppressWarnings() |>
+      nrow(),
+    1
+  )
 })
 
 test_that("process_get_sample_biobank_data_resp_json() prints expected message/warning and returns tibble", {
-
   # get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood", itemsPerPage =
   # 2)
   resp_json <- list(
@@ -84,18 +84,23 @@ test_that("process_get_sample_biobank_data_resp_json() prints expected message/w
   )
 
   # expected message
-  expect_message(process_get_sample_biobank_data_resp_json(resp_json) |>
-                   suppressWarnings(),
-                 "Paging info")
+  expect_message(
+    process_get_sample_biobank_data_resp_json(resp_json) |>
+      suppressWarnings(),
+    "Paging info"
+  )
 
   # expected warning
-  expect_warning(process_get_sample_biobank_data_resp_json(resp_json),
-                 "exceeds maximum page size")
+  expect_warning(
+    process_get_sample_biobank_data_resp_json(resp_json),
+    "exceeds maximum page size"
+  )
 
   # expected output
-  expect_equal(process_get_sample_biobank_data_resp_json(resp_json) |>
-                 suppressWarnings() |>
-                 nrow(),
-               2)
-
+  expect_equal(
+    process_get_sample_biobank_data_resp_json(resp_json) |>
+      suppressWarnings() |>
+      nrow(),
+    2
+  )
 })

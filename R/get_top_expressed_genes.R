@@ -23,6 +23,6 @@ get_top_expressed_genes <- function(tissueSiteDetailId,
                                     datasetId = "gtex_v8",
                                     filterMtGene = TRUE,
                                     page = 0,
-                                    itemsPerPage = 250){
+                                    itemsPerPage = 250) {
   gtex_query(endpoint = "expression/topExpressedGene")
 }

@@ -8,8 +8,8 @@
 #'
 #' By default, the service queries the latest GTEx release.
 #'
-#'[GTEx Portal API
-#'documentation](https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_expression_pca_api_v2_expression_expressionPca_get)
+#' [GTEx Portal API
+#' documentation](https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_expression_pca_api_v2_expression_expressionPca_get)
 #'
 #' @inheritParams gtexr_arguments
 #'
@@ -19,16 +19,20 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_expression_pca(tissueSiteDetailIds = c("Adipose_Subcutaneous",
-#'                                            "Whole_Blood"))
+#' get_expression_pca(tissueSiteDetailIds = c(
+#'   "Adipose_Subcutaneous",
+#'   "Whole_Blood"
+#' ))
 #'
-#' get_expression_pca(tissueSiteDetailIds = "Adipose_Subcutaneous",
-#'                    sampleId = "GTEX-1117F-0226-SM-5GZZ7")
+#' get_expression_pca(
+#'   tissueSiteDetailIds = "Adipose_Subcutaneous",
+#'   sampleId = "GTEX-1117F-0226-SM-5GZZ7"
+#' )
 #' }
 get_expression_pca <- function(tissueSiteDetailIds,
                                datasetId = "gtex_v8",
                                sampleId = NULL,
                                page = 0,
-                               itemsPerPage = 250){
+                               itemsPerPage = 250) {
   gtex_query(endpoint = "expression/expressionPca")
 }

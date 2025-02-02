@@ -5,6 +5,8 @@ test_that("`get_subject()` returns tibble with expected colnames", {
 
   expect_s3_class(result, "tbl_df")
 
-  expect_identical(names(result),
-                   c("hardyScale", "ageBracket", "subjectId", "sex", "datasetId"))
+  expect_identical(
+    names(result),
+    c("hardyScale", "ageBracket", "subjectId", "sex", "datasetId")
+  )
 })

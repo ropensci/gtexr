@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'   get_subject()
+#' get_subject()
 #' }
 get_subject <- function(datasetId = "gtex_v8",
                         sex = NULL,
@@ -23,6 +23,6 @@ get_subject <- function(datasetId = "gtex_v8",
                         hardyScales = NULL,
                         subjectIds = NULL,
                         page = 0,
-                        itemsPerPage = 250){
+                        itemsPerPage = 250) {
   gtex_query(endpoint = "dataset/subject")
 }

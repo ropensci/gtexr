@@ -1,22 +1,22 @@
-test_that("`get_clustered_median_exon_expression()` returns tibble with expected colnames",
-          {
-            skip_if_offline()
-            result <- get_clustered_median_exon_expression(c("ENSG00000203782.5", "ENSG00000132693.12"),
-                                                           tissueSiteDetailIds = "Bladder")
+test_that("`get_clustered_median_exon_expression()` returns tibble with expected colnames", {
+  skip_if_offline()
+  result <- get_clustered_median_exon_expression(c("ENSG00000203782.5", "ENSG00000132693.12"),
+    tissueSiteDetailIds = "Bladder"
+  )
 
-            expect_s3_class(result, "tbl_df")
+  expect_s3_class(result, "tbl_df")
 
-            expect_identical(
-              names(result),
-              c(
-                "median",
-                "exonId",
-                "tissueSiteDetailId",
-                "ontologyId",
-                "datasetId",
-                "gencodeId",
-                "geneSymbol",
-                "unit"
-              )
-            )
-          })
+  expect_identical(
+    names(result),
+    c(
+      "median",
+      "exonId",
+      "tissueSiteDetailId",
+      "ontologyId",
+      "datasetId",
+      "gencodeId",
+      "geneSymbol",
+      "unit"
+    )
+  )
+})

@@ -4,6 +4,8 @@ test_that("`get_annotation()` returns tibble with expected colnames", {
 
   expect_s3_class(result, "tbl_df")
 
-  expect_identical(names(result),
-                   c("entity", "values", "type", "annotation", "datasetId"))
+  expect_identical(
+    names(result),
+    c("entity", "values", "type", "annotation", "datasetId")
+  )
 })

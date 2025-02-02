@@ -13,9 +13,11 @@
 #' @family Datasets Endpoints
 #'
 #' @examples
-#' get_variant_by_location(start = 153209600,
-#'                         end = 153209700,
-#'                         chromosome = "chr1")
+#' get_variant_by_location(
+#'   start = 153209600,
+#'   end = 153209700,
+#'   chromosome = "chr1"
+#' )
 get_variant_by_location <- function(start,
                                     end,
                                     chromosome,
