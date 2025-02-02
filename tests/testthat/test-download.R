@@ -21,6 +21,7 @@ test_that("`download()` returns tibble with expected colnames", {
       "rin",
       "hasGTExImage",
       "concentration",
+      "autolysisScore",
       "analysisRelease",
       "genotype",
       "hardyScale",
