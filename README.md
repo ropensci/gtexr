@@ -15,6 +15,8 @@ shinyapps.io](https://github.com/rmgpanw/gtexr/actions/workflows/shinyapps-deplo
 status](https://www.r-pkg.org/badges/version/gtexr)](https://CRAN.R-project.org/package=gtexr)
 [![CRAN
 downloads](https://cranlogs.r-pkg.org/badges/gtexr)](https://CRAN.R-project.org/package=gtexr)
+[![Repo
+Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 <!-- badges: end -->
 
