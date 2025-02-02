@@ -37,7 +37,8 @@ A tibble.
 calculate_splicing_quantitative_trait_loci(
   tissueSiteDetailId = "Whole_Blood",
   phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
-  variantId = "chr1_14677_G_A_b38")
+  variantId = "chr1_14677_G_A_b38"
+)
 }
 }
 \seealso{

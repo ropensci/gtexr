@@ -47,15 +47,23 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \examples{
 \dontrun{
 # search by gene
-get_fine_mapping(gencodeIds = c("ENSG00000132693.12",
-                               "ENSG00000203782.5"))
+get_fine_mapping(gencodeIds = c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 
 # optionally filter for a single variant and/or one or more tissues
-get_fine_mapping(gencodeIds = c("ENSG00000132693.12",
-                               "ENSG00000203782.5"),
-                 variantId = "chr1_153228363_A_G_b38",
-                 tissueSiteDetailIds = c("Whole_Blood",
-                                        "Thyroid"))
+get_fine_mapping(
+  gencodeIds = c(
+    "ENSG00000132693.12",
+    "ENSG00000203782.5"
+  ),
+  variantId = "chr1_153228363_A_G_b38",
+  tissueSiteDetailIds = c(
+    "Whole_Blood",
+    "Thyroid"
+  )
+)
 }
 }
 \seealso{

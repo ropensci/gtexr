@@ -41,7 +41,7 @@ chromosome location. Default to most recent dataset release.
 }
 \examples{
 \dontrun{
-  get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
+get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
 }
 }
 \seealso{

@@ -43,14 +43,18 @@ Retrieve Single Nucleus Gene Expression Data for a given Gene.
 # Search for one or more genes - returns a tibble with one row per tissue.
 # Column "cellTypes" now contains a tibble of expression summary data, with
 # one row for each cell type
-get_single_nucleus_gex(gencodeIds = c("ENSG00000203782.5",
-                                      "ENSG00000132693.12"))
+get_single_nucleus_gex(gencodeIds = c(
+  "ENSG00000203782.5",
+  "ENSG00000132693.12"
+))
 
 # `excludeDataArray = FALSE` - expression values are stored under "celltypes"
 # in an additional column called "data"
-response <- get_single_nucleus_gex(gencodeIds = "ENSG00000132693.12",
-                                   excludeDataArray = FALSE,
-                                   itemsPerPage = 2)
+response <- get_single_nucleus_gex(
+  gencodeIds = "ENSG00000132693.12",
+  excludeDataArray = FALSE,
+  itemsPerPage = 2
+)
 
 response
 

@@ -44,8 +44,10 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \examples{
 \dontrun{
 # search by gene
-get_significant_single_tissue_sqtls(gencodeIds = c("ENSG00000065613.9",
-                                                   "ENSG00000203782.5"))
+get_significant_single_tissue_sqtls(gencodeIds = c(
+  "ENSG00000065613.9",
+  "ENSG00000203782.5"
+))
 }
 }
 \seealso{

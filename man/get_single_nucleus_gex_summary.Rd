@@ -37,8 +37,10 @@ Retrieve Summarized Single Nucleus Gene Expression Data.
 get_single_nucleus_gex_summary()
 
 # filter for specific tissue
-get_single_nucleus_gex_summary(tissueSiteDetailIds = c("Breast_Mammary_Tissue",
-                                                       "Skin_Sun_Exposed_Lower_leg"))
+get_single_nucleus_gex_summary(tissueSiteDetailIds = c(
+  "Breast_Mammary_Tissue",
+  "Skin_Sun_Exposed_Lower_leg"
+))
 }
 }
 \seealso{

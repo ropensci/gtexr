@@ -25,27 +25,27 @@ one project available: gtex". However, \code{project_id} values "adult-gtex" and
 }
 \examples{
 \dontrun{
- # "adult-gtex" (default `project_id` value) and "egtex" both return results
- get_downloads_page_data()
- egtex <- get_downloads_page_data("egtex")
- egtex
+# "adult-gtex" (default `project_id` value) and "egtex" both return results
+get_downloads_page_data()
+egtex <- get_downloads_page_data("egtex")
+egtex
 
- # ..."gtex" does not
- get_downloads_page_data("gtex")
+# ..."gtex" does not
+get_downloads_page_data("gtex")
 
- # get details for whole blood methylation data, including download URL
- purrr::pluck(
-   egtex$children,
-   1,
-   "folders",
-   "Methylation - EPIC Array",
-   "children",
-   "folders",
-   "mQTLs",
-   "children",
-   "files",
-   "WholeBlood.mQTLs.regular.txt.gz"
- )
+# get details for whole blood methylation data, including download URL
+purrr::pluck(
+  egtex$children,
+  1,
+  "folders",
+  "Methylation - EPIC Array",
+  "children",
+  "folders",
+  "mQTLs",
+  "children",
+  "files",
+  "WholeBlood.mQTLs.regular.txt.gz"
+)
 }
 }
 \seealso{

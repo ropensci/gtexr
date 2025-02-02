@@ -44,8 +44,10 @@ By default, this service queries the latest GTEx release.
 \examples{
 \dontrun{
 # median exon expression values for CRP, filtered for whole blood
-get_median_exon_expression(gencodeIds = "ENSG00000132693.12",
-                           tissueSiteDetailIds = "Whole_Blood")
+get_median_exon_expression(
+  gencodeIds = "ENSG00000132693.12",
+  tissueSiteDetailIds = "Whole_Blood"
+)
 }
 }
 \seealso{

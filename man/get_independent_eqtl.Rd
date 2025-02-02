@@ -44,14 +44,22 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \examples{
 \dontrun{
 # search by gene
-get_independent_eqtl(gencodeIds = c("ENSG00000132693.12",
-                               "ENSG00000203782.5"))
+get_independent_eqtl(gencodeIds = c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 
 # optionally filter for a single variant and/or one or more tissues
-get_independent_eqtl(gencodeIds = c("ENSG00000132693.12",
-                                    "ENSG00000203782.5"),
-                     tissueSiteDetailIds = c("Whole_Blood",
-                                             "Thyroid"))
+get_independent_eqtl(
+  gencodeIds = c(
+    "ENSG00000132693.12",
+    "ENSG00000203782.5"
+  ),
+  tissueSiteDetailIds = c(
+    "Whole_Blood",
+    "Thyroid"
+  )
+)
 }
 }
 \seealso{

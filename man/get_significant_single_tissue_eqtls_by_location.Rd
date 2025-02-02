@@ -52,7 +52,8 @@ get_significant_single_tissue_eqtls_by_location(
   tissueSiteDetailId = "Artery_Aorta",
   start = 10000,
   end = 250000,
-  chromosome = "chr11")
+  chromosome = "chr11"
+)
 }
 }
 \seealso{

@@ -25,7 +25,7 @@ Model Exon of a specific gene by gencode ID
 }
 \examples{
 \dontrun{
-  get_full_get_collapsed_gene_model_exon(gencodeId = "ENSG00000203782.5")
+get_full_get_collapsed_gene_model_exon(gencodeId = "ENSG00000203782.5")
 }
 }
 \seealso{

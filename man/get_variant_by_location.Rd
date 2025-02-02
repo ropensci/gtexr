@@ -44,9 +44,11 @@ on a certain chromosome at a certain location.
 \href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_variant_by_location_api_v2_dataset_variantByLocation_get}{GTEx Portal API documentation}
 }
 \examples{
-get_variant_by_location(start = 153209600,
-                        end = 153209700,
-                        chromosome = "chr1")
+get_variant_by_location(
+  start = 153209600,
+  end = 153209700,
+  chromosome = "chr1"
+)
 }
 \seealso{
 Other Datasets Endpoints: 

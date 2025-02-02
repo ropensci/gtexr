@@ -46,10 +46,12 @@ By default, the calculation is based on the latest GTEx release.
 \examples{
 \dontrun{
 # perform request
-calculate_isqtls(cellType = "Neutrophils",
-                 tissueSiteDetailId = "Whole_Blood",
-                 phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
-                 variantId = "chr1_1099341_T_C_b38")
+calculate_isqtls(
+  cellType = "Neutrophils",
+  tissueSiteDetailId = "Whole_Blood",
+  phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
+  variantId = "chr1_1099341_T_C_b38"
+)
 }
 }
 \seealso{

@@ -46,8 +46,10 @@ By default, the service queries the latest GTEx release. The retrieved data is s
 \examples{
 \dontrun{
 # search by gene
-get_multi_tissue_eqtls(gencodeId = c("ENSG00000132693.12",
-                                     "ENSG00000203782.5"))
+get_multi_tissue_eqtls(gencodeId = c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 }
 }
 \seealso{

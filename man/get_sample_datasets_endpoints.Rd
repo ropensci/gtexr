@@ -105,7 +105,7 @@ queries the latest GTEx release.
 }
 \examples{
 \dontrun{
- get_sample_datasets_endpoints()
+get_sample_datasets_endpoints()
 }
 }
 \seealso{

@@ -25,8 +25,8 @@ get_file_list()
 
 # Get "GTEx Analysis V9" file list
 gtex_v9_files <- get_file_list() |>
-                   dplyr::filter(name == "GTEx Analysis V9") |>
-                   dplyr::pull(filesets)
+  dplyr::filter(name == "GTEx Analysis V9") |>
+  dplyr::pull(filesets)
 
 # "GTEx Analysis V9" filesets
 names(gtex_v9_files[[1]])

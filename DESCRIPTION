@@ -25,7 +25,7 @@ URL: https://rmgpanw.github.io/gtexr/,
 BugReports: https://github.com/rmgpanw/gtexr/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Imports: 
     cli,
     dplyr,

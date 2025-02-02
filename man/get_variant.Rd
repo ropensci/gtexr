@@ -58,8 +58,10 @@ get_variant(snpId = "rs1410858")
 get_variant(variantId = "chr1_153209640_C_A_b38")
 
 # search by chromosome and position
-get_variant(chromosome = "chr1",
-            pos = 153209600:153209700)
+get_variant(
+  chromosome = "chr1",
+  pos = 153209600:153209700
+)
 }
 \seealso{
 Other Datasets Endpoints: 

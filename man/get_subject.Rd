@@ -46,7 +46,7 @@ release.
 }
 \examples{
 \dontrun{
-  get_subject()
+get_subject()
 }
 }
 \seealso{

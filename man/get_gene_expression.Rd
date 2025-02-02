@@ -46,24 +46,34 @@ By default, this service queries the latest GTEx release.
 }
 \examples{
 \dontrun{
-  # multiple genes, selected tissues
-  get_gene_expression(gencodeIds = c("ENSG00000132693.12",
-                                     "ENSG00000203782.5"),
-                      tissueSiteDetailIds = c("Thyroid", "Whole_Blood"))
+# multiple genes, selected tissues
+get_gene_expression(
+  gencodeIds = c(
+    "ENSG00000132693.12",
+    "ENSG00000203782.5"
+  ),
+  tissueSiteDetailIds = c("Thyroid", "Whole_Blood")
+)
 
-  # single gene, selected (single) tissue
-  get_gene_expression(gencodeIds = "ENSG00000132693.12",
-                      tissueSiteDetailIds = "Whole_Blood")
+# single gene, selected (single) tissue
+get_gene_expression(
+  gencodeIds = "ENSG00000132693.12",
+  tissueSiteDetailIds = "Whole_Blood"
+)
 
-  # subset by sex
-  get_gene_expression(gencodeIds = "ENSG00000132693.12",
-                      tissueSiteDetailIds = "Whole_Blood",
-                      attributeSubset = "sex")
+# subset by sex
+get_gene_expression(
+  gencodeIds = "ENSG00000132693.12",
+  tissueSiteDetailIds = "Whole_Blood",
+  attributeSubset = "sex"
+)
 
-  # subset by age bracket
-  get_gene_expression(gencodeIds = "ENSG00000132693.12",
-                      tissueSiteDetailIds = "Whole_Blood",
-                      attributeSubset = "ageBracket")
+# subset by age bracket
+get_gene_expression(
+  gencodeIds = "ENSG00000132693.12",
+  tissueSiteDetailIds = "Whole_Blood",
+  attributeSubset = "ageBracket"
+)
 }
 }
 \seealso{

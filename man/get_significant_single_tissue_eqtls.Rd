@@ -55,18 +55,24 @@ IDs e.g. use "chr1_153209640_C_A_b38" instead of "rs1410858".
 \examples{
 \dontrun{
 # search by gene
-get_significant_single_tissue_eqtls(gencodeIds = c("ENSG00000132693.12",
-                                                  "ENSG00000203782.5"))
+get_significant_single_tissue_eqtls(gencodeIds = c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 
 # search by variant - must be variantId (not rsid)
 get_significant_single_tissue_eqtls(variantIds = "chr1_153209640_C_A_b38")
 
 # filter by gene/variant and tissue site - either `gencodeIds` or `variantIds`
 # should be supplied as a minimum
-get_significant_single_tissue_eqtls(gencodeIds = c("ENSG00000132693.12",
-                                                  "ENSG00000203782.5"),
-                                    variantIds = "chr1_153209640_C_A_b38",
-                                    tissueSiteDetailIds = "Whole_Blood")
+get_significant_single_tissue_eqtls(
+  gencodeIds = c(
+    "ENSG00000132693.12",
+    "ENSG00000203782.5"
+  ),
+  variantIds = "chr1_153209640_C_A_b38",
+  tissueSiteDetailIds = "Whole_Blood"
+)
 }
 }
 \seealso{

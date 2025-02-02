@@ -47,8 +47,10 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 }
 \examples{
 \dontrun{
-get_significant_single_tissue_ieqtls(c("ENSG00000132693.12",
-                                       "ENSG00000203782.5"))
+get_significant_single_tissue_ieqtls(c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 }
 }
 \seealso{

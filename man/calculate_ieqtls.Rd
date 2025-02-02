@@ -45,10 +45,12 @@ By default, the calculation is based on the latest GTEx release.
 \examples{
 \dontrun{
 # perform request
-calculate_ieqtls(cellType = "Adipocytes",
-                 tissueSiteDetailId = "Adipose_Subcutaneous",
-                 gencodeId = "ENSG00000203782.5",
-                 variantId = "chr1_1099341_T_C_b38")
+calculate_ieqtls(
+  cellType = "Adipocytes",
+  tissueSiteDetailId = "Adipose_Subcutaneous",
+  gencodeId = "ENSG00000203782.5",
+  variantId = "chr1_1099341_T_C_b38"
+)
 }
 }
 \seealso{

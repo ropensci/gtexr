@@ -37,7 +37,7 @@ By default, this service queries the models used by the latest GTEx release.
 }
 \examples{
 \dontrun{
- get_collapsed_gene_model_exon(gencodeId = "ENSG00000132693.12")
+get_collapsed_gene_model_exon(gencodeId = "ENSG00000132693.12")
 }
 }
 \seealso{

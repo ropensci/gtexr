@@ -30,7 +30,7 @@ currently.
 }
 \examples{
 \dontrun{
- get_annotation()
+get_annotation()
 }
 }
 \seealso{
