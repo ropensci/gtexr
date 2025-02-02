@@ -1,0 +1,39 @@
+{
+	// from https://github.com/rocker-org/devcontainer-try-r
+	"name": "Combination of r-rig and rstudio-server",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	// from https://github.com/rocker-org/devcontainer-features/tree/main
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/r-rig:1": {
+			"version": "release"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {},
+		"ghcr.io/rocker-org/devcontainer-features/miniforge:2": {},
+		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
+		"ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {}
+	},
+	// Mount any required external folders
+	// "mounts": [
+	// 	"type=bind,source=</path/to/localdir>,target=/workspaces/data"
+	// ],
+	"runArgs": [
+		"--user",
+		"${localEnv:UID}:${localEnv:GID}"
+	],
+	"remoteEnv": {
+		"UID": "${localEnv:UID}",
+		"GID": "${localEnv:GID}"
+	},
+	"postCreateCommand": "sudo chmod 1777 /usr/local/share/rocker-devcontainer-features/rstudio-server/data",
+	"postAttachCommand": {
+		"rstudio-start": "rserver --www-port 8686"
+	},
+	"forwardPorts": [
+		8686
+	],
+	"portsAttributes": {
+		"8686": {
+			"label": "RStudio IDE"
+		}
+	}
+}
