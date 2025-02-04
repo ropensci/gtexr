@@ -20,3 +20,57 @@ test_that("`get_file_list()` returns tibble with expected colnames", {
     )
   )
 })
+
+
+test_that("`process_raw_file_list()` returns expected output", {
+  raw_file_list <- list(
+    list(
+      name = "GTEx Analysis Pilot V3",
+      subpath = "gtex_analysis_pilot_v3",
+      dbgapId = "phs000424.v3.p1",
+      dataset = "GTEx",
+      release = "v3",
+      order = 10,
+      type = "dataset_version",
+      id = "gtex_analysis_pilot_v3",
+      description = "",
+      filesets = list(
+        list(
+          name = "RNA-Seq Data",
+          subpath = "rna_seq_data",
+          fileset = NULL,
+          dataset = "GTEx",
+          release = "v3",
+          type = "fileset",
+          order = 3,
+          description = "",
+          files = list(
+            list(
+              name = "GTEx_Analysis_RNA-seq_Flux1.2.3_intron_fractcovered__Pilot_V3.txt.gz",
+              description = "Fraction of intron that is covered by reads.",
+              fileset = "RNA-Seq Data",
+              dataset = "GTEx",
+              release = "v3",
+              type = "file",
+              order = 2,
+              size = "50M"
+            )
+          )
+        )
+      )
+    )
+  )
+
+
+  result <- process_raw_file_list(raw_file_list)
+
+  expect_identical(result$name, "GTEx Analysis Pilot V3")
+
+  expect_identical(names(result$filesets[[1]]), "RNA-Seq Data")
+
+  expect_identical(
+    names(result$filesets[[1]]$`RNA-Seq Data`$files),
+    "GTEx_Analysis_RNA-seq_Flux1.2.3_intron_fractcovered__Pilot_V3.txt.gz"
+  )
+
+})

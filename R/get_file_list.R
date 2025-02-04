@@ -30,7 +30,11 @@
 #' }
 get_file_list <- function() {
   result <- gtex_query(endpoint = "dataset/fileList", return_raw = TRUE)
-  result |>
+  process_raw_file_list(result)
+}
+
+process_raw_file_list <- function(raw_file_list) {
+  raw_file_list |>
     purrr::map(
       \(x) x |>
         purrr::map_at("filesets", list) |>
@@ -43,10 +47,10 @@ get_file_list <- function() {
       names(x) <- purrr::map_chr(x, \(y) y$name)
       x <- x |>
         purrr::map(\(x) x |>
-          purrr::map_at("files", \(y) {
-            names(y) <- purrr::map_chr(y, \(z) z$name)
-            y
-          }))
+                     purrr::map_at("files", \(y) {
+                       names(y) <- purrr::map_chr(y, \(z) z$name)
+                       y
+                     }))
       x
     }))
 }
