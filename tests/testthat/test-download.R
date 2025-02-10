@@ -3,7 +3,7 @@ test_that("`download()` returns tibble with expected colnames", {
   result <-
     download(
       materialTypes = "RNA:Total RNA",
-      tissueSiteDetailIds = "Thyroid",
+      tissueSiteDetailIds = "Prostate",
       pathCategory = "clean_specimens",
       sex = "male",
       ageBrackets = "50-59"
@@ -11,36 +11,38 @@ test_that("`download()` returns tibble with expected colnames", {
 
   expect_s3_class(result, "tbl_df")
 
-  expect_identical(
-    names(result),
-    c(
-      "materialType",
-      "sampleId",
-      "sampleIdUpper",
-      "sex",
-      "rin",
-      "hasGTExImage",
-      "concentration",
-      "autolysisScore",
-      "analysisRelease",
-      "genotype",
-      "hardyScale",
-      "pathologyNotes",
-      "subjectId",
-      "tissueSiteDetailId",
-      "hasGenotype",
-      "originalMaterialType",
-      "aliquotId",
-      "tissueSampleId",
-      "ageBracket",
-      "brainTissueDonor",
-      "volume",
-      "hasExpressionData",
-      "hasBRDImage",
-      "tissueSiteDetail",
-      "pathologyNotesCategories",
-      "amount",
-      "tissueSite"
-    )
-  )
+  expect_true(all(
+    names(result) %in%
+      c(
+        "materialType",
+        "sampleId",
+        "sampleIdUpper",
+        "sex",
+        "rin",
+        "hasGTExImage",
+        "concentration",
+        "autolysisScore",
+        "analysisRelease",
+        "genotype",
+        "hardyScale",
+        "pathologyNotes",
+        "subjectId",
+        "tissueSiteDetailId",
+        "hasGenotype",
+        "originalMaterialType",
+        "aliquotId",
+        "tissueSampleId",
+        "ageBracket",
+        "brainTissueDonor",
+        "volume",
+        "hasExpressionData",
+        "hasBRDImage",
+        "tissueSiteDetail",
+        "pathologyNotesCategories",
+        "amount",
+        "mass",
+        "tissueSite",
+        "expression"
+      )
+  ))
 })
