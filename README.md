@@ -17,6 +17,8 @@ status](https://www.r-pkg.org/badges/version/gtexr)](https://CRAN.R-project.org/
 downloads](https://cranlogs.r-pkg.org/badges/gtexr)](https://CRAN.R-project.org/package=gtexr)
 [![Repo
 Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Status at rOpenSci Software Peer
+Review](https://badges.ropensci.org/684_status.svg)](https://github.com/ropensci/software-review/issues/684)
 
 <!-- badges: end -->
 
@@ -24,8 +26,19 @@ The goal of gtexr is to provide a convenient R interface to the [GTEx
 Portal API
 V2](https://gtexportal.org/api/v2/redoc#tag/GTEx-Portal-API-Info).
 
-New to R? Try out the ⭐[shiny
-app](https://7hocgq-rmgpanw.shinyapps.io/gtexr/)⭐.
+The [Genotype-Tissue Expression (GTEx)
+project](https://www.gtexportal.org/home/) is a comprehensive public
+resource for studying tissue-specific gene expression and regulation in
+human tissues. Through systematic analysis of RNA sequencing data from
+54 non-diseased tissue sites across nearly 1000 individuals, GTEx
+provides crucial insights into the relationship between genetic
+variation and gene expression. This data is accessible through the [GTEx
+Portal
+API](https://gtexportal.org/api/v2/redoc#tag/GTEx-Portal-API-Info),
+enabling programmatic access to human gene expression data.
+
+New to R but want to explore the available data? Try out the interactive
+no-code ⭐[shiny app](https://7hocgq-rmgpanw.shinyapps.io/gtexr/)⭐.
 
 ## Installation
 
@@ -39,8 +52,8 @@ Or you can install the development version of gtexr from
 [GitHub](https://github.com/rmgpanw/gtexr) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("rmgpanw/gtexr")
+# install.packages("pak")
+pak::pak("rmgpanw/gtexr")
 ```
 
 ## Examples
@@ -90,8 +103,10 @@ get_eqtl_genes("Whole_Blood")
 Retrieve significant eQTLs for one or more genes:
 
 ``` r
-get_significant_single_tissue_eqtls(gencodeId = c("ENSG00000132693.12",
-                                                  "ENSG00000203782.5"))
+get_significant_single_tissue_eqtls(gencodeId = c(
+  "ENSG00000132693.12",
+  "ENSG00000203782.5"
+))
 #> 
 #> ── Paging info ─────────────────────────────────────────────────────────────────
 #> • numberOfPages = 1
