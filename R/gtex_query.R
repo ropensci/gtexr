@@ -21,10 +21,7 @@ gtex_query <- function(endpoint = NULL,
 
   if (!is.null(query_params)) {
     # exclude arguments starting with "."
-    query_params <- subset(
-      query_params,
-      !grepl("^\\.", query_params)
-    )
+    query_params <- query_params[!grepl("^\\.", query_params)]
 
     # create a named list of argument-value pairs
     query_params <- rlang::env_get_list(
