@@ -22,3 +22,10 @@ test_that("`process_na_and_zero_char_query_params()` works", {
     list(NULL, NULL, 1L)
   )
 })
+
+test_that("`validate_verbose_arg()` works", {
+  withr::with_options(
+    list(gtexr.verbose = c("invalid", "option")),
+    expect_error(get_genes("CRP"), regexp = "You supplied: character of length 2")
+  )
+})

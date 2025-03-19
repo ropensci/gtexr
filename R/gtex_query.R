@@ -54,7 +54,15 @@ gtex_query <- function(endpoint = NULL,
   }
 
   if (!is.null(gtex_response_body[["paging_info"]])) {
-    paging_info_messages(gtex_response_body)
+
+    # determine verbosity
+    verbose <- getOption("gtexr.verbose")
+
+    validate_verbose_arg(verbose,
+                         call = rlang::caller_env())
+
+    paging_info_messages(gtex_response_body,
+                         verbose)
 
     result <- gtex_response_body$data |>
       purrr::map(\(x) x |>
@@ -99,7 +107,8 @@ convert_null_to_na <- function(x) {
   }
 }
 
-paging_info_messages <- function(gtex_response_body) {
+paging_info_messages <- function(gtex_response_body,
+                                 verbose) {
   # warn user if not all available results fit on one page
   if ((gtex_response_body$paging_info$totalNumberOfItems > gtex_response_body$paging_info$maxItemsPerPage)) {
     warning_message <-
@@ -116,11 +125,13 @@ paging_info_messages <- function(gtex_response_body) {
   }
 
   # print paging info
-  cli::cli_h1("Paging info")
-  gtex_response_body$paging_info |>
-    purrr::imap_chr(\(x, idx) paste(idx, x, sep = " = ")) |>
-    purrr::set_names(nm = "*") |>
-    cli::cli_bullets()
+  if (verbose) {
+    cli::cli_h1("Paging info")
+    gtex_response_body$paging_info |>
+      purrr::imap_chr(\(x, idx) paste(idx, x, sep = " = ")) |>
+      purrr::set_names(nm = "*") |>
+      cli::cli_bullets()
+  }
 }
 
 
@@ -129,5 +140,24 @@ process_na_and_zero_char_query_params <- function(x) {
     return(NULL)
   } else {
     return(x)
+  }
+}
+
+validate_verbose_arg <- function(verbose,
+                                 call) {
+  if (!rlang::is_scalar_logical(verbose)) {
+    cli::cli_abort(
+      c(
+        "!" = "Invalid `gtexr.verbose` option",
+        "x" = cli::format_inline(
+          "You supplied: {class(verbose)} of length {length(verbose)}"
+        ),
+        "i" = "`gtexr.verbose` must be either `TRUE` or `FALSE`",
+        ">" = 'To see the current value, run `getOption("gtexr.verbose")`',
+        ">" = 'Set verbosity on with `options(list(gtexr.verbose = TRUE))`',
+        ">" = '...or off with `options(list(gtexr.verbose = FALSE))`'
+      ),
+      call = call
+    )
   }
 }
