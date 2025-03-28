@@ -18,7 +18,8 @@ download(
   ageBrackets = NULL,
   hardyScales = NULL,
   hasExpressionData = NULL,
-  hasGenotype = NULL
+  hasGenotype = NULL,
+  .return_raw = FALSE
 )
 }
 \arguments{
@@ -71,6 +72,9 @@ causes", "Intermediate death", "Slow death".}
 \item{hasExpressionData}{Logical.}
 
 \item{hasGenotype}{Logical.}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble

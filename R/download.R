@@ -36,10 +36,13 @@ download <- function(materialTypes = NULL,
                      ageBrackets = NULL,
                      hardyScales = NULL,
                      hasExpressionData = NULL,
-                     hasGenotype = NULL) {
-  result <- gtex_query(endpoint = "biobank/download", return_raw = TRUE)
+                     hasGenotype = NULL,
+                     .return_raw = FALSE) {
+  gtex_query(endpoint = "biobank/download", process_download_resp_json)
+}
 
-  result |>
+process_download_resp_json <- function(resp_json) {
+  resp_json |>
     purrr::map(
       \(x) x |>
         purrr::map_at("pathologyNotesCategories", tibble::as_tibble) |>

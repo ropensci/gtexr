@@ -4,7 +4,12 @@
 \alias{get_image}
 \title{Get Image}
 \usage{
-get_image(tissueSampleIds = NULL, page = 0, itemsPerPage = 250)
+get_image(
+  tissueSampleIds = NULL,
+  page = 0,
+  itemsPerPage = 250,
+  .return_raw = FALSE
+)
 }
 \arguments{
 \item{tissueSampleIds}{Array of strings. A list of Tissue Sample ID(s).}
@@ -12,6 +17,9 @@ get_image(tissueSampleIds = NULL, page = 0, itemsPerPage = 250)
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

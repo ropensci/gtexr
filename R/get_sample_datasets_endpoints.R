@@ -36,6 +36,7 @@ get_sample_datasets_endpoints <- function(datasetId = "gtex_v8",
                                           sortBy = NULL,
                                           sortDirection = NULL,
                                           page = NULL,
-                                          itemsPerPage = NULL) {
+                                          itemsPerPage = NULL,
+                                          .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/sample")
 }

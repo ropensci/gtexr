@@ -24,12 +24,13 @@
 #' purrr::pluck(bladder_site_details, "rnaSeqSampleSummary", 1)
 #' }
 get_tissue_site_detail <- function(page = 0,
-                                   itemsPerPage = 250) {
-  result <- gtex_query(endpoint = "dataset/tissueSiteDetail", return_raw = TRUE)
+                                   itemsPerPage = 250,
+                                   .return_raw = FALSE) {
+  gtex_query(endpoint = "dataset/tissueSiteDetail", process_get_tissue_site_detail_resp_json)
+}
 
-  paging_info_messages(result)
-
-  result$data |>
+process_get_tissue_site_detail_resp_json <- function(resp_json) {
+  resp_json$data |>
     purrr::map(\(x) purrr::map_if(x, is.list, \(y) list(y))) |>
     dplyr::bind_rows()
 }

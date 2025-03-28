@@ -1,5 +1,4 @@
-process_resp_body_linkage_disequilibrium <- function(resp_body) {
-  paging_info_messages(resp_body)
+process_linkage_disequilibrium_resp_json <- function(resp_body) {
 
   if (rlang::is_empty(resp_body$data)) {
     return(tibble::tibble())
@@ -16,8 +15,8 @@ process_resp_body_linkage_disequilibrium <- function(resp_body) {
     dplyr::mutate("ld" = as.numeric(.data[["ld"]]))
 }
 
-process_resp_body_clustered_expression <- function(resp_body, expression_item_name) {
-  if (!expression_item_name %in% names(resp_body)) {
+process_clustered_expression_resp_json <- function(resp_json, expression_item_name) {
+  if (!expression_item_name %in% names(resp_json)) {
     cli::cli_abort(
       c(
         "Internal gtexr error - incorrect `expression_item_name`: '{expression_item_name}'",
@@ -27,11 +26,11 @@ process_resp_body_clustered_expression <- function(resp_body, expression_item_na
   }
 
   result <-
-    resp_body[[expression_item_name]] |>
+    resp_json[[expression_item_name]] |>
     purrr::map(tibble::as_tibble) |>
     dplyr::bind_rows()
 
-  attr(result, "clusters") <- resp_body$clusters
+  attr(result, "clusters") <- resp_json$clusters
 
   cli::cli_alert_info("Retrieve clustering data with `attr(<df>, 'clusters')`")
 

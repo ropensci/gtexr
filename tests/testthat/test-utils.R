@@ -3,7 +3,7 @@ test_that(
   {
     # empty response
     expect_equal(
-      process_resp_body_linkage_disequilibrium(list(
+      process_linkage_disequilibrium_resp_json(list(
         data = list(),
         paging_info = list(
           numberOfPages = 0,
@@ -17,7 +17,7 @@ test_that(
 
     # valid response (`get_linkage_disequilibrium_by_variant_data("chr1_153209639_T_C_b38")`)
     expect_equal(
-      process_resp_body_linkage_disequilibrium(list(
+      process_linkage_disequilibrium_resp_json(list(
         data = list(
           list(
             "chr1_153202482_C_T_b38,chr1_153209639_T_C_b38",
@@ -40,14 +40,14 @@ test_that(
   }
 )
 
-test_that("`process_resp_body_clustered_expression()` raises expected error with invalid `expression_item_name` argument values", {
+test_that("`process_clustered_expression_resp_json()` raises expected error with invalid `expression_item_name` argument values", {
   resp_body <- list(
     clusters = "clusters",
     medianExonExpression = "medianExonExpression"
   )
 
   expect_error(
-    process_resp_body_clustered_expression(resp_body, expression_item_name = "medianExonExpression_invalid"),
+    process_clustered_expression_resp_json(resp_body, expression_item_name = "medianExonExpression_invalid"),
     "Internal gtexr error - incorrect `expression_item_name`: 'medianExonExpression_invalid'"
   )
 })

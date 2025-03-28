@@ -32,11 +32,16 @@ get_significant_single_tissue_eqtls_by_location <- function(tissueSiteDetailId,
                                                             start,
                                                             end,
                                                             chromosome,
-                                                            datasetId = "gtex_v8") {
+                                                            datasetId = "gtex_v8",
+                                                            .return_raw = FALSE) {
   gtex_query(
     endpoint = "association/singleTissueEqtlByLocation",
-    return_raw = TRUE
-  )$singleTissueEqtl |>
+    process_get_significant_single_tissue_eqtls_by_location_resp_json
+  )
+}
+
+process_get_significant_single_tissue_eqtls_by_location_resp_json <- function(resp_json) {
+  resp_json$singleTissueEqtl |>
     purrr::map(tibble::as_tibble) |>
     dplyr::bind_rows()
 }

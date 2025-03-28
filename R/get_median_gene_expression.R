@@ -24,6 +24,7 @@ get_median_gene_expression <- function(gencodeIds,
                                        datasetId = "gtex_v8",
                                        tissueSiteDetailIds = NULL,
                                        page = 0,
-                                       itemsPerPage = 250) {
+                                       itemsPerPage = 250,
+                                       .return_raw = FALSE) {
   gtex_query(endpoint = "expression/medianGeneExpression")
 }

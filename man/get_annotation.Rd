@@ -4,7 +4,12 @@
 \alias{get_annotation}
 \title{Get Annotation}
 \usage{
-get_annotation(datasetId = "gtex_v8", page = 0, itemsPerPage = 250)
+get_annotation(
+  datasetId = "gtex_v8",
+  page = 0,
+  itemsPerPage = 250,
+  .return_raw = FALSE
+)
 }
 \arguments{
 \item{datasetId}{String. Unique identifier of a dataset. Usually includes a
@@ -13,6 +18,9 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble

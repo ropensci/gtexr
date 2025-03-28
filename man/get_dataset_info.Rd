@@ -4,13 +4,20 @@
 \alias{get_dataset_info}
 \title{Get Dataset Info}
 \usage{
-get_dataset_info(datasetId = "gtex_v8", organizationName = "GTEx Consortium")
+get_dataset_info(
+  datasetId = "gtex_v8",
+  organizationName = "GTEx Consortium",
+  .return_raw = FALSE
+)
 }
 \arguments{
 \item{datasetId}{String. Unique identifier of a dataset. Usually includes a
 data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 
 \item{organizationName}{String. Options: "GTEx Consortium" "Kid's First".}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

@@ -9,7 +9,8 @@ get_top_expressed_genes(
   datasetId = "gtex_v8",
   filterMtGene = TRUE,
   page = 0,
-  itemsPerPage = 250
+  itemsPerPage = 250,
+  .return_raw = FALSE
 )
 }
 \arguments{
@@ -25,6 +26,9 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

@@ -1,6 +1,6 @@
 test_that("`get_single_nucleus_gex()` returns tibble with expected colnames", {
 
-  mocked_gtex_query <- function(...) {
+  mocked_perform_gtex_request_json <- function(...) {
     list(
       data = list(
         list(
@@ -39,7 +39,7 @@ test_that("`get_single_nucleus_gex()` returns tibble with expected colnames", {
         gencodeIds = "ENSG00000203782.5"
       )
     },
-    gtex_query = mocked_gtex_query
+    perform_gtex_request_json = mocked_perform_gtex_request_json
   )
 
   expect_identical(

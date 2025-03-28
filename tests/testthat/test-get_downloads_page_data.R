@@ -4,7 +4,7 @@ test_that(
     expect_equal(
       with_mocked_bindings(
         code = get_downloads_page_data("gtex"),
-        gtex_query = function(...) {
+        perform_gtex_request_json = function(...) {
           list(data = list())
         }
       ),

@@ -9,7 +9,8 @@ get_median_junction_expression(
   datasetId = "gtex_v8",
   tissueSiteDetailIds = NULL,
   page = 0,
-  itemsPerPage = 250
+  itemsPerPage = 250,
+  .return_raw = FALSE
 )
 }
 \arguments{
@@ -26,6 +27,9 @@ Can be GTEx specific IDs (e.g. "Whole_Blood"; use
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

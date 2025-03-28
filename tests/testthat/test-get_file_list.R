@@ -24,7 +24,7 @@ test_that("`get_file_list()` returns tibble with expected colnames", {
 
 test_that("`get_file_list()` returns tibble with expected output under 'filesets' column", {
 
-  mocked_gtex_query <- function(...) {
+  mocked_perform_gtex_request_json <- function(...) {
     list(
       list(
         name = "GTEx Analysis Pilot V3",
@@ -68,7 +68,7 @@ test_that("`get_file_list()` returns tibble with expected output under 'filesets
     code = {
       file_list <- get_file_list()
     },
-    gtex_query = mocked_gtex_query
+    perform_gtex_request_json = mocked_perform_gtex_request_json
     )
 
   expect_identical(file_list$name, "GTEx Analysis Pilot V3")

@@ -9,7 +9,8 @@ get_gene_search(
   gencodeVersion = "v26",
   genomeBuild = "GRCh38/hg38",
   page = 0,
-  itemsPerPage = 250
+  itemsPerPage = 250,
+  .return_raw = FALSE
 )
 }
 \arguments{
@@ -24,6 +25,9 @@ Either "v26" or "v19".}
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

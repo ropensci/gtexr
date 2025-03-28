@@ -41,12 +41,14 @@
 #' }
 get_clustered_median_transcript_expression <- function(gencodeIds,
                                                        datasetId = "gtex_v8",
-                                                       tissueSiteDetailIds = NULL) {
-  resp_body <- gtex_query(
+                                                       tissueSiteDetailIds = NULL,
+                                                       .return_raw = FALSE) {
+  gtex_query(
     endpoint = "expression/clusteredMedianTranscriptExpression",
-    return_raw = TRUE
+    process_get_clustered_median_transcript_expression_resp_json
   )
+}
 
-
-  process_resp_body_clustered_expression(resp_body, expression_item_name = "medianTranscriptExpression")
+process_get_clustered_median_transcript_expression_resp_json <- function(resp_json) {
+  process_clustered_expression_resp_json(resp_json, "medianTranscriptExpression")
 }

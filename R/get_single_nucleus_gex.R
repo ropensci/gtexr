@@ -1,4 +1,4 @@
-#' Get Single Nucleux Gex
+#' Get Single Nucleus Gex
 #'
 #' @description Retrieve Single Nucleus Gene Expression Data for a given Gene.
 #'
@@ -44,15 +44,13 @@ get_single_nucleus_gex <- function(gencodeIds,
                                    tissueSiteDetailIds = NULL,
                                    excludeDataArray = TRUE,
                                    page = 0,
-                                   itemsPerPage = 250) {
-  resp_body <- gtex_query(
-    endpoint = "expression/singleNucleusGeneExpression",
-    return_raw = TRUE
-  )
+                                   itemsPerPage = 250,
+                                   .return_raw = FALSE) {
+  gtex_query(endpoint = "expression/singleNucleusGeneExpression", process_get_single_nucleus_gex_resp_json)
+}
 
-  paging_info_messages(resp_body)
-
-  resp_body$data |>
+process_get_single_nucleus_gex_resp_json <- function(resp_json) {
+  resp_json$data |>
     # returns a list of lists, with one list for each tissue type. Aim: return a
     # single row tibble for each tissue type
     purrr::map(\(x) {

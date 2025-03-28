@@ -1,5 +1,5 @@
 gtex_query <- function(endpoint = NULL,
-                       return_raw = FALSE) {
+                       process_resp_fn = NULL) {
   # build request
   gtex_request <- httr2::request("https://gtexportal.org/api/v2/") |>
     httr2::req_user_agent("gtexr (https://github.com/rmgpanw/gtexr)")
@@ -14,15 +14,37 @@ gtex_query <- function(endpoint = NULL,
   query_params <- NULL
   fn <- rlang::caller_fn()
 
-  # allows gtex_query() to be called directly
-  if (!is.null(fn)) {
+  # process args
+  if (!is.null(fn)) { # allows gtex_query() to be called directly
     query_params <- rlang::fn_fmls_names(fn)
-  }
 
-  if (!is.null(query_params)) {
+    return_raw <- tryCatch(rlang::env_get(env = rlang::caller_env(n = 1),
+                                          nm = ".return_raw"),
+                           error = function(cnd) {
+                             cli::cli_abort(
+                               c("Missing argument: {.var .return_raw}",
+                                 "i" = "Please submit an issue at {.url {packageDescription('gtexr')$BugReports}} with a reproducible example.",
+                                 "i" = "For gtexr package developers: check whether {.var .return_raw} is included in the calling function arguments."
+                               ),
+                               call = rlang::caller_env()
+                             )
+                           })
+
+    validate_return_raw_arg(
+      return_raw = return_raw,
+      call = rlang::caller_env()
+    )
+
     # exclude arguments starting with "."
     query_params <- query_params[!grepl("^\\.", query_params)]
+  }
 
+  # determine verbosity
+  verbose <- getOption("gtexr.verbose")
+
+  validate_verbose_arg(verbose, call = rlang::caller_env())
+
+  if (!rlang::is_empty(query_params)) {
     # create a named list of argument-value pairs
     query_params <- rlang::env_get_list(
       env = rlang::caller_env(n = 1),
@@ -45,36 +67,46 @@ gtex_query <- function(endpoint = NULL,
       )
   }
 
-  gtex_response_body <- perform_gtex_request(gtex_request, call = rlang::caller_env()) |>
-    httr2::resp_body_json() |>
-    purrr::map(convert_null_to_na)
+  gtex_resp_json <- perform_gtex_request_json(gtex_request, call = rlang::caller_env())
 
+  # return early, if requested
   if (return_raw) {
-    return(gtex_response_body)
+    return(gtex_resp_json)
   }
 
-  if (!is.null(gtex_response_body[["paging_info"]])) {
+  # If paging info, print
+  if (!is.null(gtex_resp_json[["paging_info"]])) {
 
-    # determine verbosity
-    verbose <- getOption("gtexr.verbose")
+    paging_info_messages(gtex_resp_json, verbose)
 
-    validate_verbose_arg(verbose,
-                         call = rlang::caller_env())
+    # convert response to a tibble
+    if (!is.null(process_resp_fn)) {
+      result <- process_resp_fn(gtex_resp_json)
+    } else {
+      result <- gtex_resp_json$data |>
+        purrr::map(\(x) x |>
+                     purrr::compact() |>
+                     tibble::as_tibble()) |>
+        dplyr::bind_rows()
+    }
 
-    paging_info_messages(gtex_response_body,
-                         verbose)
-
-    result <- gtex_response_body$data |>
-      purrr::map(\(x) x |>
-        purrr::compact() |>
-        tibble::as_tibble()) |>
-      dplyr::bind_rows()
+    # ...else if no paging info
   } else {
-    result <- gtex_response_body |>
-      tibble::as_tibble()
+    if (!is.null(process_resp_fn)) {
+      result <- process_resp_fn(gtex_resp_json)
+    } else {
+      result <- gtex_resp_json |>
+        tibble::as_tibble()
+    }
   }
 
   return(result)
+}
+
+perform_gtex_request_json <- function(gtex_request, call = rlang::caller_env()) {
+  perform_gtex_request(gtex_request, call = call) |>
+    httr2::resp_body_json() |>
+    purrr::map(convert_null_to_na)
 }
 
 perform_gtex_request <- function(gtex_request, call) {
@@ -107,14 +139,14 @@ convert_null_to_na <- function(x) {
   }
 }
 
-paging_info_messages <- function(gtex_response_body,
+paging_info_messages <- function(gtex_resp_json,
                                  verbose) {
   # warn user if not all available results fit on one page
-  if ((gtex_response_body$paging_info$totalNumberOfItems > gtex_response_body$paging_info$maxItemsPerPage)) {
+  if ((gtex_resp_json$paging_info$totalNumberOfItems > gtex_resp_json$paging_info$maxItemsPerPage)) {
     warning_message <-
       c(
         "!" = cli::format_inline(
-          "Total number of items ({gtex_response_body$paging_info$totalNumberOfItems}) exceeds maximum page size ({gtex_response_body$paging_info$maxItemsPerPage})."
+          "Total number of items ({gtex_resp_json$paging_info$totalNumberOfItems}) exceeds maximum page size ({gtex_resp_json$paging_info$maxItemsPerPage})."
         ),
         "i" = cli::format_inline("Try increasing `itemsPerPage`.")
       )
@@ -127,7 +159,7 @@ paging_info_messages <- function(gtex_response_body,
   # print paging info
   if (verbose) {
     cli::cli_h1("Paging info")
-    gtex_response_body$paging_info |>
+    gtex_resp_json$paging_info |>
       purrr::imap_chr(\(x, idx) paste(idx, x, sep = " = ")) |>
       purrr::set_names(nm = "*") |>
       cli::cli_bullets()
@@ -156,6 +188,22 @@ validate_verbose_arg <- function(verbose,
         ">" = 'To see the current value, run `getOption("gtexr.verbose")`',
         ">" = 'Set verbosity on with `options(list(gtexr.verbose = TRUE))`',
         ">" = '...or off with `options(list(gtexr.verbose = FALSE))`'
+      ),
+      call = call
+    )
+  }
+}
+
+validate_return_raw_arg <- function(return_raw,
+                                 call) {
+  if (!rlang::is_scalar_logical(return_raw)) {
+    cli::cli_abort(
+      c(
+        "!" = "Invalid `.return_raw` value",
+        "x" = cli::format_inline(
+          "You supplied: {class(return_raw)} of length {length(return_raw)}"
+        ),
+        "i" = "`return_raw` must be either `TRUE` or `FALSE`"
       ),
       call = call
     )

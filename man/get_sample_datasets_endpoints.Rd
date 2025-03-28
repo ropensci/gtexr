@@ -24,7 +24,8 @@ get_sample_datasets_endpoints(
   sortBy = NULL,
   sortDirection = NULL,
   page = NULL,
-  itemsPerPage = NULL
+  itemsPerPage = NULL,
+  .return_raw = FALSE
 )
 }
 \arguments{
@@ -91,6 +92,9 @@ use \code{\link[=get_tissue_site_detail]{get_tissue_site_detail()}} to see valid
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble

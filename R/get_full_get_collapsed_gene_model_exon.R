@@ -18,6 +18,7 @@
 #' }
 get_full_get_collapsed_gene_model_exon <- function(gencodeId,
                                                    page = 0,
-                                                   itemsPerPage = 250) {
+                                                   itemsPerPage = 250,
+                                                   .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/fullCollapsedGeneModelExon")
 }

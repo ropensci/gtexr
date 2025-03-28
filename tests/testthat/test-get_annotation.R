@@ -1,6 +1,6 @@
 test_that("`get_annotation()` returns tibble with expected colnames", {
 
-  mocked_gtex_query <- function(...) {
+  mocked_perform_gtex_request_json <- function(...) {
     c(list(data = list(
       list(
         entity = "subject",
@@ -30,7 +30,7 @@ test_that("`get_annotation()` returns tibble with expected colnames", {
     code = {
       annotation <- get_annotation()
     },
-    gtex_query = mocked_gtex_query
+    perform_gtex_request_json = mocked_perform_gtex_request_json
   )
 
   expect_identical(

@@ -1,6 +1,6 @@
 test_that("`calculate_ieqtls()` returns tibble with expected colnames", {
 
-  mocked_gtex_query <- function(...) {
+  mocked_perform_gtex_request_json <- function(...) {
     list(
       cellType = "Adipocytes",
       data = list(0.2038),
@@ -30,7 +30,7 @@ test_that("`calculate_ieqtls()` returns tibble with expected colnames", {
         variantId = "chr1_1099341_T_C_b38"
       )
     },
-    gtex_query = mocked_gtex_query
+    perform_gtex_request_json = mocked_perform_gtex_request_json
   )
 
   expect_identical(

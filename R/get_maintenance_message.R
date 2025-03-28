@@ -19,6 +19,7 @@
 #' get_maintenance_message()
 #' }
 get_maintenance_message <- function(page = 0,
-                                    itemsPerPage = 250) {
+                                    itemsPerPage = 250,
+                                    .return_raw = FALSE) {
   gtex_query(endpoint = "admin/maintenanceMessage")
 }

@@ -23,6 +23,7 @@ get_subject <- function(datasetId = "gtex_v8",
                         hardyScales = NULL,
                         subjectIds = NULL,
                         page = 0,
-                        itemsPerPage = 250) {
+                        itemsPerPage = 250,
+                        .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/subject")
 }

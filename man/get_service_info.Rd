@@ -4,7 +4,11 @@
 \alias{get_service_info}
 \title{Get Service Info}
 \usage{
-get_service_info()
+get_service_info(.return_raw = FALSE)
+}
+\arguments{
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

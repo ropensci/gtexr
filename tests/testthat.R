@@ -10,3 +10,7 @@ library(testthat)
 library(gtexr)
 
 test_check("gtexr")
+
+# # To get code coverage report
+# withr::with_envvar(c("NOT_CRAN" = "true"),
+#                    {x <- covr::report()})

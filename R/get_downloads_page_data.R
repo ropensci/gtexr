@@ -40,13 +40,16 @@
 #'   "WholeBlood.mQTLs.regular.txt.gz"
 #' )
 #' }
-get_downloads_page_data <- function(project_id = "adult-gtex") {
-  result <- gtex_query(
+get_downloads_page_data <- function(project_id = "adult-gtex",
+                                    .return_raw = FALSE) {
+  gtex_query(
     endpoint = "dataset/openAccessFilesMetadata",
-    return_raw = TRUE
+    process_get_downloads_page_data_resp_json
   )
+}
 
-  result |>
+process_get_downloads_page_data_resp_json <- function(resp_json) {
+  resp_json |>
     purrr::map(name_unnamed_items, name_item = "displayName") |>
     tibble::as_tibble() |>
     tidyr::unnest_wider("data") |>

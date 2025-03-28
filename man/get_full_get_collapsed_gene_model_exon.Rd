@@ -4,7 +4,12 @@
 \alias{get_full_get_collapsed_gene_model_exon}
 \title{Get Full Get Collapsed Gene Model Exon}
 \usage{
-get_full_get_collapsed_gene_model_exon(gencodeId, page = 0, itemsPerPage = 250)
+get_full_get_collapsed_gene_model_exon(
+  gencodeId,
+  page = 0,
+  itemsPerPage = 250,
+  .return_raw = FALSE
+)
 }
 \arguments{
 \item{gencodeId}{String. A Versioned GENCODE ID of a gene, e.g.
@@ -13,6 +18,9 @@ get_full_get_collapsed_gene_model_exon(gencodeId, page = 0, itemsPerPage = 250)
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble

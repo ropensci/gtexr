@@ -69,6 +69,8 @@
 #'   for further details.
 #' @param pos Integer, vector.
 #' @param project_id String. Options: "gtex", "adult-gtex", "egtex".
+#' @param .return_raw Logical. If `TRUE`, return the raw API JSON response.
+#'   Default = `FALSE`
 #' @param rin Integer vector.
 #' @param sampleId String. `^GTEX-[A-Z0-9]{5}-[0-9]{4}-SM-[A-Z0-9]{5}$`
 #' @param sampleIds Character vector. GTEx sample ID.
@@ -128,6 +130,7 @@ gtexr_arguments <- function(ageBrackets = NULL,
                             phenotypeId = NULL,
                             pos = NULL,
                             project_id = NULL,
+                            .return_raw = NULL,
                             rin = NULL,
                             sampleId = NULL,
                             sampleIds = NULL,

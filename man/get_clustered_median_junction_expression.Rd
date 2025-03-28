@@ -7,7 +7,8 @@
 get_clustered_median_junction_expression(
   gencodeIds,
   datasetId = "gtex_v8",
-  tissueSiteDetailIds = NULL
+  tissueSiteDetailIds = NULL,
+  .return_raw = FALSE
 )
 }
 \arguments{
@@ -20,6 +21,9 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 \item{tissueSiteDetailIds}{Character vector of IDs for tissues of interest.
 Can be GTEx specific IDs (e.g. "Whole_Blood"; use
 \code{\link[=get_tissue_site_detail]{get_tissue_site_detail()}} to see valid values) or Ontology IDs.}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble, with clustering data stored as an attribute, "clusters".

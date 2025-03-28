@@ -4,10 +4,13 @@
 \alias{get_downloads_page_data}
 \title{Get Downloads Page Data}
 \usage{
-get_downloads_page_data(project_id = "adult-gtex")
+get_downloads_page_data(project_id = "adult-gtex", .return_raw = FALSE)
 }
 \arguments{
 \item{project_id}{String. Options: "gtex", "adult-gtex", "egtex".}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A Tibble

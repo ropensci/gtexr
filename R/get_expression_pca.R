@@ -33,6 +33,7 @@ get_expression_pca <- function(tissueSiteDetailIds,
                                datasetId = "gtex_v8",
                                sampleId = NULL,
                                page = 0,
-                               itemsPerPage = 250) {
+                               itemsPerPage = 250,
+                               .return_raw = FALSE) {
   gtex_query(endpoint = "expression/expressionPca")
 }

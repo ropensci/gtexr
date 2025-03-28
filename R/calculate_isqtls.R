@@ -30,17 +30,22 @@ calculate_isqtls <-
            tissueSiteDetailId,
            phenotypeId,
            variantId,
-           datasetId = "gtex_v8") {
-    gtex_query(endpoint = "association/dynisqtl", return_raw = TRUE) |>
-      purrr::imap(\(x, idx) ifelse(is.list(x),
-        tibble::tibble(
-          data = purrr::map_depth(
-            x,
-            purrr::pluck_depth(x) - 2,
-            unlist
-          )
-        ),
-        x
-      )) |>
-      tibble::as_tibble()
+           datasetId = "gtex_v8",
+           .return_raw = FALSE) {
+    gtex_query(endpoint = "association/dynisqtl", process_calculate_isqtls_resp_json)
   }
+
+process_calculate_isqtls_resp_json <- function(resp_json) {
+  resp_json |>
+    purrr::imap(\(x, idx) ifelse(is.list(x),
+                                 tibble::tibble(
+                                   data = purrr::map_depth(
+                                     x,
+                                     purrr::pluck_depth(x) - 2,
+                                     unlist
+                                   )
+                                 ),
+                                 x
+    )) |>
+    tibble::as_tibble()
+}

@@ -21,12 +21,17 @@
 calculate_splicing_quantitative_trait_loci <- function(tissueSiteDetailId,
                                                        phenotypeId,
                                                        variantId,
-                                                       datasetId = "gtex_v8") {
-  result <- gtex_query("association/dynsqtl", return_raw = TRUE)
-  result$data <- list(tibble::tibble(data = as.numeric(result$data)))
-  result$genotypes <- list(tibble::tibble(genotypes = as.integer(result$genotypes)))
+                                                       datasetId = "gtex_v8",
+                                                       .return_raw = FALSE) {
+  gtex_query(
+    "association/dynsqtl",
+    process_calculate_splicing_quantitative_trait_loci_resp_json
+  )
+}
 
-  result <- tibble::as_tibble(result)
+process_calculate_splicing_quantitative_trait_loci_resp_json <- function(resp_json) {
+  resp_json$data <- list(tibble::tibble(data = as.numeric(resp_json$data)))
+  resp_json$genotypes <- list(tibble::tibble(genotypes = as.integer(resp_json$genotypes)))
 
-  return(result)
+  return(tibble::as_tibble(resp_json))
 }

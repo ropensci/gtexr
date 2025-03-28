@@ -52,12 +52,13 @@ get_gene_expression <- function(gencodeIds,
                                 tissueSiteDetailIds = NULL,
                                 attributeSubset = NULL,
                                 page = 0,
-                                itemsPerPage = 250) {
-  resp_body <- gtex_query(endpoint = "expression/geneExpression", return_raw = TRUE)
+                                itemsPerPage = 250,
+                                .return_raw = FALSE) {
+  gtex_query(endpoint = "expression/geneExpression", process_get_gene_expression_resp_json)
+}
 
-  paging_info_messages(resp_body)
-
-  resp_body$data |>
+process_get_gene_expression_resp_json <- function(resp_json) {
+  resp_json$data |>
     purrr::map(\(x) {
       x$data <- list(as.numeric(x$data))
       x |>

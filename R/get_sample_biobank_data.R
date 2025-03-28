@@ -29,10 +29,9 @@ get_sample_biobank_data <- function(draw = NULL,
                                     hasExpressionData = NULL,
                                     hasGenotype = NULL,
                                     page = 0,
-                                    itemsPerPage = 250) {
-  resp_json <- gtex_query(endpoint = "biobank/sample", return_raw = TRUE)
-
-  process_get_sample_biobank_data_resp_json(resp_json = resp_json)
+                                    itemsPerPage = 250,
+                                    .return_raw = FALSE) {
+  gtex_query(endpoint = "biobank/sample", process_get_sample_biobank_data_resp_json)
 }
 
 process_get_sample_biobank_data_resp_json <- function(resp_json) {
@@ -49,7 +48,10 @@ process_get_sample_biobank_data_resp_json <- function(resp_json) {
     cli::cli_warn(warning_message, message_unformatted = warning_message)
   }
 
-  # print paging info
+  # print paging info (retrieve `verbose` from caller function, `gtexr_query()`)
+  verbose <- rlang::env_get(env = rlang::caller_env(), nm = "verbose")
+
+  if (verbose) {
   cli::cli_h1("Paging info")
   resp_json |>
     purrr::discard_at("sample") |>
@@ -75,6 +77,7 @@ process_get_sample_biobank_data_resp_json <- function(resp_json) {
     purrr::imap_chr(\(x, idx) paste(idx, x, sep = " = ")) |>
     purrr::set_names(nm = "*") |>
     cli::cli_bullets()
+  }
 
   resp_json$sample |>
     purrr::map(\(x) x |>

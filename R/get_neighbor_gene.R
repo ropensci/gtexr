@@ -20,6 +20,7 @@ get_neighbor_gene <- function(pos,
                               chromosome,
                               bp_window,
                               page = 0,
-                              itemsPerPage = 250) {
+                              itemsPerPage = 250,
+                              .return_raw = FALSE) {
   gtex_query(endpoint = "reference/neighborGene")
 }

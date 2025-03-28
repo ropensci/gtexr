@@ -24,6 +24,7 @@ get_variant_by_location <- function(start,
                                     sortBy = "pos",
                                     sortDirection = "asc",
                                     page = 0,
-                                    itemsPerPage = 250) {
+                                    itemsPerPage = 250,
+                                    .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/variantByLocation")
 }

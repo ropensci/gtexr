@@ -25,19 +25,20 @@
 #' # GTEx variant ID
 #' get_genomic_features("chr11_66561023_G_GTTA_b38")
 #' }
-get_genomic_features <- function(.featureId, datasetId = "gtex_v8") {
+get_genomic_features <- function(.featureId,
+                                 datasetId = "gtex_v8",
+                                 .return_raw = FALSE) {
   # validate `.featureId`
   validate_featureId(.featureId)
 
   # perform query
   gtex_query(
     endpoint = paste0("reference/features/", .featureId),
-    return_raw = TRUE
-  ) |>
-    process_get_genomic_features_resp_json(.featureId = .featureId)
+    process_get_genomic_features_resp_json
+  )
 }
 
-process_get_genomic_features_resp_json <- function(resp_json, .featureId) {
+process_get_genomic_features_resp_json <- function(resp_json) {
   if (rlang::is_empty(resp_json$features)) {
     result <- tibble::tibble(assembly = resp_json$assembly)
   } else {

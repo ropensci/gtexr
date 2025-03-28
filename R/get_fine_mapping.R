@@ -42,6 +42,7 @@ get_fine_mapping <- function(gencodeIds,
                              variantId = NULL,
                              tissueSiteDetailIds = NULL,
                              page = 0,
-                             itemsPerPage = 250) {
+                             itemsPerPage = 250,
+                             .return_raw = FALSE) {
   gtex_query(endpoint = "association/fineMapping")
 }

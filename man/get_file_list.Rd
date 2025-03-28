@@ -4,7 +4,11 @@
 \alias{get_file_list}
 \title{Get File List}
 \usage{
-get_file_list()
+get_file_list(.return_raw = FALSE)
+}
+\arguments{
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble

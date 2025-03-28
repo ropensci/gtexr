@@ -1,4 +1,4 @@
-#' et Significant Single Tissue Isqtls
+#' Get Significant Single Tissue Isqtls
 #'
 #' @description Retrieve Interaction sQTL Data.
 #'
@@ -28,6 +28,7 @@ get_significant_single_tissue_isqtls <- function(gencodeIds,
                                                  tissueSiteDetailIds = NULL,
                                                  datasetId = "gtex_v8",
                                                  page = 0,
-                                                 itemsPerPage = 250) {
+                                                 itemsPerPage = 250,
+                                                 .return_raw = FALSE) {
   gtex_query(endpoint = "association/singleTissueISqtl")
 }

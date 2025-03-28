@@ -4,7 +4,7 @@
 \alias{get_genomic_features}
 \title{Get Genomic Features}
 \usage{
-get_genomic_features(.featureId, datasetId = "gtex_v8")
+get_genomic_features(.featureId, datasetId = "gtex_v8", .return_raw = FALSE)
 }
 \arguments{
 \item{.featureId}{String. A genomic feature e.g. GENCODE ID, RSID or
@@ -12,6 +12,9 @@ GTEx Variant ID.}
 
 \item{datasetId}{String. Unique identifier of a dataset. Usually includes a
 data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 }
 \value{
 A tibble.

@@ -24,6 +24,7 @@ get_genes <- function(geneIds,
                       gencodeVersion = "v26",
                       genomeBuild = "GRCh38/hg38",
                       page = 0,
-                      itemsPerPage = 250) {
+                      itemsPerPage = 250,
+                      .return_raw = FALSE) {
   gtex_query(endpoint = "reference/gene")
 }

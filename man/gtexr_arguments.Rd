@@ -38,6 +38,7 @@ gtexr_arguments(
   phenotypeId = NULL,
   pos = NULL,
   project_id = NULL,
+  .return_raw = NULL,
   rin = NULL,
   sampleId = NULL,
   sampleIds = NULL,
@@ -156,6 +157,9 @@ for further details.}
 \item{pos}{Integer, vector.}
 
 \item{project_id}{String. Options: "gtex", "adult-gtex", "egtex".}
+
+\item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
+Default = \code{FALSE}}
 
 \item{rin}{Integer vector.}
 

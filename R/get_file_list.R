@@ -8,6 +8,8 @@
 #' @details The returned tibble includes a nested list column, "filesets". This
 #'   details files, sub-categorised by fileset (see examples section).
 #'
+#' @inheritParams gtexr_arguments
+#'
 #' @return A tibble
 #' @export
 #' @family Datasets Endpoints
@@ -28,13 +30,12 @@
 #' # "GTEx Analysis V9", "snRNA-Seq Data" fileset files
 #' names(gtex_v9_files[[1]][["snRNA-Seq Data"]]$files)
 #' }
-get_file_list <- function() {
-  result <- gtex_query(endpoint = "dataset/fileList", return_raw = TRUE)
-  process_raw_file_list(result)
+get_file_list <- function(.return_raw = FALSE) {
+  gtex_query(endpoint = "dataset/fileList", process_get_file_list_resp_json)
 }
 
-process_raw_file_list <- function(raw_file_list) {
-  raw_file_list |>
+process_get_file_list_resp_json <- function(resp_json) {
+  resp_json |>
     purrr::map(
       \(x) x |>
         purrr::map_at("filesets", list) |>
