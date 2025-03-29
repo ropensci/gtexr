@@ -25,6 +25,7 @@ get_sample_datasets_endpoints(
   sortDirection = NULL,
   page = NULL,
   itemsPerPage = NULL,
+  .verbose = getOption("gtexr.verbose"),
   .return_raw = FALSE
 )
 }
@@ -92,6 +93,9 @@ use \code{\link[=get_tissue_site_detail]{get_tissue_site_detail()}} to see valid
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.verbose}{Logical. If \code{TRUE} (default), print paging information. Set
+to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 
 \item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
 Default = \code{FALSE}}

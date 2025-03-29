@@ -15,6 +15,7 @@
 get_linkage_disequilibrium_by_variant_data <- function(variantId,
                                                        page = 0,
                                                        itemsPerPage = 250,
+                                                       .verbose = getOption("gtexr.verbose"),
                                                        .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/ldByVariant", process_linkage_disequilibrium_resp_json)
 }

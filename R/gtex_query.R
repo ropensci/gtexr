@@ -16,7 +16,7 @@ gtex_query <- function(endpoint = NULL,
 
   # process args
   if (!is.null(fn)) { # allows gtex_query() to be called directly
-    query_params <- rlang::fn_fmls_names(fn)
+    caller_args <- rlang::fn_fmls_names(fn)
 
     return_raw <- tryCatch(rlang::env_get(env = rlang::caller_env(n = 1),
                                           nm = ".return_raw"),
@@ -35,14 +35,17 @@ gtex_query <- function(endpoint = NULL,
       call = rlang::caller_env()
     )
 
+    if (".verbose" %in% caller_args) {
+      # determine verbosity
+      verbose <- rlang::env_get(env = rlang::caller_env(n = 1),
+                                         nm = ".verbose")
+
+      validate_verbose_arg(verbose, call = rlang::caller_env())
+    }
+
     # exclude arguments starting with "."
-    query_params <- query_params[!grepl("^\\.", query_params)]
+    query_params <- caller_args[!grepl("^\\.", caller_args)]
   }
-
-  # determine verbosity
-  verbose <- getOption("gtexr.verbose")
-
-  validate_verbose_arg(verbose, call = rlang::caller_env())
 
   if (!rlang::is_empty(query_params)) {
     # create a named list of argument-value pairs

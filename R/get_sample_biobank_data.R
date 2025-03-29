@@ -30,6 +30,7 @@ get_sample_biobank_data <- function(draw = NULL,
                                     hasGenotype = NULL,
                                     page = 0,
                                     itemsPerPage = 250,
+                                    .verbose = getOption("gtexr.verbose"),
                                     .return_raw = FALSE) {
   gtex_query(endpoint = "biobank/sample", process_get_sample_biobank_data_resp_json)
 }

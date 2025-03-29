@@ -21,6 +21,7 @@ get_gwas_catalog_by_location <- function(start,
                                          chromosome,
                                          page = 0,
                                          itemsPerPage = 250,
+                                         .verbose = getOption("gtexr.verbose"),
                                          .return_raw = FALSE) {
   gtex_query(endpoint = "reference/gwasCatalogByLocation")
 }

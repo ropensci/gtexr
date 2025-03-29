@@ -23,6 +23,7 @@ get_gene_search <- function(geneId,
                             genomeBuild = "GRCh38/hg38",
                             page = 0,
                             itemsPerPage = 250,
+                            .verbose = getOption("gtexr.verbose"),
                             .return_raw = FALSE) {
   gtex_query(endpoint = "reference/geneSearch")
 }

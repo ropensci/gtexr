@@ -25,6 +25,7 @@ get_variant_by_location <- function(start,
                                     sortDirection = "asc",
                                     page = 0,
                                     itemsPerPage = 250,
+                                    .verbose = getOption("gtexr.verbose"),
                                     .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/variantByLocation")
 }

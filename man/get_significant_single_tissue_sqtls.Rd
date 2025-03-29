@@ -9,6 +9,7 @@ get_significant_single_tissue_sqtls(
   variantIds = NULL,
   tissueSiteDetailIds = NULL,
   datasetId = "gtex_v8",
+  .verbose = getOption("gtexr.verbose"),
   .return_raw = FALSE
 )
 }
@@ -24,6 +25,9 @@ Can be GTEx specific IDs (e.g. "Whole_Blood"; use
 
 \item{datasetId}{String. Unique identifier of a dataset. Usually includes a
 data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
+
+\item{.verbose}{Logical. If \code{TRUE} (default), print paging information. Set
+to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 
 \item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
 Default = \code{FALSE}}

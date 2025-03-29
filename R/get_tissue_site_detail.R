@@ -25,6 +25,7 @@
 #' }
 get_tissue_site_detail <- function(page = 0,
                                    itemsPerPage = 250,
+                                   .verbose = getOption("gtexr.verbose"),
                                    .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/tissueSiteDetail", process_get_tissue_site_detail_resp_json)
 }

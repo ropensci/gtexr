@@ -23,6 +23,7 @@
 get_annotation <- function(datasetId = "gtex_v8",
                            page = 0,
                            itemsPerPage = 250,
+                           .verbose = getOption("gtexr.verbose"),
                            .return_raw = FALSE) {
 
   gtex_query(endpoint = "dataset/annotation", process_get_annotation_resp_json)

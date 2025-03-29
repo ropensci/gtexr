@@ -24,6 +24,7 @@ get_top_expressed_genes <- function(tissueSiteDetailId,
                                     filterMtGene = TRUE,
                                     page = 0,
                                     itemsPerPage = 250,
+                                    .verbose = getOption("gtexr.verbose"),
                                     .return_raw = FALSE) {
   gtex_query(endpoint = "expression/topExpressedGene")
 }

@@ -26,6 +26,7 @@ get_median_transcript_expression <- function(gencodeIds,
                                              tissueSiteDetailIds = NULL,
                                              page = 0,
                                              itemsPerPage = 250,
+                                             .verbose = getOption("gtexr.verbose"),
                                              .return_raw = FALSE) {
   gtex_query(endpoint = "expression/medianTranscriptExpression")
 }

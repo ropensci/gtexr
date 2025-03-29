@@ -94,6 +94,8 @@
 #'   use [get_tissue_site_detail()] to see valid values).
 #' @param variantId String. A gtex variant ID.
 #' @param variantIds Character vector. Gtex variant IDs.
+#' @param .verbose Logical. If `TRUE` (default), print paging information. Set
+#'   to `FALSE` globally with `options(list(gtexr.verbose = FALSE))`.
 #'
 #' @keywords internal
 #' @return Returns `NULL` invisibly. Used for documentation only.
@@ -146,7 +148,8 @@ gtexr_arguments <- function(ageBrackets = NULL,
                             tissueSiteDetailIds = NULL,
                             uberonIds = NULL,
                             variantId = NULL,
-                            variantIds = NULL) {
+                            variantIds = NULL,
+                            .verbose = NULL) {
   tibble::tribble(
     ~arg, ~type, ~scalar, ~pluralised, ~shinyinput, ~choices,
     "ageBrackets", "character", FALSE, TRUE, "selectInput", c("20-29", "30-39", "40-49", "50-59", "60-69", "70-79"),

@@ -26,6 +26,7 @@ get_single_nucleus_gex_summary <- function(datasetId = "gtex_snrnaseq_pilot",
                                            tissueSiteDetailIds = NULL,
                                            page = 0,
                                            itemsPerPage = 250,
+                                           .verbose = getOption("gtexr.verbose"),
                                            .return_raw = FALSE) {
   gtex_query(endpoint = "expression/singleNucleusGeneExpressionSummary")
 }

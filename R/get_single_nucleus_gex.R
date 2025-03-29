@@ -45,6 +45,7 @@ get_single_nucleus_gex <- function(gencodeIds,
                                    excludeDataArray = TRUE,
                                    page = 0,
                                    itemsPerPage = 250,
+                                   .verbose = getOption("gtexr.verbose"),
                                    .return_raw = FALSE) {
   gtex_query(endpoint = "expression/singleNucleusGeneExpression", process_get_single_nucleus_gex_resp_json)
 }

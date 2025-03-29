@@ -20,6 +20,7 @@
 #' }
 get_maintenance_message <- function(page = 0,
                                     itemsPerPage = 250,
+                                    .verbose = getOption("gtexr.verbose"),
                                     .return_raw = FALSE) {
   gtex_query(endpoint = "admin/maintenanceMessage")
 }

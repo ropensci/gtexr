@@ -32,6 +32,7 @@ get_multi_tissue_eqtls <- function(gencodeIds,
                                    datasetId = "gtex_v8",
                                    page = 0,
                                    itemsPerPage = 250,
+                                   .verbose = getOption("gtexr.verbose"),
                                    .return_raw = FALSE) {
   gtex_query(endpoint = "association/metasoft")
 }

@@ -30,6 +30,7 @@ get_significant_single_tissue_sqtls <- function(gencodeIds,
                                                 variantIds = NULL,
                                                 tissueSiteDetailIds = NULL,
                                                 datasetId = "gtex_v8",
+                                                .verbose = getOption("gtexr.verbose"),
                                                 .return_raw = FALSE) {
   gtex_query(endpoint = "association/singleTissueSqtl")
 }

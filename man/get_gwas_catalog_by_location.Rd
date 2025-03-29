@@ -10,6 +10,7 @@ get_gwas_catalog_by_location(
   chromosome,
   page = 0,
   itemsPerPage = 250,
+  .verbose = getOption("gtexr.verbose"),
   .return_raw = FALSE
 )
 }
@@ -26,6 +27,9 @@ get_gwas_catalog_by_location(
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250).}
+
+\item{.verbose}{Logical. If \code{TRUE} (default), print paging information. Set
+to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 
 \item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
 Default = \code{FALSE}}

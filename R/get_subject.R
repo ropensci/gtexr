@@ -24,6 +24,7 @@ get_subject <- function(datasetId = "gtex_v8",
                         subjectIds = NULL,
                         page = 0,
                         itemsPerPage = 250,
+                        .verbose = getOption("gtexr.verbose"),
                         .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/subject")
 }

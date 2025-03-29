@@ -21,6 +21,7 @@ get_neighbor_gene <- function(pos,
                               bp_window,
                               page = 0,
                               itemsPerPage = 250,
+                              .verbose = getOption("gtexr.verbose"),
                               .return_raw = FALSE) {
   gtex_query(endpoint = "reference/neighborGene")
 }

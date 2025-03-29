@@ -21,6 +21,7 @@ get_linkage_disequilibrium_data <- function(gencodeId,
                                             datasetId = "gtex_v8",
                                             page = 0,
                                             itemsPerPage = 250,
+                                            .verbose = getOption("gtexr.verbose"),
                                             .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/ld", process_linkage_disequilibrium_resp_json)
 }

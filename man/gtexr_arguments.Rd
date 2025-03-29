@@ -54,7 +54,8 @@ gtexr_arguments(
   tissueSiteDetailIds = NULL,
   uberonIds = NULL,
   variantId = NULL,
-  variantIds = NULL
+  variantIds = NULL,
+  .verbose = NULL
 )
 }
 \arguments{
@@ -199,6 +200,9 @@ use \code{\link[=get_tissue_site_detail]{get_tissue_site_detail()}} to see valid
 \item{variantId}{String. A gtex variant ID.}
 
 \item{variantIds}{Character vector. Gtex variant IDs.}
+
+\item{.verbose}{Logical. If \code{TRUE} (default), print paging information. Set
+to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 }
 \value{
 Returns \code{NULL} invisibly. Used for documentation only.
