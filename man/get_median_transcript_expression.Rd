@@ -9,7 +9,7 @@ get_median_transcript_expression(
   datasetId = "gtex_v8",
   tissueSiteDetailIds = NULL,
   page = 0,
-  itemsPerPage = 250,
+  itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
   .return_raw = FALSE
 )
@@ -27,7 +27,8 @@ Can be GTEx specific IDs (e.g. "Whole_Blood"; use
 
 \item{page}{Integer (default = 0).}
 
-\item{itemsPerPage}{Integer (default = 250).}
+\item{itemsPerPage}{Integer (default = 250). Set globally to maximum value
+100000 with \code{options(list(gtexr.itemsPerPage = 100000))}.}
 
 \item{.verbose}{Logical. If \code{TRUE} (default), print paging information. Set
 to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}

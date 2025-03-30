@@ -52,7 +52,7 @@ get_gene_expression <- function(gencodeIds,
                                 tissueSiteDetailIds = NULL,
                                 attributeSubset = NULL,
                                 page = 0,
-                                itemsPerPage = 250,
+                                itemsPerPage = getOption("gtexr.itemsPerPage"),
                                 .verbose = getOption("gtexr.verbose"),
                                 .return_raw = FALSE) {
   gtex_query(endpoint = "expression/geneExpression", process_get_gene_expression_resp_json)

@@ -41,7 +41,8 @@
 #'   causes", "Intermediate death", "Slow death".
 #' @param hasExpressionData Logical.
 #' @param hasGenotype Logical.
-#' @param itemsPerPage Integer (default = 250).
+#' @param itemsPerPage Integer (default = 250). Set globally to maximum value
+#'   100000 with `options(list(gtexr.itemsPerPage = 100000))`.
 #' @param ischemicTime Integer.
 #' @param ischemicTimeGroups Character vector. Options:
 #'   "<= 0", "1 - 300", "301 - 600", "601 - 900", "901 - 1200", "1201 - 1500", "> 1500".

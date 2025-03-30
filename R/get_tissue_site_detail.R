@@ -24,7 +24,7 @@
 #' purrr::pluck(bladder_site_details, "rnaSeqSampleSummary", 1)
 #' }
 get_tissue_site_detail <- function(page = 0,
-                                   itemsPerPage = 250,
+                                   itemsPerPage = getOption("gtexr.itemsPerPage"),
                                    .verbose = getOption("gtexr.verbose"),
                                    .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/tissueSiteDetail", process_get_tissue_site_detail_resp_json)

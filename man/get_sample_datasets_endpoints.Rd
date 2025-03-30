@@ -92,7 +92,8 @@ use \code{\link[=get_tissue_site_detail]{get_tissue_site_detail()}} to see valid
 
 \item{page}{Integer (default = 0).}
 
-\item{itemsPerPage}{Integer (default = 250).}
+\item{itemsPerPage}{Integer (default = 250). Set globally to maximum value
+100000 with \code{options(list(gtexr.itemsPerPage = 100000))}.}
 
 \item{.verbose}{Logical. If \code{TRUE} (default), print paging information. Set
 to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}

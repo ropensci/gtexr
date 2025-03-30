@@ -39,7 +39,7 @@ get_independent_eqtl <- function(gencodeIds,
                                  tissueSiteDetailIds = NULL,
                                  datasetId = "gtex_v8",
                                  page = 0,
-                                 itemsPerPage = 250,
+                                 itemsPerPage = getOption("gtexr.itemsPerPage"),
                                  .verbose = getOption("gtexr.verbose"),
                                  .return_raw = FALSE) {
   gtex_query(endpoint = "association/independentEqtl")

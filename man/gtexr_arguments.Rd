@@ -121,7 +121,8 @@ causes", "Intermediate death", "Slow death".}
 
 \item{hasGenotype}{Logical.}
 
-\item{itemsPerPage}{Integer (default = 250).}
+\item{itemsPerPage}{Integer (default = 250). Set globally to maximum value
+100000 with \code{options(list(gtexr.itemsPerPage = 100000))}.}
 
 \item{ischemicTime}{Integer.}
 

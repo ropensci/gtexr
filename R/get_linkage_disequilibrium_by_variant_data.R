@@ -14,7 +14,7 @@
 #' get_linkage_disequilibrium_by_variant_data("chr1_159245536_C_T_b38")
 get_linkage_disequilibrium_by_variant_data <- function(variantId,
                                                        page = 0,
-                                                       itemsPerPage = 250,
+                                                       itemsPerPage = getOption("gtexr.itemsPerPage"),
                                                        .verbose = getOption("gtexr.verbose"),
                                                        .return_raw = FALSE) {
   gtex_query(endpoint = "dataset/ldByVariant", process_linkage_disequilibrium_resp_json)

@@ -24,7 +24,7 @@ get_exons <- function(gencodeId,
                       genomeBuild = NULL,
                       datasetId = "gtex_v8",
                       page = 0,
-                      itemsPerPage = 250,
+                      itemsPerPage = getOption("gtexr.itemsPerPage"),
                       .verbose = getOption("gtexr.verbose"),
                       .return_raw = FALSE) {
   gtex_query(endpoint = "reference/exon")
