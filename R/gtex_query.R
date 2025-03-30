@@ -80,7 +80,7 @@ gtex_query <- function(endpoint = NULL,
   # If paging info, print
   if (!is.null(gtex_resp_json[["paging_info"]])) {
 
-    paging_info_messages(gtex_resp_json, verbose)
+    paging_info_messages(gtex_resp_json, fn_name = as.character(rlang::caller_call()[[1]]), verbose)
 
     # convert response to a tibble
     if (!is.null(process_resp_fn)) {
@@ -143,20 +143,14 @@ convert_null_to_na <- function(x) {
 }
 
 paging_info_messages <- function(gtex_resp_json,
+                                 fn_name,
                                  verbose) {
   # warn user if not all available results fit on one page
   if ((gtex_resp_json$paging_info$totalNumberOfItems > gtex_resp_json$paging_info$maxItemsPerPage)) {
-    warning_message <-
-      c(
-        "!" = cli::format_inline(
-          "Total number of items ({gtex_resp_json$paging_info$totalNumberOfItems}) exceeds maximum page size ({gtex_resp_json$paging_info$maxItemsPerPage})."
-        ),
-        "i" = cli::format_inline("Try increasing `itemsPerPage`.")
-      )
 
-    cli::cli_warn(warning_message,
-      message_unformatted = warning_message
-    )
+    n_items_exceeds_page_size_warning(fn_name,
+                                      gtex_resp_json$paging_info$totalNumberOfItems,
+                                      gtex_resp_json$paging_info$maxItemsPerPage)
   }
 
   # print paging info

@@ -82,20 +82,32 @@ Get general information about the GTEx service:
 
 ``` r
 library(gtexr)
-get_service_info()
-#> # A tibble: 1 × 9
-#>   id     name  version organization_name organization_url description contactUrl
-#>   <chr>  <chr> <chr>   <chr>             <chr>            <chr>       <chr>     
-#> 1 org.g… GTEx… 2.0.0   GTEx Project      https://gtexpor… This servi… https://g…
-#> # ℹ 2 more variables: documentationUrl <chr>, environment <chr>
+get_service_info() |>
+  tibble::glimpse()
+#> Rows: 1
+#> Columns: 9
+#> $ id                <chr> "org.gtexportal.rest.v2"
+#> $ name              <chr> "GTEx Portal V2 API"
+#> $ version           <chr> "2.0.0"
+#> $ organization_name <chr> "GTEx Project"
+#> $ organization_url  <chr> "https://gtexportal.org"
+#> $ description       <chr> "This service provides access to the data powering t…
+#> $ contactUrl        <chr> "https://gtexportal.org/home/contact"
+#> $ documentationUrl  <chr> "https://gtexportal.org/api/v2/docs"
+#> $ environment       <chr> "prod"
 ```
 
-Retrieve eQTL genes for whole blood tissue:
+Retrieve eQTL genes for whole blood tissue:[^1]
 
 ``` r
 get_eqtl_genes("Whole_Blood")
-#> Warning: ! Total number of items (12360) exceeds maximum page size (250).
-#> ℹ Try increasing `itemsPerPage`.
+#> Warning: ! Total number of items (12360) exceeds the selected maximum page size (250).
+#> ✖ 12110 items were not retrieved.
+#> ℹ To retrieve all available items, increase `itemsPerPage`, ensuring you reuse
+#>   your original query parameters e.g.
+#>   `get_eqtl_genes(<your_existing_parameters>, itemsPerPage = 100000)`
+#> ℹ Alternatively, adjust global "gtexr.itemsPerPage" setting e.g.
+#>   `options(list(gtexr.itemsPerPage = 100000))`
 #> 
 #> ── Paging info ─────────────────────────────────────────────────────────────────
 #> • numberOfPages = 50
@@ -161,3 +173,8 @@ guidelines](https://rmgpanw.github.io/gtexr/CONTRIBUTING.html).
 Please note that the gtexr project is released with a [Contributor Code
 of Conduct](https://rmgpanw.github.io/gtexr/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.
+
+[^1]: Note the warning raised if the number of items returned by a
+    function call exceeds the requested page size. Argument
+    `itemsPerPage` is set to 250 by default, but may be increased to
+    ensure that all items are retrieved in one go.

@@ -99,7 +99,7 @@ test_that("process_get_sample_biobank_data_resp_json() prints expected message/w
     # expected warning
     expect_warning(
       get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood", itemsPerPage = 2),
-      "exceeds maximum page size"
+      "get_sample_biobank_data\\(<your_existing_parameters>, itemsPerPage = 100000\\)"
     )
 
     # expected output

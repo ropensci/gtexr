@@ -60,10 +60,13 @@ Get general information about the GTEx service:
 
 ```{r}
 library(gtexr)
-get_service_info()
+get_service_info() |>
+  tibble::glimpse()
 ```
 
-Retrieve eQTL genes for whole blood tissue:
+Retrieve eQTL genes for whole blood tissue:[^1]
+
+[^1]: Note the warning raised if the number of items returned by a function call exceeds the requested page size. Argument `itemsPerPage` is set to 250 by default, but may be increased to ensure that all items are retrieved in one go.
 
 ```{r get-eqtl-genes}
 get_eqtl_genes("Whole_Blood")

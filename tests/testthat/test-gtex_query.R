@@ -30,7 +30,8 @@ with_mock_dir("gtex_query", {
   })
 
   test_that("gtex_query() raises a warning if total n items exceeds page size", {
-    expect_warning(get_gene_search("CRP", itemsPerPage = 1))
+    expect_warning(get_gene_search("CRP", itemsPerPage = 1),
+                   "get_gene_search\\(<your_existing_parameters>, itemsPerPage = 100000\\)")
   })
 })
 

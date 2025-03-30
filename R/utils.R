@@ -36,3 +36,22 @@ process_clustered_expression_resp_json <- function(resp_json, expression_item_na
 
   return(result)
 }
+
+n_items_exceeds_page_size_warning <- function(fn_name, n_items, maxItemsPerPage) {
+  warning_message <-
+    c(
+      "!" = cli::format_inline(
+        "Total number of items ({n_items}) exceeds the selected maximum page size ({maxItemsPerPage})."
+      ),
+      "x" = cli::format_inline("{n_items - maxItemsPerPage} items were not retrieved."),
+      "i" = cli::format_inline(
+        c("To retrieve all available items, increase `itemsPerPage`, ensuring you reuse your original query parameters",
+        " e.g. `{fn_name}(<your_existing_parameters>, itemsPerPage = 100000)`")
+      ),
+      "i" = cli::format_inline(
+        "Alternatively, adjust global \"gtexr.itemsPerPage\" setting e.g. `options(list(gtexr.itemsPerPage = 100000))`"
+      )
+    )
+
+  cli::cli_warn(warning_message, message_unformatted = warning_message)
+}

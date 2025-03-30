@@ -38,15 +38,9 @@ get_sample_biobank_data <- function(draw = NULL,
 process_get_sample_biobank_data_resp_json <- function(resp_json) {
   # warn user if not all available results fit on one page
   if ((resp_json$recordsFiltered > resp_json$pageSize)) {
-    warning_message <-
-      c(
-        "!" = cli::format_inline(
-          "Total number of items ({resp_json$recordsFiltered}) exceeds maximum page size ({resp_json$pageSize})."
-        ),
-        "i" = cli::format_inline("Try increasing `itemsPerPage`.")
-      )
-
-    cli::cli_warn(warning_message, message_unformatted = warning_message)
+    n_items_exceeds_page_size_warning(as.character(rlang::caller_call(2)[[1]]),
+                                      resp_json$recordsFiltered,
+                                      resp_json$pageSize)
   }
 
   # print paging info (retrieve `verbose` from caller function, `gtexr_query()`)
