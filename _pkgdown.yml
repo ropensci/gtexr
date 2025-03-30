@@ -4,41 +4,51 @@ template:
 
 reference:
 - title: GTEx Portal API Info
+  desc: Retrieve general service information about the GTEx API.
 - contents:
   - has_concept("GTEx Portal API Info")
 
 - title: Admin Endpoints
+  desc: Access maintenance messages and news updates from GTEx.
 - contents:
   - has_concept("Admin Endpoints")
 
 - title: Static Association Endpoints
+  desc: Query precomputed eQTL and sQTL associations across tissues.
 - contents:
   - has_concept("Static Association Endpoints")
 
 - title: Dynamic Association Endpoints
+  desc: Perform on-the-fly eQTL and sQTL calculations.
 - contents:
   - has_concept("Dynamic Association Endpoints")
 
 - title: Biobank Data Endpoints
+  desc: Retrieve metadata on biobank samples.
 - contents:
   - has_concept("Biobank Data Endpoints")
 
 - title: Datasets Endpoints
+  desc: Access various GTEx dataset information, as well as variant annotation and linkage disequilibrium data.
 - contents:
   - has_concept("Datasets Endpoints")
 
 - title: Expression Data Endpoints
+  desc: Obtain expression levels across tissues, including gene, exon, junction, and transcript-level data.
 - contents:
   - has_concept("Expression Data Endpoints")
 
 - title: Histology Endpoints
+  desc: Retrieve tissue histology image data.
 - contents:
   - has_concept("Histology Endpoints")
 
 - title: Metadata Endpoints
+  desc: Get dataset metadata (currently not active).
 - contents:
   - has_concept("Metadata Endpoints")
 
 - title: Reference Genome Endpoints
+  desc: Query reference genome features, including genetic coordinates for genes, transcripts and exons, as well as reported phenotype associations for a region.
 - contents:
   - has_concept("Reference Genome Endpoints")

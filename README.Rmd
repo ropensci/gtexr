@@ -42,6 +42,18 @@ Or you can install the development version  of gtexr from [GitHub](https://githu
 pak::pak("rmgpanw/gtexr")
 ```
 
+## Available functionality
+
+- **GTEx Portal API Info** – Retrieve general service information about the GTEx API.  
+- **Admin Endpoints** – Access maintenance messages and news updates from GTEx.  
+- **Static Association Endpoints** – Query precomputed eQTL and sQTL associations across tissues.  
+- **Dynamic Association Endpoints** – Perform on-the-fly eQTL and sQTL calculations.  
+- **Biobank Data Endpoints** – Retrieve metadata on biobank samples.
+- **Datasets Endpoints** – Access various GTEx dataset information, as well as variant annotation and linkage disequilibrium data.
+- **Expression Data Endpoints** – Obtain expression levels across tissues, including gene, exon, junction, and transcript-level data.  
+- **Histology Endpoints** – Retrieve tissue histology image data.  
+- **Reference Genome Endpoints** – Query reference genome features, including genetic coordinates for genes, transcripts and exons, as well as reported phenotype associations for a region.  
+
 ## Examples
 
 Get general information about the GTEx service:
