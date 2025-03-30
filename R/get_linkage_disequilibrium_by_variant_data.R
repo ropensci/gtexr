@@ -6,7 +6,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_linkage_disequilibrium_by_variant_data_api_v2_dataset_ldByVariant_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @return A tibble.
+#' @returns A tibble.
 #' @export
 #' @family Datasets Endpoints
 #'

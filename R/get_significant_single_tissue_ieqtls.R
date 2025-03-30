@@ -12,7 +12,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_significant_single_tissue_ieqtls_api_v2_association_singleTissueIEqtl_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @return A tibble
+#' @returns A tibble
 #' @export
 #' @family Static Association Endpoints
 #'

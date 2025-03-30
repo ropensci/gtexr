@@ -11,7 +11,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_variant_by_location_api_v2_dataset_variantByLocation_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @return A tibble.
+#' @returns A tibble.
 #' @export
 #' @family Datasets Endpoints
 #'

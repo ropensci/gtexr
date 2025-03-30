@@ -98,7 +98,8 @@
 #'   to `FALSE` globally with `options(list(gtexr.verbose = FALSE))`.
 #'
 #' @keywords internal
-#' @return Returns `NULL` invisibly. Used for documentation only.
+#' @returns A tibble of gtexr arguments and their metadata. Used for
+#'   documentation only.
 gtexr_arguments <- function(ageBrackets = NULL,
                             aliquotIds = NULL,
                             attributeSubset = NULL,

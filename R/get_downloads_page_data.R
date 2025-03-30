@@ -12,7 +12,7 @@
 #'
 #' @inheritParams gtexr_arguments
 #'
-#' @return A Tibble
+#' @returns A tibble
 #' @export
 #' @family Datasets Endpoints
 #'

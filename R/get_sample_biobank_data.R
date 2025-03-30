@@ -5,7 +5,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Biobank-Data-Endpoints/operation/get_sample_api_v2_biobank_sample_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @return A tibble
+#' @returns A tibble
 #' @export
 #' @family Biobank Data Endpoints
 #'

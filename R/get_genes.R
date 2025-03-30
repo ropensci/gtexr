@@ -12,7 +12,7 @@
 #'
 #' @inheritParams gtexr_arguments
 #'
-#' @return A tibble
+#' @returns A tibble
 #' @export
 #' @family Reference Genome Endpoints
 #'

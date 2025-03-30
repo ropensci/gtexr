@@ -205,7 +205,8 @@ use \code{\link[=get_tissue_site_detail]{get_tissue_site_detail()}} to see valid
 to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 }
 \value{
-Returns \code{NULL} invisibly. Used for documentation only.
+A tibble of gtexr arguments and their metadata. Used for
+documentation only.
 }
 \description{
 Internal function that documents all arguments for exported gtexr functions

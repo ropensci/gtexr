@@ -7,7 +7,7 @@
 #'
 #' @inheritParams gtexr_arguments
 #'
-#' @return A tibble.
+#' @returns A tibble.
 #' @export
 #' @family Metadata Endpoints
 #'
