@@ -20,7 +20,7 @@
 #' \dontrun{
 #' get_sqtl_genes("Whole_Blood")
 #' }
-get_sqtl_genes <- function(tissueSiteDetailId,
+get_sqtl_genes <- function(tissueSiteDetailIds = NULL,
                            datasetId = "gtex_v8",
                            page = 0,
                            itemsPerPage = getOption("gtexr.itemsPerPage"),

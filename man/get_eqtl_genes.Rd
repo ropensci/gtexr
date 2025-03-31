@@ -5,7 +5,7 @@
 \title{Get Eqtl Genes}
 \usage{
 get_eqtl_genes(
-  tissueSiteDetailIds,
+  tissueSiteDetailIds = NULL,
   datasetId = "gtex_v8",
   page = 0,
   itemsPerPage = getOption("gtexr.itemsPerPage"),
