@@ -9,7 +9,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_tissue_site_detail_api_v2_dataset_tissueSiteDetail_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @returns A Tibble
+#' @returns A tibble. Or a list if `.return_raw = TRUE`.
 #' @export
 #' @family Datasets Endpoints
 #'

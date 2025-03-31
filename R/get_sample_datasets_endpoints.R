@@ -9,7 +9,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_sample_api_v2_dataset_sample_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @returns A tibble
+#' @returns A tibble. Or a list if `.return_raw = TRUE`.
 #' @export
 #' @family Datasets Endpoints
 #'

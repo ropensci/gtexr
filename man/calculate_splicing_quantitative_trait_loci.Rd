@@ -30,7 +30,7 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 Default = \code{FALSE}}
 }
 \value{
-A tibble.
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 \href{https://gtexportal.org/api/v2/redoc#tag/Dynamic-Association-Endpoints/operation/calculate_splicing_quantitative_trait_loci_api_v2_association_dynsqtl_get}{GTEx Portal API documentation}.

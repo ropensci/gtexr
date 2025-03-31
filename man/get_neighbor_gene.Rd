@@ -36,7 +36,7 @@ to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 Default = \code{FALSE}}
 }
 \value{
-A tibble.
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 Find all neighboring genes on a certain chromosome around a

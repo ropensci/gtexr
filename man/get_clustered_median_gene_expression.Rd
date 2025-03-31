@@ -26,7 +26,7 @@ Can be GTEx specific IDs (e.g. "Whole_Blood"; use
 Default = \code{FALSE}}
 }
 \value{
-A tibble, with clustering data stored as an attribute, "clusters".
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 Find median gene expression data along with hierarchical

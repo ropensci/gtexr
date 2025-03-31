@@ -15,7 +15,7 @@
 #'
 #' @inheritParams gtexr_arguments
 #'
-#' @returns A tibble, with clustering data stored as an attribute, "clusters".
+#' @returns A tibble. Or a list if `.return_raw = TRUE`.
 #' @export
 #' @family Expression Data Endpoints
 #'

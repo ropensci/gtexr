@@ -17,7 +17,7 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 Default = \code{FALSE}}
 }
 \value{
-A tibble.
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 \href{https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_genomic_features_api_v2_reference_features__featureId__get}{GTEx API Portal documentation}

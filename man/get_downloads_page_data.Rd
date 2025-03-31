@@ -13,7 +13,7 @@ get_downloads_page_data(project_id = "adult-gtex", .return_raw = FALSE)
 Default = \code{FALSE}}
 }
 \value{
-A tibble
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 Retrieves all the files belonging to the given \code{project_id} for

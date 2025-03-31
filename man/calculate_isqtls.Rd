@@ -34,7 +34,7 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 Default = \code{FALSE}}
 }
 \value{
-A tibble.
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 Calculate your own Cell Specific sQTLs.

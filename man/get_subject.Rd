@@ -43,7 +43,7 @@ to \code{FALSE} globally with \code{options(list(gtexr.verbose = FALSE))}.}
 Default = \code{FALSE}}
 }
 \value{
-A Tibble
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 This service returns information of subjects used in analyses

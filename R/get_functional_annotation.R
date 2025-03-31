@@ -7,7 +7,7 @@
 #' documentation](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_full_get_collapsed_gene_model_exon_api_v2_dataset_fullCollapsedGeneModelExon_get)
 #'
 #' @inheritParams gtexr_arguments
-#' @returns A tibble
+#' @returns A tibble. Or a list if `.return_raw = TRUE`.
 #' @export
 #' @family Datasets Endpoints
 #'

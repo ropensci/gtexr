@@ -77,7 +77,7 @@ causes", "Intermediate death", "Slow death".}
 Default = \code{FALSE}}
 }
 \value{
-A tibble
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 \href{https://gtexportal.org/api/v2/redoc#tag/Biobank-Data-Endpoints/operation/download_api_v2_biobank_download_get}{GTEx Portal API documentation}

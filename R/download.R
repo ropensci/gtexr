@@ -9,7 +9,7 @@
 #'
 #'
 #' @inheritParams gtexr_arguments
-#' @returns A tibble
+#' @returns A tibble. Or a list if `.return_raw = TRUE`.
 #' @export
 #' @family Biobank Data Endpoints
 #'

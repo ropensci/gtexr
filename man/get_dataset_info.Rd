@@ -20,7 +20,7 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 Default = \code{FALSE}}
 }
 \value{
-A tibble.
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 \href{https://gtexportal.org/api/v2/redoc#tag/Metadata-Endpoints/operation/get_dataset_info_api_v2_metadata_dataset_get}{GTEx Portal API documentation}

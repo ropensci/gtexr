@@ -11,7 +11,7 @@ get_file_list(.return_raw = FALSE)
 Default = \code{FALSE}}
 }
 \value{
-A tibble
+A tibble. Or a list if \code{.return_raw = TRUE}.
 }
 \description{
 Get all the files in GTEx dataset for Download page
