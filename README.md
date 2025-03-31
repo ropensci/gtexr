@@ -48,12 +48,18 @@ You can install this package from CRAN:
 install.packages("gtexr")
 ```
 
-Or you can install the development version of gtexr from
+Or you can install the development version of gtexr from either
 [GitHub](https://github.com/rmgpanw/gtexr) with:
 
 ``` r
 # install.packages("pak")
-pak::pak("rmgpanw/gtexr")
+pak::pak("rmgpanw/gtexr") # source - GitHub
+```
+
+… or [R Universe](https://ropensci.r-universe.dev/builds) with:
+
+``` r
+pak::pak("gtexr", repos = "https://dev.ropensci.org") # source - rOpenSci
 ```
 
 ## Available functionality
