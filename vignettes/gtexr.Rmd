@@ -19,25 +19,49 @@ knitr::opts_chunk$set(
 
 The [GTEx Portal API V2](https://gtexportal.org/home/apiPage) enables programmatic access to data available from the Genotype-Tissue Expression Portal. The gtexr package wraps this API, providing R functions that correspond to each [API endpoint](https://gtexportal.org/api/v2/redoc):
 
-- R function names mirror those of their corresponding endpoint, converted to lower case with spaces replaced with underscores e.g. the R function for ["Get Service Info"](https://gtexportal.org/api/v2/redoc#tag/GTEx-Portal-API-Info/operation/get_service_info_api_v2__get) is `get_service_info()`.
+- R function names mirror those of their corresponding endpoint, converted to lower case with spaces replaced with underscores[^1] e.g. the R function for ["Get Service Info"](https://gtexportal.org/api/v2/redoc#tag/GTEx-Portal-API-Info/operation/get_service_info_api_v2__get) is `get_service_info()`.
 - Query parameters are similarly mirrored by function arguments e.g. the arguments for `get_maintenance_message()` (corresponding to the endpoint ["Get Maintenance Message"](https://gtexportal.org/api/v2/redoc#tag/Admin-Endpoints/operation/get_maintenance_message_api_v2_admin_maintenanceMessage_get)) are `page` and `itemsPerPage`. For query parameters that accept an array of values however, the corresponding function argument is pluralised to indicate this e.g. for endpoint ["Get Eqtl Genes"](https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_eqtl_genes_api_v2_association_egene_get) the query parameter 'tissueSiteDetailId' is pluralised to argument name `tissueSiteDetailIds` in `get_eqtl_genes()`.
-- Default values for arguments mirror those for the API
+- Default values for arguments mirror those for the API.
 - The documentation for each function includes at least one working example e.g. `?get_eqtl_genes` provides example valid values for the required argument `tissueSiteDetailIds`.
-- All functions return a `tibble::tibble`.
+- All functions return a `tibble::tibble` by default. Alternatively, the raw JSON from an API call may be retrieved by setting argument `.return_raw` to `TRUE` e.g. `get_service_info(.return_raw = TRUE)`.
+
+[^1]: With the exception of `get_sample_biobank_data()` and `get_sample_datasets_endpoints()`, for which 'get_sample' is additionally appended with their respective category titles 'biobank_data' and 'datasets_endpoints'.
 
 ## Shiny app
 
 Users can try out all functions interatively with the ⭐[gtexr shiny app](https://7hocgq-rmgpanw.shinyapps.io/gtexr/)⭐, which pre-populates query parameters with those for the first working example from each function's documentation.
 
-## Examples
-
-The rest of this vignette outlines some example applications of gtexr.
+## Paginated responses
 
 ```{r setup, message = FALSE}
 library(gtexr)
 library(dplyr)
 library(purrr)
 ```
+
+Many API endpoints return only the first 250 available items by default. A warning is raised if the number of available items exceeds the selected maximum page size e.g.
+
+```{r}
+get_eqtl_genes("Whole_Blood")
+```
+
+For most cases, the simplest solution is to increase the value of `itemsPerPage` e.g. `get_eqtl_genes("Whole_Blood", itemsPerPage = 100000)`. This limit can be set globally by setting the "gtexr.itemsPerPage" option with `options(list(gtexr.itemsPerPage = 100000))`.
+
+Alternatively, multiple pages can be retrieved sequentially e.g.
+
+```{r}
+# to retrieve the first 3 pages, with default setting of 250 items per page
+1:3 |>
+  map(\(page) get_eqtl_genes("Whole_Blood", page = page, .verbose = FALSE) |>
+        suppressWarnings()) |>
+  bind_rows()
+```
+
+Note that paging information is printed to the R console by default. Set argument `.verbose` to `FALSE` to silence these messages, or disable globally with `options(list(gtexr.verbose = FALSE))`.
+
+## Examples
+
+The rest of this vignette outlines some example applications of gtexr.
 
 ### Get build 37 coordinates for a variant
 
