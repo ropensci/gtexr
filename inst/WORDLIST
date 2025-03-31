@@ -4,8 +4,10 @@ Biobank
 CMD
 Chuin
 Codecov
+Drusen
 EFO
 ENSG
+Epub
 Eqtl
 Eqtls
 Eskin
@@ -31,13 +33,17 @@ Newick
 OMNI
 ORCID
 Olvera
+Ophthalmol
 PAXgene
 PLoS
+PMID
 Pca
+Pseudodrusen
 RNASEQ
 RSID
 RSIDs
 Repo
+Reticular
 Sqtl
 Sqtls
 Tibble
@@ -48,6 +54,8 @@ WGS
 Ying
 adenoma
 ageBracket
+ajo
+al
 albicantia
 aliquotId
 allelic
@@ -67,6 +75,7 @@ dbSNP
 desc
 desquamation
 documentationPage
+doi
 dysplasia
 eGene
 eGenes
@@ -76,6 +85,7 @@ egtex
 elastosis
 empiricalPValue
 esophagitis
+et
 exome
 featureId
 fileset
@@ -100,6 +110,7 @@ interatively
 io
 isQTLs
 ischemicTime
+itemsPerPage
 mValue
 mappable
 mastopathy
