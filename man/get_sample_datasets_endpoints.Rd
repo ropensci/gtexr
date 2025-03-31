@@ -21,10 +21,10 @@ get_sample_datasets_endpoints(
   rin = NULL,
   uberonIds = NULL,
   dataTypes = NULL,
-  sortBy = NULL,
-  sortDirection = NULL,
-  page = NULL,
-  itemsPerPage = NULL,
+  sortBy = "sampleId",
+  sortDirection = "asc",
+  page = 0,
+  itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
   .return_raw = FALSE
 )
