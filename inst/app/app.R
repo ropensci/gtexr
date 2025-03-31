@@ -1,9 +1,26 @@
-library(shiny)
 library(gtexr)
 library(purrr)
+
+check_packages <- function(pkgs, call = rlang::caller_env()) {
+  missing_pkgs <- pkgs[!pkgs %in% installed.packages()[, "Package"]]
+
+  if (length(missing_pkgs) > 0) {
+    cli::cli_alert_warning("The following packages are missing: {.val {missing_pkgs}}")
+
+    cli::cli_alert_info("Install them using:")
+    cli::cli_text("{.code install.packages(c({paste0('\"', missing_pkgs, '\"', collapse = ', ')}))}")
+
+    cli::cli_abort("Missing required packages.", call = call)
+  }
+}
+
+check_packages(c("shiny", "stringr", "DT"), call = rlang::caller_env())
+
+library(shiny)
 library(stringr)
 library(DT)
-library(tidyselect)
+
+# Set up ------------------------------------------------------------------
 
 gtexr_arguments_metadata <- gtexr:::gtexr_arguments()
 
@@ -297,7 +314,7 @@ endpointServer <- function(id, gtexr_fn) {
 
         DT::datatable(response() |>
                         dplyr::mutate(dplyr::across(
-                          tidyselect::where(is.list),
+                          dplyr::where(is.list),
                           \(x) "[[data]]"
                         )),
                       rownames = FALSE,

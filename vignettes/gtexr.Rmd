@@ -29,7 +29,11 @@ The [GTEx Portal API V2](https://gtexportal.org/home/apiPage) enables programmat
 
 ## Shiny app
 
-Users can try out all functions interatively with the ⭐[gtexr shiny app](https://7hocgq-rmgpanw.shinyapps.io/gtexr/)⭐, which pre-populates query parameters with those for the first working example from each function's documentation.
+Users can try out all functions interatively with the ⭐[gtexr shiny app](https://7hocgq-rmgpanw.shinyapps.io/gtexr/)⭐, which pre-populates query parameters with those for the first working example from each function's documentation. To run the app locally:
+
+``` r
+shiny::runApp(system.file("app", package = "gtexr"))
+```
 
 ## Paginated responses
 
