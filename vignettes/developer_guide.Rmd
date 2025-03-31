@@ -24,6 +24,8 @@ knitr::opts_chunk$set(
     -   Default values also match those for API endpoint.
     -   Query parameters flagged as "required" in the GTEx Portal API documentation do not have default values.[^2]
     -   Are all documented in `gtexr_arguments.R`. All functions therefore use `@inheritParams gtexr_arguments` for documentation.
+    -   All have a `.return_raw` argument (default value `FALSE`), allowing users to retrieve the raw JSON from an API call.
+    -   Functions which return a paginated response should have a `.verbose` argument (default value `getOption("gtexr.verbose")`, which is set to `TRUE`) and set argument `itemsPerPage` to `getOption("gtexr.itemsPerPage")` (which is set to 250 by default).
 -   Use `@family` roxygen tag to match categories on API documentation. This is used to categorise functions on pkgdown site reference page.
 -   Return a tibble.
 -   The first example in `@examples` must produce output and be a single function call without assignment (e.g. `get_news_items()`, not `x <- get_news_items()`). This is used to pre-populate argument values in the gtexr shiny app with a working example.
