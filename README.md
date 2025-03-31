@@ -169,6 +169,20 @@ get_significant_single_tissue_eqtls(gencodeId = c(
 #> #   ontologyId <chr>, chromosome <chr>, gencodeId <chr>, nes <dbl>
 ```
 
+## Citing gtexr
+
+If you find gtexr useful, please consider citing both GTEx and gtexr.
+Citation details are available
+[here](https://rmgpanw.github.io/gtexr/authors.html#citation).
+
+Example publications citing gtexr include:
+
+- [Schwartz R, Warwick AN, et al. Genetic Distinctions Between Reticular
+  Pseudodrusen and Drusen: A Genome-Wide Association Study. Am J
+  Ophthalmol. 2025 Mar 8:S0002-9394(25)00119-9. doi:
+  10.1016/j.ajo.2025.03.007. Epub ahead of print. PMID:
+  40064387](https://www.ajo.com/article/S0002-9394(25)00119-9/fulltext)
+
 ## Community guidelines
 
 Feedback, bug reports, and feature requests are welcome; file issues or
