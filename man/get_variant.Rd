@@ -82,7 +82,7 @@ Other Datasets Endpoints:
 \code{\link{get_functional_annotation}()},
 \code{\link{get_linkage_disequilibrium_by_variant_data}()},
 \code{\link{get_linkage_disequilibrium_data}()},
-\code{\link{get_sample_datasets_endpoints}()},
+\code{\link{get_sample_datasets}()},
 \code{\link{get_subject}()},
 \code{\link{get_tissue_site_detail}()},
 \code{\link{get_variant_by_location}()}

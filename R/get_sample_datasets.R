@@ -1,4 +1,4 @@
-#' Get Sample (Datasets Endpoints)
+#' Get Sample (Datasets)
 #'
 #' @description This service returns information of samples used in analyses
 #' from all datasets. Results may be filtered by dataset ID, sample ID, subject
@@ -15,9 +15,9 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_sample_datasets_endpoints()
+#' get_sample_datasets()
 #' }
-get_sample_datasets_endpoints <- function(datasetId = "gtex_v8",
+get_sample_datasets <- function(datasetId = "gtex_v8",
                                           sampleIds = NULL,
                                           tissueSampleIds = NULL,
                                           subjectIds = NULL,

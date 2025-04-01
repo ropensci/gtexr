@@ -25,7 +25,7 @@ The [GTEx Portal API V2](https://gtexportal.org/home/apiPage) enables programmat
 - The documentation for each function includes at least one working example e.g. `?get_eqtl_genes` provides example valid values for the required argument `tissueSiteDetailIds`.
 - All functions return a `tibble::tibble` by default. Alternatively, the raw JSON from an API call may be retrieved by setting argument `.return_raw` to `TRUE` e.g. `get_service_info(.return_raw = TRUE)`.
 
-[^1]: With the exception of `get_sample_biobank_data()` and `get_sample_datasets_endpoints()`, for which 'get_sample' is additionally appended with their respective category titles 'biobank_data' and 'datasets_endpoints'.
+[^1]: With the exception of `get_sample_biobank_data()` and `get_sample_datasets()`, for which 'get_sample' is additionally appended with their respective category titles 'biobank_data' and 'datasets'.
 
 ## Shiny app
 
