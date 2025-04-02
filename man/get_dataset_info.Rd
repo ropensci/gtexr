@@ -5,8 +5,8 @@
 \title{Get Dataset Info}
 \usage{
 get_dataset_info(
-  datasetId = "gtex_v8",
-  organizationName = "GTEx Consortium",
+  datasetId = NULL,
+  organizationName = NULL,
   .return_raw = FALSE
 )
 }
@@ -25,12 +25,9 @@ A tibble. Or a list if \code{.return_raw = TRUE}.
 \description{
 \href{https://gtexportal.org/api/v2/redoc#tag/Metadata-Endpoints/operation/get_dataset_info_api_v2_metadata_dataset_get}{GTEx Portal API documentation}
 }
-\details{
-Note: this currently only returns empty values.
-}
 \examples{
 \dontrun{
-get_dataset_info()
+get_dataset_info(datasetId = "gtex_v8", organizationName = "GTEx Consortium")
 }
 }
 \concept{Metadata Endpoints}

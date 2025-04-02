@@ -17,6 +17,7 @@
 #' get_full_get_collapsed_gene_model_exon(gencodeId = "ENSG00000203782.5")
 #' }
 get_full_get_collapsed_gene_model_exon <- function(gencodeId,
+                                                   datasetId = "gtex_v8",
                                                    page = 0,
                                                    itemsPerPage = getOption("gtexr.itemsPerPage"),
                                                    .verbose = getOption("gtexr.verbose"),

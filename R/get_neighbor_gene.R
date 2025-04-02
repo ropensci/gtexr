@@ -20,6 +20,8 @@ get_neighbor_gene <- function(pos,
                               chromosome,
                               bp_window,
                               page = 0,
+                              gencodeVersion = "v26",
+                              genomeBuild = "GRCh38/hg38",
                               itemsPerPage = getOption("gtexr.itemsPerPage"),
                               .verbose = getOption("gtexr.verbose"),
                               .return_raw = FALSE) {

@@ -5,7 +5,7 @@
 \title{Get Exons}
 \usage{
 get_exons(
-  gencodeId,
+  gencodeIds,
   gencodeVersion = NULL,
   genomeBuild = NULL,
   datasetId = "gtex_v8",
@@ -16,8 +16,8 @@ get_exons(
 )
 }
 \arguments{
-\item{gencodeId}{String. A Versioned GENCODE ID of a gene, e.g.
-"ENSG00000065613.9".}
+\item{gencodeIds}{A character vector of Versioned GENCODE IDs, e.g.
+c("ENSG00000132693.12", "ENSG00000203782.5").}
 
 \item{gencodeVersion}{String (default = "v26"). GENCODE annotation release.
 Either "v26" or "v19".}
@@ -54,7 +54,7 @@ This service returns exons from all known transcripts of the given gene.
 }
 \examples{
 \dontrun{
-get_exons(gencodeId = "ENSG00000203782.5")
+get_exons(gencodeIds = c("ENSG00000132693.12", "ENSG00000203782.5"))
 }
 }
 \seealso{

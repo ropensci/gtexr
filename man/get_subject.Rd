@@ -8,7 +8,7 @@ get_subject(
   datasetId = "gtex_v8",
   sex = NULL,
   ageBrackets = NULL,
-  hardyScales = NULL,
+  hardyScale = NULL,
   subjectIds = NULL,
   page = 0,
   itemsPerPage = getOption("gtexr.itemsPerPage"),
@@ -25,7 +25,7 @@ data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 \item{ageBrackets}{The age bracket(s) of the donors of interest. Options:
 "20-29", "30-39", "40-49", "50-59", "60-69", "70-79".}
 
-\item{hardyScales}{Character vector. A list of Hardy Scale(s) of interest.
+\item{hardyScale}{String A Hardy Scale of interest.
 Options: "Ventilator case", "Fast death - violent", "Fast death - natural
 causes", "Intermediate death", "Slow death".}
 
@@ -51,7 +51,7 @@ from all datasets. Results may be filtered by dataset ID, subject ID, sex,
 age bracket or Hardy Scale. By default, this service queries the latest GTEx
 release.
 
-\href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_tissue_site_detail_api_v2_dataset_tissueSiteDetail_get}{GTEx Portal API documentation}
+\href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_subject_api_v2_dataset_subject_get}{GTEx Portal API documentation}
 }
 \examples{
 \dontrun{

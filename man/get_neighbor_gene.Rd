@@ -9,13 +9,15 @@ get_neighbor_gene(
   chromosome,
   bp_window,
   page = 0,
+  gencodeVersion = "v26",
+  genomeBuild = "GRCh38/hg38",
   itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
   .return_raw = FALSE
 )
 }
 \arguments{
-\item{pos}{Integer, vector.}
+\item{pos}{Integer.}
 
 \item{chromosome}{String. One of "chr1", "chr2", "chr3", "chr4", "chr5",
 "chr6", "chr7", "chr8", "chr9", "chr10", "chr11", "chr12", "chr13",
@@ -25,6 +27,12 @@ get_neighbor_gene(
 \item{bp_window}{Integer.}
 
 \item{page}{Integer (default = 0).}
+
+\item{gencodeVersion}{String (default = "v26"). GENCODE annotation release.
+Either "v26" or "v19".}
+
+\item{genomeBuild}{String. Options: "GRCh38/hg38", "GRCh37/hg19". Default =
+"GRCh38/hg38".}
 
 \item{itemsPerPage}{Integer (default = 250). Set globally to maximum value
 100000 with \code{options(list(gtexr.itemsPerPage = 100000))}.}

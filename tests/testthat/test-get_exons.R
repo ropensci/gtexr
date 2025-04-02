@@ -1,6 +1,6 @@
 test_that("`get_exons()` returns tibble with expected colnames", {
   skip_if_offline()
-  result <- get_exons(gencodeId = "ENSG00000203782.5", itemsPerPage = 1) |>
+  result <- get_exons(gencodeIds = "ENSG00000203782.5", itemsPerPage = 1) |>
     suppressWarnings()
 
   expect_s3_class(result, "tbl_df")

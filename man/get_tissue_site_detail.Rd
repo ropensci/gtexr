@@ -5,6 +5,7 @@
 \title{Get Tissue Site Detail}
 \usage{
 get_tissue_site_detail(
+  datasetId = "gtex_v8",
   page = 0,
   itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
@@ -12,6 +13,9 @@ get_tissue_site_detail(
 )
 }
 \arguments{
+\item{datasetId}{String. Unique identifier of a dataset. Usually includes a
+data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
+
 \item{page}{Integer (default = 0).}
 
 \item{itemsPerPage}{Integer (default = 250). Set globally to maximum value

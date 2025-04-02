@@ -6,6 +6,7 @@
 \usage{
 get_full_get_collapsed_gene_model_exon(
   gencodeId,
+  datasetId = "gtex_v8",
   page = 0,
   itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
@@ -15,6 +16,9 @@ get_full_get_collapsed_gene_model_exon(
 \arguments{
 \item{gencodeId}{String. A Versioned GENCODE ID of a gene, e.g.
 "ENSG00000065613.9".}
+
+\item{datasetId}{String. Unique identifier of a dataset. Usually includes a
+data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 
 \item{page}{Integer (default = 0).}
 

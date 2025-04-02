@@ -15,7 +15,7 @@ test_that(
 
 test_that("`get_downloads_page_data()` returns tibble with expected colnames", {
   skip_if_offline()
-  result <- get_downloads_page_data()
+  result <- get_downloads_page_data("adult-gtex")
 
   expect_s3_class(result, "tbl_df")
 

@@ -26,10 +26,12 @@
 #'   "ENSG00000203782.5"
 #' ))
 #' }
-get_significant_single_tissue_sqtls <- function(gencodeIds,
+get_significant_single_tissue_sqtls <- function(gencodeIds = NULL,
                                                 variantIds = NULL,
                                                 tissueSiteDetailIds = NULL,
                                                 datasetId = "gtex_v8",
+                                                page = 0,
+                                                itemsPerPage = getOption("gtexr.itemsPerPage"),
                                                 .verbose = getOption("gtexr.verbose"),
                                                 .return_raw = FALSE) {
   gtex_query(endpoint = "association/singleTissueSqtl")

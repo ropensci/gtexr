@@ -19,7 +19,7 @@
 #' @examples
 #' \dontrun{
 #' # "adult-gtex" (default `project_id` value) and "egtex" both return results
-#' get_downloads_page_data()
+#' get_downloads_page_data("adult-gtex")
 #' egtex <- get_downloads_page_data("egtex")
 #' egtex
 #'
@@ -40,7 +40,7 @@
 #'   "WholeBlood.mQTLs.regular.txt.gz"
 #' )
 #' }
-get_downloads_page_data <- function(project_id = "adult-gtex",
+get_downloads_page_data <- function(project_id,
                                     .return_raw = FALSE) {
   gtex_query(
     endpoint = "dataset/openAccessFilesMetadata",

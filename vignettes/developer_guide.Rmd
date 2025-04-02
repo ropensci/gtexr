@@ -20,9 +20,9 @@ knitr::opts_chunk$set(
 -   `@description` section is copied verbatim from the API documentation site and ends with a link to the corresponding API endpoint documentation.
 -   Further notes may be added under `@details`.
 -   Arguments
-    -   Names match those for API endpoint, except where the argument accepts an array (vector in R) of values, in which case it is pluralised.[^1]
+    -   Names match those for API endpoint,[^1] except where the argument accepts an array (vector in R) of values, in which case it is pluralised.[^2]
     -   Default values also match those for API endpoint.
-    -   Query parameters flagged as "required" in the GTEx Portal API documentation do not have default values.[^2]
+    -   Query parameters flagged as "required" in the GTEx Portal API documentation do not have default values.[^3]
     -   Are all documented in `gtexr_arguments.R`. All functions therefore use `@inheritParams gtexr_arguments` for documentation.
     -   All have a `.return_raw` argument (default value `FALSE`), allowing users to retrieve the raw JSON from an API call.
     -   Functions which return a paginated response should have a `.verbose` argument (default value `getOption("gtexr.verbose")`, which is set to `TRUE`) and set argument `itemsPerPage` to `getOption("gtexr.itemsPerPage")` (which is set to 250 by default).
@@ -31,6 +31,8 @@ knitr::opts_chunk$set(
 -   The first example in `@examples` must produce output and be a single function call without assignment (e.g. `get_news_items()`, not `x <- get_news_items()`). This is used to pre-populate argument values in the gtexr shiny app with a working example.
 -   All examples should be surrounded by `\dontrun{}`.
 
-[^1]: Note that the [Get Genomic Features](https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_genomic_features_api_v2_reference_features__featureId__get) endpoint takes a path parameter "featureId". The corresponding gtexr argument is prefixed with "." (`.featureId`).
+[^1]: Note that the [Get Genomic Features](https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_genomic_features_api_v2_reference_features__featureId__get) endpoint takes a path parameter "featureId", for which the corresponding gtexr argument is prefixed with "." (`.featureId`).
 
-[^2]: Note however that while `variantId` is not flagged as "required" for [Get Linkage Disequilibrium By Variant Data](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_linkage_disequilibrium_by_variant_data_api_v2_dataset_ldByVariant_get), no default value is provided in `get_linkage_disequilibrium_by_variant_data()` as providing `NULL` or an unrecognised variant ID returns an empty response.
+[^2]: The parameter `pathCategory` always accepts an array however, and is therefore not pluralised.
+
+[^3]: Note however that while `variantId` is not flagged as "required" for [Get Linkage Disequilibrium By Variant Data](https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_linkage_disequilibrium_by_variant_data_api_v2_dataset_ldByVariant_get), no default value is provided in `get_linkage_disequilibrium_by_variant_data()` as providing `NULL` or an unrecognised variant ID returns an empty response.

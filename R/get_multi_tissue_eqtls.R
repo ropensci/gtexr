@@ -22,12 +22,9 @@
 #' @examples
 #' \dontrun{
 #' # search by gene
-#' get_multi_tissue_eqtls(gencodeId = c(
-#'   "ENSG00000132693.12",
-#'   "ENSG00000203782.5"
-#' ))
+#' get_multi_tissue_eqtls(gencodeId = "ENSG00000132693.12")
 #' }
-get_multi_tissue_eqtls <- function(gencodeIds,
+get_multi_tissue_eqtls <- function(gencodeId,
                                    variantId = NULL,
                                    datasetId = "gtex_v8",
                                    page = 0,

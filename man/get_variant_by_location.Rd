@@ -10,6 +10,7 @@ get_variant_by_location(
   chromosome,
   sortBy = "pos",
   sortDirection = "asc",
+  datasetId = "gtex_v8",
   page = 0,
   itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
@@ -31,6 +32,9 @@ get_variant_by_location(
 "tissueSiteDetailId", "sex".}
 
 \item{sortDirection}{String. Options: "asc", "desc". Default = "asc".}
+
+\item{datasetId}{String. Unique identifier of a dataset. Usually includes a
+data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
 
 \item{page}{Integer (default = 0).}
 

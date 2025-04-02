@@ -4,7 +4,7 @@
 \alias{get_downloads_page_data}
 \title{Get Downloads Page Data}
 \usage{
-get_downloads_page_data(project_id = "adult-gtex", .return_raw = FALSE)
+get_downloads_page_data(project_id, .return_raw = FALSE)
 }
 \arguments{
 \item{project_id}{String. Options: "gtex", "adult-gtex", "egtex".}
@@ -29,7 +29,7 @@ one project available: gtex". However, \code{project_id} values "adult-gtex" and
 \examples{
 \dontrun{
 # "adult-gtex" (default `project_id` value) and "egtex" both return results
-get_downloads_page_data()
+get_downloads_page_data("adult-gtex")
 egtex <- get_downloads_page_data("egtex")
 egtex
 

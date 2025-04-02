@@ -17,9 +17,9 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_exons(gencodeId = "ENSG00000203782.5")
+#' get_exons(gencodeIds = c("ENSG00000132693.12", "ENSG00000203782.5"))
 #' }
-get_exons <- function(gencodeId,
+get_exons <- function(gencodeIds,
                       gencodeVersion = NULL,
                       genomeBuild = NULL,
                       datasetId = "gtex_v8",

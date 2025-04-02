@@ -10,10 +10,17 @@ which can be set to `FALSE` to suppress pagination messages. The `itemsPerPage`
 argument for these functions can also be set globally by adjusting option
 "gtexr.itemsPerPage".
 
-* **Breaking change:** `get_sample_datasets_endpoints()` has been renamed to
-`get_sample_datasets()`. This is to match the naming convention used for 
-`get_sample_biobank_data()`, whereby 'get_sample' is appended with 
-their respective category titles 'datasets' and 'biobank_data'.
+* `get_dataset_info()` has now been fixed (previously returned an empty tibble).
+
+* **Breaking changes:** 
+
+  - `get_sample_datasets_endpoints()` has been renamed to
+  `get_sample_datasets()`. This is to match the naming convention used for 
+  `get_sample_biobank_data()`, whereby 'get_sample' is appended with 
+  their respective category titles 'datasets' and 'biobank_data'.
+
+  - `get_multi_tissue_eqtls()` argument `gencodeIds` has been renamed to
+  `gencodeId` to match the GTEx API.
 
 ## Minor changes and bug fixes
 
@@ -22,7 +29,7 @@ their respective category titles 'datasets' and 'biobank_data'.
   - `get_sqtl_genes()` argument `tissueSiteDetailId` has been pluralised to 
   `tissueSiteDetailIds`.
   
-  - `get_eqtl_genes()`, `get_sqtl_genes()` and `get_sample_datasets()` (formerly
+  - `get_eqtl_genes()`, `get_sqtl_genes()`, `get_exons()`, `get_neighbor_gene()`, `get_subject()`, `get_tissue_site_detail()`, `get_significant_single_tissue_sqtls()`, `download()` and `get_sample_datasets()` (formerly
   called `get_sample_datasets_endpoints()`) default argument values now match API.
 
 # gtexr 0.1.0

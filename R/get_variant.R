@@ -34,9 +34,9 @@
 #' )
 get_variant <- function(snpId = NULL,
                         variantId = NULL,
-                        chromosome = NULL,
-                        pos = NULL,
                         datasetId = "gtex_v8",
+                        chromosome = NULL,
+                        poss = NULL,
                         page = 0,
                         itemsPerPage = getOption("gtexr.itemsPerPage"),
                         .verbose = getOption("gtexr.verbose"),

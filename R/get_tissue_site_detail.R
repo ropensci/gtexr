@@ -23,7 +23,8 @@
 #'
 #' purrr::pluck(bladder_site_details, "rnaSeqSampleSummary", 1)
 #' }
-get_tissue_site_detail <- function(page = 0,
+get_tissue_site_detail <- function(datasetId = "gtex_v8",
+                                   page = 0,
                                    itemsPerPage = getOption("gtexr.itemsPerPage"),
                                    .verbose = getOption("gtexr.verbose"),
                                    .return_raw = FALSE) {

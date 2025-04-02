@@ -25,11 +25,12 @@ gtexr_arguments(
   geneId = NULL,
   geneIds = NULL,
   genomeBuild = NULL,
+  hardyScale = NULL,
   hardyScales = NULL,
   hasExpressionData = NULL,
   hasGenotype = NULL,
   itemsPerPage = NULL,
-  ischemicTime = NULL,
+  ischemicTimes = NULL,
   ischemicTimeGroups = NULL,
   materialTypes = NULL,
   organizationName = NULL,
@@ -37,9 +38,10 @@ gtexr_arguments(
   pathCategory = NULL,
   phenotypeId = NULL,
   pos = NULL,
+  poss = NULL,
   project_id = NULL,
   .return_raw = NULL,
-  rin = NULL,
+  rins = NULL,
   sampleId = NULL,
   sampleIds = NULL,
   searchTerm = NULL,
@@ -113,6 +115,10 @@ unversioned gencodeIds.}
 \item{genomeBuild}{String. Options: "GRCh38/hg38", "GRCh37/hg19". Default =
 "GRCh38/hg38".}
 
+\item{hardyScale}{String A Hardy Scale of interest.
+Options: "Ventilator case", "Fast death - violent", "Fast death - natural
+causes", "Intermediate death", "Slow death".}
+
 \item{hardyScales}{Character vector. A list of Hardy Scale(s) of interest.
 Options: "Ventilator case", "Fast death - violent", "Fast death - natural
 causes", "Intermediate death", "Slow death".}
@@ -124,7 +130,7 @@ causes", "Intermediate death", "Slow death".}
 \item{itemsPerPage}{Integer (default = 250). Set globally to maximum value
 100000 with \code{options(list(gtexr.itemsPerPage = 100000))}.}
 
-\item{ischemicTime}{Integer.}
+\item{ischemicTimes}{Integer.}
 
 \item{ischemicTimeGroups}{Character vector. Options:
 "<= 0", "1 - 300", "301 - 600", "601 - 900", "901 - 1200", "1201 - 1500", "> 1500".}
@@ -156,14 +162,16 @@ Frozen Tissue".}
 \href{https://www.gtexportal.org/home/faq#splicingPhenotypeId}{GTEx portal FAQs}
 for further details.}
 
-\item{pos}{Integer, vector.}
+\item{pos}{Integer.}
+
+\item{poss}{Integer, vector.}
 
 \item{project_id}{String. Options: "gtex", "adult-gtex", "egtex".}
 
 \item{.return_raw}{Logical. If \code{TRUE}, return the raw API JSON response.
 Default = \code{FALSE}}
 
-\item{rin}{Integer vector.}
+\item{rins}{Integer, vector.}
 
 \item{sampleId}{String. \verb{^GTEX-[A-Z0-9]\{5\}-[0-9]\{4\}-SM-[A-Z0-9]\{5\}$}}
 

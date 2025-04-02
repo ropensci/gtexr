@@ -5,7 +5,7 @@
 \title{Get Multi Tissue Eqtls}
 \usage{
 get_multi_tissue_eqtls(
-  gencodeIds,
+  gencodeId,
   variantId = NULL,
   datasetId = "gtex_v8",
   page = 0,
@@ -15,8 +15,8 @@ get_multi_tissue_eqtls(
 )
 }
 \arguments{
-\item{gencodeIds}{A character vector of Versioned GENCODE IDs, e.g.
-c("ENSG00000132693.12", "ENSG00000203782.5").}
+\item{gencodeId}{String. A Versioned GENCODE ID of a gene, e.g.
+"ENSG00000065613.9".}
 
 \item{variantId}{String. A gtex variant ID.}
 
@@ -55,10 +55,7 @@ By default, the service queries the latest GTEx release. The retrieved data is s
 \examples{
 \dontrun{
 # search by gene
-get_multi_tissue_eqtls(gencodeId = c(
-  "ENSG00000132693.12",
-  "ENSG00000203782.5"
-))
+get_multi_tissue_eqtls(gencodeId = "ENSG00000132693.12")
 }
 }
 \seealso{

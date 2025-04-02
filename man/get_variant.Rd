@@ -7,9 +7,9 @@
 get_variant(
   snpId = NULL,
   variantId = NULL,
-  chromosome = NULL,
-  pos = NULL,
   datasetId = "gtex_v8",
+  chromosome = NULL,
+  poss = NULL,
   page = 0,
   itemsPerPage = getOption("gtexr.itemsPerPage"),
   .verbose = getOption("gtexr.verbose"),
@@ -21,15 +21,15 @@ get_variant(
 
 \item{variantId}{String. A gtex variant ID.}
 
+\item{datasetId}{String. Unique identifier of a dataset. Usually includes a
+data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
+
 \item{chromosome}{String. One of "chr1", "chr2", "chr3", "chr4", "chr5",
 "chr6", "chr7", "chr8", "chr9", "chr10", "chr11", "chr12", "chr13",
 "chr14", "chr15", "chr16", "chr17", "chr18", "chr19", "chr20", "chr21",
 "chr22", "chrM", "chrX", "chrY".}
 
-\item{pos}{Integer, vector.}
-
-\item{datasetId}{String. Unique identifier of a dataset. Usually includes a
-data source and data release. Options: "gtex_v8", "gtex_snrnaseq_pilot".}
+\item{poss}{Integer, vector.}
 
 \item{page}{Integer (default = 0).}
 
