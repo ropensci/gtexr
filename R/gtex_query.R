@@ -95,12 +95,7 @@ gtex_query <- function(endpoint = NULL,
 
     # ...else if no paging info
   } else {
-    if (!is.null(process_resp_fn)) {
       result <- process_resp_fn(gtex_resp_json)
-    } else {
-      result <- gtex_resp_json |>
-        tibble::as_tibble()
-    }
   }
 
   return(result)
