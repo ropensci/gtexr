@@ -70,3 +70,28 @@ test_that("`.return_raw` argument works", {
                regexp = "You supplied: character of length 1")
 
 })
+
+test_that("Informative error raised if processed paginated response has differing n rows to expected n items", {
+  mocked_perform_gtex_request_json <- function(...) {
+    list(
+      data = list(list(x = "some_data"), list(
+        x = "some_more_data",
+        y = list(a = "some_nested_data", b = "some_nested_data")
+      )),
+      paging_info = list(
+        numberOfPages = 1,
+        page = 0,
+        maxItemsPerPage = 250,
+        totalNumberOfItems = 2
+      )
+    )
+  }
+
+  testthat::with_mocked_bindings(
+    code = {
+      expect_error(get_eqtl_genes("Whole_Blood"),
+                   regexp = "Mismatch: processed GTEx API response has 3 rows, but raw GTEx response has 2 elements.")
+    },
+    perform_gtex_request_json = mocked_perform_gtex_request_json
+  )
+})

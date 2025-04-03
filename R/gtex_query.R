@@ -93,6 +93,16 @@ gtex_query <- function(endpoint = NULL,
         dplyr::bind_rows()
     }
 
+    if (nrow(result) != length(gtex_resp_json$data)) {
+      cli::cli_abort(
+        c(
+          "Mismatch: processed GTEx API response has {nrow(result)} rows, but raw GTEx response has {length(gtex_resp_json$data)} elements.",
+          "i" = "Please submit an issue at {.url {packageDescription('gtexr')$BugReports}} with a reproducible example."
+        ),
+        call = rlang::caller_env()
+      )
+    }
+
     # ...else if no paging info
   } else {
       result <- process_resp_fn(gtex_resp_json)

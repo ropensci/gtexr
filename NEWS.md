@@ -19,8 +19,9 @@ argument for these functions can also be set globally by adjusting option
   `get_sample_biobank_data()`, whereby 'get_sample' is appended with 
   their respective category titles 'datasets' and 'biobank_data'.
 
-  - `get_multi_tissue_eqtls()` argument `gencodeIds` has been renamed to
-  `gencodeId` to match the GTEx API.
+  - `get_multi_tissue_eqtls()` has been fixed to return a tibble with one row 
+  per data item. Argument `gencodeIds` has also been renamed to `gencodeId` to 
+  match the GTEx API.
 
 ## Minor changes and bug fixes
 
@@ -29,8 +30,10 @@ argument for these functions can also be set globally by adjusting option
   - `get_sqtl_genes()` argument `tissueSiteDetailId` has been pluralised to 
   `tissueSiteDetailIds`.
   
-  - `get_eqtl_genes()`, `get_sqtl_genes()`, `get_exons()`, `get_neighbor_gene()`, `get_subject()`, `get_tissue_site_detail()`, `get_significant_single_tissue_sqtls()`, `download()` and `get_sample_datasets()` (formerly
-  called `get_sample_datasets_endpoints()`) default argument values now match API.
+  - `get_eqtl_genes()`, `get_sqtl_genes()`, `get_exons()`, `get_neighbor_gene()`, 
+  `get_subject()`, `get_tissue_site_detail()`, `get_significant_single_tissue_sqtls()`, 
+  `download()` and `get_sample_datasets()` (formerly called 
+  `get_sample_datasets_endpoints()`) default argument values now match API.
 
 # gtexr 0.1.0
 
