@@ -20,7 +20,7 @@ bibentry(
            comment = c(ORCID = "0000-0002-5088-6343"))
     ),
   year     = "2024",
-  url      = "https://github.com/rmgpanw/gtexr"
+  url      = "https://github.com/ropensci/gtexr"
 )
 
 bibentry(

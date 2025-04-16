@@ -9,7 +9,7 @@ structure(list(
   request = structure(list(
     url = "https://gtexportal.org/api/v2/reference/gene?geneId=CRP&gencodeVersion=v26&genomeBuild=GRCh38%2Fhg38&page=-1&itemsPerPage=250",
     method = NULL, headers = list(), body = NULL, fields = list(),
-    options = list(useragent = "gtexr (https://github.com/rmgpanw/gtexr)"),
+    options = list(useragent = "gtexr (https://github.com/ropensci/gtexr)"),
     policies = list(error_is_error = function(resp) {
       ifelse(!resp$status_code %in% c(200L, 422L, 400L), TRUE,
         FALSE

@@ -26,9 +26,9 @@ Description: A convenient R interface to the Genotype-Tissue Expression (GTEx)
     gene expression data. For more information on the API, see 
     <https://gtexportal.org/api/v2/redoc>.
 License: MIT + file LICENSE
-URL: https://rmgpanw.github.io/gtexr/,
-    https://github.com/rmgpanw/gtexr
-BugReports: https://github.com/rmgpanw/gtexr/issues
+URL: https://docs.ropensci.org/gtexr,
+    https://github.com/ropensci/gtexr
+BugReports: https://github.com/ropensci/gtexr/issues
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)

@@ -4,9 +4,9 @@
   "identifier": "gtexr",
   "description": "A convenient R interface to the Genotype-Tissue Expression (GTEx) Portal API. For more information on the API, see <https://gtexportal.org/api/v2/redoc>.",
   "name": "gtexr: Query the GTEx Portal API",
-  "relatedLink": ["https://rmgpanw.github.io/gtexr/", "https://CRAN.R-project.org/package=gtexr"],
-  "codeRepository": "https://github.com/rmgpanw/gtexr",
-  "issueTracker": "https://github.com/rmgpanw/gtexr/issues",
+  "relatedLink": ["https://docs.ropensci.org/gtexr", "https://CRAN.R-project.org/package=gtexr"],
+  "codeRepository": "https://github.com/ropensci/gtexr",
+  "issueTracker": "https://github.com/ropensci/gtexr/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.1.0.9000",
   "programmingLanguage": {
@@ -224,8 +224,8 @@
     "SystemRequirements": null
   },
   "fileSize": "417.409KB",
-  "releaseNotes": "https://github.com/rmgpanw/gtexr/blob/master/NEWS.md",
-  "readme": "https://github.com/rmgpanw/gtexr/blob/main/README.md",
-  "contIntegration": ["https://github.com/rmgpanw/gtexr/actions/workflows/pkgdown.yaml", "https://app.codecov.io/gh/rmgpanw/gtexr?branch=main", "https://github.com/rmgpanw/gtexr/actions/workflows/R-CMD-check.yaml", "https://github.com/rmgpanw/gtexr/actions/workflows/shinyapps-deploy.yaml"],
+  "releaseNotes": "https://github.com/ropensci/gtexr/blob/master/NEWS.md",
+  "readme": "https://github.com/ropensci/gtexr/blob/main/README.md",
+  "contIntegration": ["https://github.com/ropensci/gtexr/actions/workflows/pkgdown.yaml", "https://app.codecov.io/gh/ropensci/gtexr?branch=main", "https://github.com/ropensci/gtexr/actions/workflows/R-CMD-check.yaml", "https://github.com/ropensci/gtexr/actions/workflows/shinyapps-deploy.yaml"],
   "keywords": ["api-wrapper", "bioinformatics", "gtex", "r", "eqtl", "sqtl"]
 }

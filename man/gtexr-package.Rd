@@ -13,9 +13,9 @@ A convenient R interface to the Genotype-Tissue Expression (GTEx) Portal API. Th
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://rmgpanw.github.io/gtexr/}
-  \item \url{https://github.com/rmgpanw/gtexr}
-  \item Report bugs at \url{https://github.com/rmgpanw/gtexr/issues}
+  \item \url{https://docs.ropensci.org/gtexr}
+  \item \url{https://github.com/ropensci/gtexr}
+  \item Report bugs at \url{https://github.com/ropensci/gtexr/issues}
 }
 
 }

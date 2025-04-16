@@ -2,7 +2,7 @@ gtex_query <- function(endpoint = NULL,
                        process_resp_fn = NULL) {
   # build request
   gtex_request <- httr2::request("https://gtexportal.org/api/v2/") |>
-    httr2::req_user_agent("gtexr (https://github.com/rmgpanw/gtexr)")
+    httr2::req_user_agent("gtexr (https://github.com/ropensci/gtexr)")
 
   # append endpoint
   if (!is.null(endpoint)) {

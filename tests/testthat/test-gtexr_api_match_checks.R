@@ -1,7 +1,7 @@
 
 get_gtex_openapi_json <- function() {
   httr2::request("https://gtexportal.org/api/v2/openapi.json") |>
-    httr2::req_user_agent("gtexr (https://github.com/rmgpanw/gtexr)") |>
+    httr2::req_user_agent("gtexr (https://github.com/ropensci/gtexr)") |>
     httr2::req_perform() |>
     httr2::resp_body_json()
 }

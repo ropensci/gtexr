@@ -43,5 +43,5 @@ jobs:
           forceUpdate: true
 
           # installs gtexr locally from current commit
-          githubPackages: rmgpanw/gtexr
+          githubPackages: ropensci/gtexr
           githubToken: ${{ secrets.GITHUB_TOKEN }}

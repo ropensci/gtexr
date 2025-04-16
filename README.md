@@ -1,16 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gtexr <a href="https://rmgpanw.github.io/gtexr/"><img src="man/figures/logo.png" align="right" height="138"/></a>
+# gtexr <a href="https://docs.ropensci.org/gtexr"><img src="man/figures/logo.png" align="right" height="138"/></a>
 
 <!-- badges: start -->
 
-[![pkgdown](https://github.com/rmgpanw/gtexr/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/rmgpanw/gtexr/actions/workflows/pkgdown.yaml)
+[![pkgdown](https://github.com/ropensci/gtexr/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/ropensci/gtexr/actions/workflows/pkgdown.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/rmgpanw/gtexr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/rmgpanw/gtexr?branch=main)
-[![R-CMD-check](https://github.com/rmgpanw/gtexr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rmgpanw/gtexr/actions/workflows/R-CMD-check.yaml)
+coverage](https://codecov.io/gh/ropensci/gtexr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ropensci/gtexr?branch=main)
+[![R-CMD-check](https://github.com/ropensci/gtexr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ropensci/gtexr/actions/workflows/R-CMD-check.yaml)
 [![Deploy to
-shinyapps.io](https://github.com/rmgpanw/gtexr/actions/workflows/shinyapps-deploy.yaml/badge.svg)](https://github.com/rmgpanw/gtexr/actions/workflows/shinyapps-deploy.yaml)
+shinyapps.io](https://github.com/ropensci/gtexr/actions/workflows/shinyapps-deploy.yaml/badge.svg)](https://github.com/ropensci/gtexr/actions/workflows/shinyapps-deploy.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/gtexr)](https://CRAN.R-project.org/package=gtexr)
 [![CRAN
@@ -49,17 +49,17 @@ install.packages("gtexr")
 ```
 
 Or you can install the development version of gtexr from either
-[GitHub](https://github.com/rmgpanw/gtexr) with:
+[GitHub](https://github.com/ropensci/gtexr) with:
 
 ``` r
 # install.packages("pak")
-pak::pak("rmgpanw/gtexr") # source - GitHub
+pak::pak("ropensci/gtexr") # source - GitHub
 ```
 
 … or [R Universe](https://ropensci.r-universe.dev/builds) with:
 
 ``` r
-pak::pak("gtexr", repos = "https://dev.ropensci.org") # source - rOpenSci
+install.packages("gtexr", repos = "https://ropensci.r-universe.dev")
 ```
 
 ## Available functionality
@@ -173,7 +173,7 @@ get_significant_single_tissue_eqtls(gencodeId = c(
 
 If you find gtexr useful, please consider citing both GTEx and gtexr.
 Citation details are available
-[here](https://rmgpanw.github.io/gtexr/authors.html#citation).
+[here](https://docs.ropensci.org/gtexrauthors.html#citation).
 
 Example publications citing gtexr include:
 
@@ -186,13 +186,13 @@ Example publications citing gtexr include:
 ## Community guidelines
 
 Feedback, bug reports, and feature requests are welcome; file issues or
-seek support [here](https://rmgpanw.github.io/gtexr/issues). If you
+seek support [here](https://github.com/ropensci/gtexr/issues). If you
 would like to contribute to the package, please see our [contributing
-guidelines](https://rmgpanw.github.io/gtexr/CONTRIBUTING.html).
+guidelines](https://docs.ropensci.org/gtexrCONTRIBUTING.html).
 
-Please note that the gtexr project is released with a [Contributor Code
-of Conduct](https://rmgpanw.github.io/gtexr/CODE_OF_CONDUCT.html). By
-contributing to this project, you agree to abide by its terms.
+Please note that this package is released with a [Contributor Code of
+Conduct](https://ropensci.org/code-of-conduct/). By contributing to this
+project, you agree to abide by its terms.
 
 [^1]: Note the warning raised if the number of items returned by a
     function call exceeds the requested page size. Argument

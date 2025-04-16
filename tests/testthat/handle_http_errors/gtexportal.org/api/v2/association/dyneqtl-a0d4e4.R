@@ -9,7 +9,7 @@ structure(list(
   request = structure(list(
     url = "https://gtexportal.org/api/v2/association/dyneqtl?tissueSiteDetailId=Whole_Blood&gencodeId=ENSG00000203782.5&variantId=invalid%20rsid&datasetId=gtex_v8",
     method = NULL, headers = list(), body = NULL, fields = list(),
-    options = list(useragent = "gtexr (https://github.com/rmgpanw/gtexr)"),
+    options = list(useragent = "gtexr (https://github.com/ropensci/gtexr)"),
     policies = list(error_is_error = function(resp) {
       ifelse(!resp$status_code %in% c(200L, 422L, 400L), TRUE,
         FALSE
