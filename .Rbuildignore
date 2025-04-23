@@ -17,3 +17,4 @@
 ^codemeta\.json$
 ^.devcontainer$
 ^CODE_OF_CONDUCT\.md$
+^revdep$

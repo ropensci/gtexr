@@ -173,7 +173,7 @@ get_significant_single_tissue_eqtls(gencodeId = c(
 
 If you find gtexr useful, please consider citing both GTEx and gtexr.
 Citation details are available
-[here](https://docs.ropensci.org/gtexrauthors.html#citation).
+[here](https://docs.ropensci.org/gtexr/authors.html#citation).
 
 Example publications citing gtexr include:
 
@@ -181,14 +181,14 @@ Example publications citing gtexr include:
   Pseudodrusen and Drusen: A Genome-Wide Association Study. Am J
   Ophthalmol. 2025 Mar 8:S0002-9394(25)00119-9. doi:
   10.1016/j.ajo.2025.03.007. Epub ahead of print. PMID:
-  40064387](https://www.ajo.com/article/S0002-9394(25)00119-9/fulltext)
+  40064387](https://pubmed.ncbi.nlm.nih.gov/40064387/)
 
 ## Community guidelines
 
 Feedback, bug reports, and feature requests are welcome; file issues or
 seek support [here](https://github.com/ropensci/gtexr/issues). If you
 would like to contribute to the package, please see our [contributing
-guidelines](https://docs.ropensci.org/gtexrCONTRIBUTING.html).
+guidelines](https://docs.ropensci.org/gtexr/CONTRIBUTING.html).
 
 Please note that this package is released with a [Contributor Code of
 Conduct](https://ropensci.org/code-of-conduct/). By contributing to this
