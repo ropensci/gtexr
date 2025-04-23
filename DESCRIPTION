@@ -14,7 +14,12 @@ Authors@R: c(
     person("Chuin Ying", "Ung", role = "aut",
            comment = c(ORCID = "0000-0001-8487-4589")),
     person("Robert", "Luben", role = "aut",
-           comment = c(ORCID = "0000-0002-5088-6343"))
+           comment = c(ORCID = "0000-0002-5088-6343")),
+    person(given = "Zhian N.",
+           family = "Kamvar",
+           role = c("rev"),
+           email = "zkamvar@carpentries.org",
+           comment = c(ORCID = "0000-0003-1458-7108"))
     )
 Description: A convenient R interface to the Genotype-Tissue Expression (GTEx) 
     Portal API. The GTEx project is a comprehensive public resource for studying 

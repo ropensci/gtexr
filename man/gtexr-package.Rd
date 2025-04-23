@@ -30,5 +30,10 @@ Authors:
   \item Robert Luben (\href{https://orcid.org/0000-0002-5088-6343}{ORCID})
 }
 
+Other contributors:
+\itemize{
+  \item Zhian N. Kamvar \email{zkamvar@carpentries.org} (\href{https://orcid.org/0000-0003-1458-7108}{ORCID}) [reviewer]
+}
+
 }
 \keyword{internal}
