@@ -2,7 +2,7 @@ name: Draft PDF
 on:
   push:
     branches:
-      - ropensci-software-review
+      - main
 
 jobs:
   paper:
