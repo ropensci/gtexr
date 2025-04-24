@@ -42,8 +42,7 @@ jobs:
           file: ./cobertura.xml
           plugin: noop
           disable_search: true
-          # Leave out `token` completely for org repos like ropensci/*
-          # token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Show testthat output
         if: always()
