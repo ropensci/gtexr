@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Build
-package](https://github.com/r-universe/ropensci/actions/workflows/build.yml/badge.svg)](https://github.com/r-universe/ropensci/actions/workflows/build.yml)
 [![Codecov test
 coverage](https://codecov.io/gh/ropensci/gtexr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ropensci/gtexr?branch=main)
 [![R-CMD-check](https://github.com/ropensci/gtexr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ropensci/gtexr/actions/workflows/R-CMD-check.yaml)
