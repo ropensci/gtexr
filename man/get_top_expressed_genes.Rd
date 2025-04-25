@@ -49,7 +49,7 @@ By default, this service queries the latest GTEx release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_top_expressed_genes_api_v2_expression_topExpressedGene_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_top_expressed_genes(tissueSiteDetailId = "Artery_Aorta")
 \dontshow{\}) # examplesIf}
 }

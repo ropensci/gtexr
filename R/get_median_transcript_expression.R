@@ -17,7 +17,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_median_transcript_expression(gencodeIds = "ENSG00000132693.12")
 get_median_transcript_expression <- function(gencodeIds,
                                              datasetId = "gtex_v8",

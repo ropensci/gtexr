@@ -62,7 +62,7 @@ when searching by variant, this returns no results. Instead use gtex variant
 IDs e.g. use "chr1_153209640_C_A_b38" instead of "rs1410858".
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # search by gene
 get_significant_single_tissue_eqtls(gencodeIds = c(
   "ENSG00000132693.12",

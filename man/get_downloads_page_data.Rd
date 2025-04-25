@@ -27,7 +27,7 @@ one project available: gtex". However, \code{project_id} values "adult-gtex" and
 "egtex" both return results, whereas "gtex" does not (see examples).
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # "adult-gtex" (default `project_id` value) and "egtex" both return results
 get_downloads_page_data("adult-gtex")
 egtex <- get_downloads_page_data("egtex")

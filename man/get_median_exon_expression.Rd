@@ -51,7 +51,7 @@ By default, this service queries the latest GTEx release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_median_exon_expression_api_v2_expression_medianExonExpression_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # median exon expression values for CRP, filtered for whole blood
 get_median_exon_expression(
   gencodeIds = "ENSG00000132693.12",

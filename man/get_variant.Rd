@@ -60,7 +60,7 @@ this service queries the latest GTEx release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_variant_api_v2_dataset_variant_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # search by rsid
 get_variant(snpId = "rs1410858")
 

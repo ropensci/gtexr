@@ -16,7 +16,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_sqtl_genes("Whole_Blood")
 get_sqtl_genes <- function(tissueSiteDetailIds = NULL,
                            datasetId = "gtex_v8",

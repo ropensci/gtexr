@@ -16,7 +16,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_annotation()
 get_annotation <- function(datasetId = "gtex_v8",
                            page = 0,

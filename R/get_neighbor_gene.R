@@ -12,7 +12,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_neighbor_gene(pos = 1000000, chromosome = "chr1", bp_window = 10000)
 get_neighbor_gene <- function(pos,
                               chromosome,

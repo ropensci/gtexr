@@ -11,7 +11,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
 get_functional_annotation <- function(datasetId = "gtex_v8",
                                       chromosome,

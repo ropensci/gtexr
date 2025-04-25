@@ -14,7 +14,7 @@
 #' @export
 #' @family Admin Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_maintenance_message()
 get_maintenance_message <- function(page = 0,
                                     itemsPerPage = getOption("gtexr.itemsPerPage"),

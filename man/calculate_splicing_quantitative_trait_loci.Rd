@@ -36,7 +36,7 @@ A tibble. Or a list if \code{.return_raw = TRUE}.
 \href{https://gtexportal.org/api/v2/redoc#tag/Dynamic-Association-Endpoints/operation/calculate_splicing_quantitative_trait_loci_api_v2_association_dynsqtl_get}{GTEx Portal API documentation}.
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # perform request - returns a tibble with a single row
 calculate_splicing_quantitative_trait_loci(
   tissueSiteDetailId = "Whole_Blood",

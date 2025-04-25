@@ -57,7 +57,7 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \href{https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_significant_single_tissue_sqtls_api_v2_association_singleTissueSqtl_get}{GTEx Portal API documentation}.
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # search by gene
 get_significant_single_tissue_sqtls(gencodeIds = c(
   "ENSG00000065613.9",

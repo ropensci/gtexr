@@ -14,7 +14,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # Column "filesets" is a list column
 #' get_file_list()
 #'

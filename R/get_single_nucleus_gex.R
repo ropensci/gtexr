@@ -11,7 +11,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # Search for one or more genes - returns a tibble with one row per tissue.
 #' # Column "cellTypes" now contains a tibble of expression summary data, with
 #' # one row for each cell type

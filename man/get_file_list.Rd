@@ -23,7 +23,7 @@ The returned tibble includes a nested list column, "filesets". This
 details files, sub-categorised by fileset (see examples section).
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Column "filesets" is a list column
 get_file_list()
 

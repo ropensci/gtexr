@@ -15,7 +15,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_exons(gencodeIds = c("ENSG00000132693.12", "ENSG00000203782.5"))
 get_exons <- function(gencodeIds,
                       gencodeVersion = NULL,

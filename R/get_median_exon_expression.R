@@ -16,7 +16,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # median exon expression values for CRP, filtered for whole blood
 #' get_median_exon_expression(
 #'   gencodeIds = "ENSG00000132693.12",

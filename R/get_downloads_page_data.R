@@ -16,7 +16,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # "adult-gtex" (default `project_id` value) and "egtex" both return results
 #' get_downloads_page_data("adult-gtex")
 #' egtex <- get_downloads_page_data("egtex")

@@ -15,7 +15,7 @@
 #' @export
 #' @family Dynamic Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # perform request
 #' calculate_ieqtls(
 #'   cellType = "Adipocytes",

@@ -11,7 +11,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # gene symbol
 #' get_genomic_features("brca1")
 #'

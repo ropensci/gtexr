@@ -10,7 +10,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # returns a tibble with one row per tissue
 #' get_tissue_site_detail()
 #'

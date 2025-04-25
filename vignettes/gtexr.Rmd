@@ -13,7 +13,7 @@ editor_options:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  eval = Sys.getenv("NOT_CRAN") == "true"
+  eval = Sys.getenv("IN_PKGDOWN") == "true"
 )
 ```
 

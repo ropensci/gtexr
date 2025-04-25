@@ -19,7 +19,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_significant_single_tissue_eqtls_by_location(
 #'   tissueSiteDetailId = "Artery_Aorta",
 #'   start = 10000,

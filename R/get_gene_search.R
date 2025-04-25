@@ -14,7 +14,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_gene_search("CRP")
 get_gene_search <- function(geneId,
                             gencodeVersion = "v26",

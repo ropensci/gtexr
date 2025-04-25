@@ -19,7 +19,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # search by gene
 #' get_multi_tissue_eqtls(gencodeId = "ENSG00000132693.12")
 #'

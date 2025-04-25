@@ -15,7 +15,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_transcripts(gencodeId = "ENSG00000203782.5")
 get_transcripts <- function(gencodeId,
                             gencodeVersion = "v26",

@@ -15,7 +15,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_top_expressed_genes(tissueSiteDetailId = "Artery_Aorta")
 get_top_expressed_genes <- function(tissueSiteDetailId,
                                     datasetId = "gtex_v8",

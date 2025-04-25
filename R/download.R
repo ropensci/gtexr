@@ -13,7 +13,7 @@
 #' @export
 #' @family Biobank Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' download(
 #'   materialTypes = "RNA:Total RNA",
 #'   tissueSiteDetailIds = "Thyroid",

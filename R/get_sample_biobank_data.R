@@ -9,7 +9,7 @@
 #' @export
 #' @family Biobank Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood")
 get_sample_biobank_data <- function(draw = NULL,
                                     materialTypes = NULL,

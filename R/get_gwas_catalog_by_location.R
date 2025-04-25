@@ -12,7 +12,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_gwas_catalog_by_location(start = 1, end = 10000000, chromosome = "chr1")
 get_gwas_catalog_by_location <- function(start,
                                          end,

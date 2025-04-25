@@ -16,7 +16,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # multiple genes, selected tissues
 #' get_gene_expression(
 #'   gencodeIds = c(

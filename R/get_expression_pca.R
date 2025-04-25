@@ -17,7 +17,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_expression_pca(tissueSiteDetailIds = c(
 #'   "Adipose_Subcutaneous",
 #'   "Whole_Blood"

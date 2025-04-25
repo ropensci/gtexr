@@ -9,7 +9,7 @@
 #' @export
 #' @family Metadata Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_dataset_info(datasetId = "gtex_v8", organizationName = "GTEx Consortium")
 get_dataset_info <- function(datasetId = NULL,
                              organizationName = NULL,

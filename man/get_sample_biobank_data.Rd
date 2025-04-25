@@ -97,7 +97,7 @@ A tibble. Or a list if \code{.return_raw = TRUE}.
 \href{https://gtexportal.org/api/v2/redoc#tag/Biobank-Data-Endpoints/operation/get_sample_api_v2_biobank_sample_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood")
 \dontshow{\}) # examplesIf}
 }

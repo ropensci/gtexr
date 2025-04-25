@@ -9,7 +9,7 @@
 #' @export
 #' @family Dynamic Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # perform request - returns a tibble with a single row
 #' calculate_splicing_quantitative_trait_loci(
 #'   tissueSiteDetailId = "Whole_Blood",

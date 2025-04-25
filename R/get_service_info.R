@@ -11,7 +11,7 @@
 #' @export
 #' @family GTEx Portal API Info
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_service_info()
 get_service_info <- function(.return_raw = FALSE) {
   gtex_query(endpoint = NULL, process_get_service_info_resp_json)

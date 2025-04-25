@@ -15,7 +15,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' # search by gene
 #' get_independent_eqtl(gencodeIds = c(
 #'   "ENSG00000132693.12",

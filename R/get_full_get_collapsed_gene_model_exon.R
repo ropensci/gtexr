@@ -12,7 +12,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_full_get_collapsed_gene_model_exon(gencodeId = "ENSG00000203782.5")
 get_full_get_collapsed_gene_model_exon <- function(gencodeId,
                                                    datasetId = "gtex_v8",

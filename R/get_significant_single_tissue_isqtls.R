@@ -16,7 +16,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_significant_single_tissue_isqtls(gencodeIds = c(
 #'   "ENSG00000065613.9",
 #'   "ENSG00000203782.5"

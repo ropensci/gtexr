@@ -13,7 +13,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' get_subject()
 get_subject <- function(datasetId = "gtex_v8",
                         sex = NULL,
