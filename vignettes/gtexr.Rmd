@@ -13,7 +13,8 @@ editor_options:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  eval = (Sys.getenv("RUN_VIGNETTES") != "")
+  eval = (Sys.getenv("RUN_VIGNETTES") != ""),
+  echo = TRUE
 )
 ```
 
