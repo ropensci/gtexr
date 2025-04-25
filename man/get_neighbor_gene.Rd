@@ -53,9 +53,9 @@ position with a certain window size.
 \href{https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_neighbor_gene_api_v2_reference_neighborGene_get}{GTEx API Portal documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_neighbor_gene(pos = 1000000, chromosome = "chr1", bp_window = 10000)
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Reference Genome Endpoints: 

@@ -15,7 +15,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_linkage_disequilibrium_data(gencodeId = "ENSG00000132693.12")
 get_linkage_disequilibrium_data <- function(gencodeId,
                                             datasetId = "gtex_v8",

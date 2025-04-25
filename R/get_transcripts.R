@@ -15,10 +15,8 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_transcripts(gencodeId = "ENSG00000203782.5")
-#' }
 get_transcripts <- function(gencodeId,
                             gencodeVersion = "v26",
                             genomeBuild = "GRCh38/hg38",

@@ -13,10 +13,8 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_sample_datasets()
-#' }
 get_sample_datasets <- function(datasetId = "gtex_v8",
                                           sampleIds = NULL,
                                           tissueSampleIds = NULL,
@@ -39,5 +37,19 @@ get_sample_datasets <- function(datasetId = "gtex_v8",
                                           itemsPerPage = getOption("gtexr.itemsPerPage"),
                                           .verbose = getOption("gtexr.verbose"),
                                           .return_raw = FALSE) {
-  gtex_query(endpoint = "dataset/sample")
+  gtex_query(endpoint = "dataset/sample", process_get_sample_datasets_resp_json)
+}
+
+process_get_sample_datasets_resp_json <- function(resp_json) {
+  resp_json$data |>
+    purrr::map(\(x) {
+      if (!rlang::is_empty(x$pathologyNotesCategories)) {
+        x$pathologyNotesCategories <- tibble::as_tibble(x$pathologyNotesCategories)
+      }
+
+      x |>
+        purrr::compact() |>
+        tibble::as_tibble()
+    }, .progress = TRUE) |>
+    dplyr::bind_rows()
 }

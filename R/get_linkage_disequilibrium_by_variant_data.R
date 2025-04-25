@@ -10,7 +10,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_linkage_disequilibrium_by_variant_data("chr1_159245536_C_T_b38")
 get_linkage_disequilibrium_by_variant_data <- function(variantId,
                                                        page = 0,

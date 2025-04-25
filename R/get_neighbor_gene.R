@@ -12,10 +12,8 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_neighbor_gene(pos = 1000000, chromosome = "chr1", bp_window = 10000)
-#' }
 get_neighbor_gene <- function(pos,
                               chromosome,
                               bp_window,

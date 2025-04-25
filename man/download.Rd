@@ -86,7 +86,7 @@ A tibble. Or a list if \code{.return_raw = TRUE}.
 Note: running this request with no filters (i.e. \code{download()}) raises an error.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 download(
   materialTypes = "RNA:Total RNA",
   tissueSiteDetailIds = "Thyroid",
@@ -94,7 +94,7 @@ download(
   sex = "male",
   ageBrackets = "50-59"
 )
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Biobank Data Endpoints: 

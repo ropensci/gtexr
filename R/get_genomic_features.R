@@ -11,8 +11,7 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # gene symbol
 #' get_genomic_features("brca1")
 #'
@@ -24,7 +23,6 @@
 #'
 #' # GTEx variant ID
 #' get_genomic_features("chr11_66561023_G_GTTA_b38")
-#' }
 get_genomic_features <- function(.featureId,
                                  datasetId = "gtex_v8",
                                  .return_raw = FALSE) {

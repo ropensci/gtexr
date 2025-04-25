@@ -11,8 +11,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # Search for one or more genes - returns a tibble with one row per tissue.
 #' # Column "cellTypes" now contains a tibble of expression summary data, with
 #' # one row for each cell type
@@ -38,7 +37,6 @@
 #' # when `excludeDataArray = FALSE`, expression values are stored in "data"
 #' # e.g. for Breast_Mammary_Tissue, Epithelial cell (luminal):
 #' response$cellTypes[[2]]$data[[1]]
-#' }
 get_single_nucleus_gex <- function(gencodeIds,
                                    datasetId = "gtex_snrnaseq_pilot",
                                    tissueSiteDetailIds = NULL,

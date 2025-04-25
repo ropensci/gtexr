@@ -14,10 +14,8 @@
 #' @export
 #' @family Admin Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_maintenance_message()
-#' }
 get_maintenance_message <- function(page = 0,
                                     itemsPerPage = getOption("gtexr.itemsPerPage"),
                                     .verbose = getOption("gtexr.verbose"),

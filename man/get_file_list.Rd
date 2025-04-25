@@ -23,7 +23,7 @@ The returned tibble includes a nested list column, "filesets". This
 details files, sub-categorised by fileset (see examples section).
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Column "filesets" is a list column
 get_file_list()
 
@@ -37,7 +37,7 @@ names(gtex_v9_files[[1]])
 
 # "GTEx Analysis V9", "snRNA-Seq Data" fileset files
 names(gtex_v9_files[[1]][["snRNA-Seq Data"]]$files)
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Datasets Endpoints: 

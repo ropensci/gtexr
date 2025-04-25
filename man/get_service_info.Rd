@@ -19,8 +19,8 @@ General information about the GTEx service.
 \href{https://gtexportal.org/api/v2/redoc#tag/GTEx-Portal-API-Info/operation/get_service_info_api_v2__get}{GTEx Portal API documentation}.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_service_info()
-}
+\dontshow{\}) # examplesIf}
 }
 \concept{GTEx Portal API Info}

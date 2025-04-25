@@ -51,7 +51,7 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \href{https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_independent_eqtl_api_v2_association_independentEqtl_get}{GTEx portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # search by gene
 get_independent_eqtl(gencodeIds = c(
   "ENSG00000132693.12",
@@ -69,7 +69,7 @@ get_independent_eqtl(
     "Thyroid"
   )
 )
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Static Association Endpoints: 

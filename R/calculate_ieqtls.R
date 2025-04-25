@@ -15,8 +15,7 @@
 #' @export
 #' @family Dynamic Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # perform request
 #' calculate_ieqtls(
 #'   cellType = "Adipocytes",
@@ -24,7 +23,6 @@
 #'   gencodeId = "ENSG00000203782.5",
 #'   variantId = "chr1_1099341_T_C_b38"
 #' )
-#' }
 calculate_ieqtls <-
   function(cellType,
            tissueSiteDetailId,

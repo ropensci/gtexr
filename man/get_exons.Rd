@@ -53,9 +53,9 @@ This service returns exons from all known transcripts of the given gene.
 \href{https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_exons_api_v2_reference_exon_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_exons(gencodeIds = c("ENSG00000132693.12", "ENSG00000203782.5"))
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Reference Genome Endpoints: 

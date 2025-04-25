@@ -12,10 +12,8 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_gwas_catalog_by_location(start = 1, end = 10000000, chromosome = "chr1")
-#' }
 get_gwas_catalog_by_location <- function(start,
                                          end,
                                          chromosome,

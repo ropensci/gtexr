@@ -42,9 +42,9 @@ Note: the output for this function appears to be incomplete
 currently.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_annotation()
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Datasets Endpoints: 

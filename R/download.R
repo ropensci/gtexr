@@ -13,8 +13,7 @@
 #' @export
 #' @family Biobank Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' download(
 #'   materialTypes = "RNA:Total RNA",
 #'   tissueSiteDetailIds = "Thyroid",
@@ -22,7 +21,6 @@
 #'   sex = "male",
 #'   ageBrackets = "50-59"
 #' )
-#' }
 download <- function(materialTypes = NULL,
                      tissueSiteDetailIds = NULL,
                      pathCategory = NULL,

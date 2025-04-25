@@ -42,7 +42,7 @@ By default, this endpoint queries the latest GTEx release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_clustered_median_exon_expression_api_v2_expression_clusteredMedianExonExpression_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_clustered_median_exon_expression(c(
   "ENSG00000203782.5",
   "ENSG00000132693.12"
@@ -60,7 +60,7 @@ attr(result, "clusters")
 # phylo_tree <- ape::read.tree(text = attr(result, "clusters")$tissue)
 # plot(phylo_tree)
 # print(phylo_tree)
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Expression Data Endpoints: 

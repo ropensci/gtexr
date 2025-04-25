@@ -53,7 +53,7 @@ By default, the service queries the latest GTEx release. The retrieved data is s
 \href{https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_multi_tissue_eqtls_api_v2_association_metasoft_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # search by gene
 get_multi_tissue_eqtls(gencodeId = "ENSG00000132693.12")
 
@@ -62,7 +62,7 @@ x <- get_multi_tissue_eqtls(gencodeId = "ENSG00000132693.12",
                             variantId = "chr1_159476920_T_C_b38")
 
 x$tissues[[1]]
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Static Association Endpoints: 

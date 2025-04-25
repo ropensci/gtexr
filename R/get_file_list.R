@@ -14,8 +14,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # Column "filesets" is a list column
 #' get_file_list()
 #'
@@ -29,7 +28,6 @@
 #'
 #' # "GTEx Analysis V9", "snRNA-Seq Data" fileset files
 #' names(gtex_v9_files[[1]][["snRNA-Seq Data"]]$files)
-#' }
 get_file_list <- function(.return_raw = FALSE) {
   gtex_query(endpoint = "dataset/fileList", process_get_file_list_resp_json)
 }

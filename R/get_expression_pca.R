@@ -17,8 +17,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_expression_pca(tissueSiteDetailIds = c(
 #'   "Adipose_Subcutaneous",
 #'   "Whole_Blood"
@@ -28,7 +27,6 @@
 #'   tissueSiteDetailIds = "Adipose_Subcutaneous",
 #'   sampleId = "GTEX-1117F-0226-SM-5GZZ7"
 #' )
-#' }
 get_expression_pca <- function(tissueSiteDetailIds,
                                datasetId = "gtex_v8",
                                sampleId = NULL,

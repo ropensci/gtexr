@@ -48,9 +48,9 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \href{https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_sqtl_genes_api_v2_association_sgene_get}{GTEx Portal API documentation}.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_sqtl_genes("Whole_Blood")
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Static Association Endpoints: 

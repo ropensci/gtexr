@@ -50,9 +50,9 @@ build and GENCODE version must be provided.
 \href{https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_genes_api_v2_reference_gene_get}{GTEx API Portal documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_genes(c("CRP", "IL6R"))
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Reference Genome Endpoints: 

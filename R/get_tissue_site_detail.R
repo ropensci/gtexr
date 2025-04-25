@@ -10,8 +10,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # returns a tibble with one row per tissue
 #' get_tissue_site_detail()
 #'
@@ -22,7 +21,6 @@
 #' purrr::pluck(bladder_site_details, "eqtlSampleSummary", 1)
 #'
 #' purrr::pluck(bladder_site_details, "rnaSeqSampleSummary", 1)
-#' }
 get_tissue_site_detail <- function(datasetId = "gtex_v8",
                                    page = 0,
                                    itemsPerPage = getOption("gtexr.itemsPerPage"),

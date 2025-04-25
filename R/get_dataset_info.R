@@ -9,10 +9,8 @@
 #' @export
 #' @family Metadata Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_dataset_info(datasetId = "gtex_v8", organizationName = "GTEx Consortium")
-#' }
 get_dataset_info <- function(datasetId = NULL,
                              organizationName = NULL,
                              .return_raw = FALSE) {

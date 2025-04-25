@@ -11,10 +11,8 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
-#' }
 get_functional_annotation <- function(datasetId = "gtex_v8",
                                       chromosome,
                                       start,

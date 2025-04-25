@@ -36,9 +36,9 @@ enabled.
 Note this typically returns an empty tibble.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_maintenance_message()
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Admin Endpoints: 

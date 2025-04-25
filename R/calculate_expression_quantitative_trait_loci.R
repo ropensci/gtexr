@@ -25,8 +25,7 @@
 #' @export
 #' @family Dynamic Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # perform request - returns a tibble with a single row
 #' calculate_expression_quantitative_trait_loci(
 #'   tissueSiteDetailId = "Whole_Blood",
@@ -76,7 +75,6 @@
 #'     chromosome:genome_build,
 #'     tissueSiteDetailId
 #'   )
-#' }
 calculate_expression_quantitative_trait_loci <- function(tissueSiteDetailId,
                                                          gencodeId,
                                                          variantId,

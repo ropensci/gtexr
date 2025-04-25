@@ -16,10 +16,8 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_collapsed_gene_model_exon(gencodeId = "ENSG00000132693.12")
-#' }
 get_collapsed_gene_model_exon <- function(gencodeId,
                                           datasetId = "gtex_v8",
                                           page = 0,

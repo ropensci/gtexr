@@ -25,10 +25,8 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_eqtl_genes(c("Whole_Blood", "Artery_Aorta"))
-#' }
 get_eqtl_genes <- function(tissueSiteDetailIds = NULL,
                            datasetId = "gtex_v8",
                            page = 0,

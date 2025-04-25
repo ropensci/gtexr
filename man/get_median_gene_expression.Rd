@@ -49,9 +49,9 @@ Find median gene expression data along with hierarchical clusters.
 \href{https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_median_gene_expression_api_v2_expression_medianGeneExpression_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_median_gene_expression(gencodeIds = "ENSG00000132693.12")
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Expression Data Endpoints: 

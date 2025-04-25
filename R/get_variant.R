@@ -20,7 +20,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # search by rsid
 #' get_variant(snpId = "rs1410858")
 #'

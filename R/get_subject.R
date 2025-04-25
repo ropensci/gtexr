@@ -13,10 +13,8 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_subject()
-#' }
 get_subject <- function(datasetId = "gtex_v8",
                         sex = NULL,
                         ageBrackets = NULL,

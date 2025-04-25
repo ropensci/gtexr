@@ -1,5 +1,10 @@
 # gtexr (development version)
 
+* **Breaking changes:** 
+
+  - `get_sample_datasets()` has been fixed to return a tibble with one row per 
+  data item.
+
 # gtexr 0.2.0
 
 ## Major changes

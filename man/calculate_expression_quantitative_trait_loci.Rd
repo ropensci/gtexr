@@ -56,7 +56,7 @@ Notes on input:
 }
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # perform request - returns a tibble with a single row
 calculate_expression_quantitative_trait_loci(
   tissueSiteDetailId = "Whole_Blood",
@@ -106,7 +106,7 @@ calculate_expression_quantitative_trait_loci(
     chromosome:genome_build,
     tissueSiteDetailId
   )
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Dynamic Association Endpoints: 

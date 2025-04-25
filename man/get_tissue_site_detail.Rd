@@ -36,7 +36,7 @@ Retrieve all tissue site detail information in the database
 \href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_tissue_site_detail_api_v2_dataset_tissueSiteDetail_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # returns a tibble with one row per tissue
 get_tissue_site_detail()
 
@@ -47,7 +47,7 @@ bladder_site_details <- get_tissue_site_detail() |>
 purrr::pluck(bladder_site_details, "eqtlSampleSummary", 1)
 
 purrr::pluck(bladder_site_details, "rnaSeqSampleSummary", 1)
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Datasets Endpoints: 

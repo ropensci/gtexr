@@ -49,9 +49,9 @@ chromosome location. Default to most recent dataset release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_full_get_collapsed_gene_model_exon_api_v2_dataset_fullCollapsedGeneModelExon_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_functional_annotation(chromosome = "chr1", start = 192168000, end = 192169000)
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Datasets Endpoints: 

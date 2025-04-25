@@ -12,7 +12,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_variant_by_location(
 #'   start = 153209600,
 #'   end = 153209700,

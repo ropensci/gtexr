@@ -45,9 +45,9 @@ end locations.
 \href{https://gtexportal.org/api/v2/redoc#tag/Reference-Genome-Endpoints/operation/get_gwas_catalog_by_location_api_v2_reference_gwasCatalogByLocation_get}{GTEx API Portal documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_gwas_catalog_by_location(start = 1, end = 10000000, chromosome = "chr1")
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Reference Genome Endpoints: 

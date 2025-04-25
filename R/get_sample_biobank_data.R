@@ -9,10 +9,8 @@
 #' @export
 #' @family Biobank Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_sample_biobank_data(tissueSiteDetailIds = "Whole_Blood")
-#' }
 get_sample_biobank_data <- function(draw = NULL,
                                     materialTypes = NULL,
                                     tissueSiteDetailIds = NULL,

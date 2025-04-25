@@ -18,14 +18,12 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # search by gene
 #' get_significant_single_tissue_sqtls(gencodeIds = c(
 #'   "ENSG00000065613.9",
 #'   "ENSG00000203782.5"
 #' ))
-#' }
 get_significant_single_tissue_sqtls <- function(gencodeIds = NULL,
                                                 variantIds = NULL,
                                                 tissueSiteDetailIds = NULL,

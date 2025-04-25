@@ -14,10 +14,8 @@
 #' @export
 #' @family Reference Genome Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_gene_search("CRP")
-#' }
 get_gene_search <- function(geneId,
                             gencodeVersion = "v26",
                             genomeBuild = "GRCh38/hg38",

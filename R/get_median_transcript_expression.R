@@ -17,10 +17,8 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_median_transcript_expression(gencodeIds = "ENSG00000132693.12")
-#' }
 get_median_transcript_expression <- function(gencodeIds,
                                              datasetId = "gtex_v8",
                                              tissueSiteDetailIds = NULL,

@@ -15,10 +15,8 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_top_expressed_genes(tissueSiteDetailId = "Artery_Aorta")
-#' }
 get_top_expressed_genes <- function(tissueSiteDetailId,
                                     datasetId = "gtex_v8",
                                     filterMtGene = TRUE,

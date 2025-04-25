@@ -45,9 +45,9 @@ By default, this service queries the models used by the latest GTEx release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Datasets-Endpoints/operation/get_collapsed_gene_model_exon_api_v2_dataset_collapsedGeneModelExon_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_collapsed_gene_model_exon(gencodeId = "ENSG00000132693.12")
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Datasets Endpoints: 

@@ -11,8 +11,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # all tissues
 #' get_single_nucleus_gex_summary()
 #'
@@ -21,7 +20,6 @@
 #'   "Breast_Mammary_Tissue",
 #'   "Skin_Sun_Exposed_Lower_leg"
 #' ))
-#' }
 get_single_nucleus_gex_summary <- function(datasetId = "gtex_snrnaseq_pilot",
                                            tissueSiteDetailIds = NULL,
                                            page = 0,

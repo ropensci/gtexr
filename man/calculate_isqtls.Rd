@@ -48,7 +48,7 @@ By default, the calculation is based on the latest GTEx release.
 \href{https://gtexportal.org/api/v2/redoc#tag/Dynamic-Association-Endpoints/operation/calculate_ieqtls_api_v2_association_dynieqtl_get}{GTEx Portal API documentation}.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # perform request
 calculate_isqtls(
   cellType = "Neutrophils",
@@ -56,7 +56,7 @@ calculate_isqtls(
   phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
   variantId = "chr1_1099341_T_C_b38"
 )
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Dynamic Association Endpoints: 

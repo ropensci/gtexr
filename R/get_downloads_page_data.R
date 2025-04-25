@@ -16,8 +16,7 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # "adult-gtex" (default `project_id` value) and "egtex" both return results
 #' get_downloads_page_data("adult-gtex")
 #' egtex <- get_downloads_page_data("egtex")
@@ -39,7 +38,6 @@
 #'   "files",
 #'   "WholeBlood.mQTLs.regular.txt.gz"
 #' )
-#' }
 get_downloads_page_data <- function(project_id,
                                     .return_raw = FALSE) {
   gtex_query(

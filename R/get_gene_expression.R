@@ -16,8 +16,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # multiple genes, selected tissues
 #' get_gene_expression(
 #'   gencodeIds = c(
@@ -46,7 +45,6 @@
 #'   tissueSiteDetailIds = "Whole_Blood",
 #'   attributeSubset = "ageBracket"
 #' )
-#' }
 get_gene_expression <- function(gencodeIds,
                                 datasetId = "gtex_v8",
                                 tissueSiteDetailIds = NULL,

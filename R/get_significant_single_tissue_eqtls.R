@@ -23,8 +23,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # search by gene
 #' get_significant_single_tissue_eqtls(gencodeIds = c(
 #'   "ENSG00000132693.12",
@@ -44,7 +43,6 @@
 #'   variantIds = "chr1_153209640_C_A_b38",
 #'   tissueSiteDetailIds = "Whole_Blood"
 #' )
-#' }
 get_significant_single_tissue_eqtls <- function(gencodeIds = NULL,
                                                 variantIds = NULL,
                                                 tissueSiteDetailIds = NULL,

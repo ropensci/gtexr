@@ -16,14 +16,12 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # median exon expression values for CRP, filtered for whole blood
 #' get_median_exon_expression(
 #'   gencodeIds = "ENSG00000132693.12",
 #'   tissueSiteDetailIds = "Whole_Blood"
 #' )
-#' }
 get_median_exon_expression <- function(gencodeIds,
                                        datasetId = "gtex_v8",
                                        tissueSiteDetailIds = NULL,

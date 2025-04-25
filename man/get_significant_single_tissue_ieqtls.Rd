@@ -55,12 +55,12 @@ The retrieved data is split into pages with \code{items_per_page} entries per pa
 \href{https://gtexportal.org/api/v2/redoc#tag/Static-Association-Endpoints/operation/get_significant_single_tissue_ieqtls_api_v2_association_singleTissueIEqtl_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 get_significant_single_tissue_ieqtls(c(
   "ENSG00000132693.12",
   "ENSG00000203782.5"
 ))
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Static Association Endpoints: 

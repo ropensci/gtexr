@@ -16,8 +16,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # search by gene
 #' get_fine_mapping(gencodeIds = c(
 #'   "ENSG00000132693.12",
@@ -36,7 +35,6 @@
 #'     "Thyroid"
 #'   )
 #' )
-#' }
 get_fine_mapping <- function(gencodeIds,
                              datasetId = "gtex_v8",
                              variantId = NULL,

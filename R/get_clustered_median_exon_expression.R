@@ -18,8 +18,7 @@
 #' @export
 #' @family Expression Data Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_clustered_median_exon_expression(c(
 #'   "ENSG00000203782.5",
 #'   "ENSG00000132693.12"
@@ -37,7 +36,6 @@
 #' # phylo_tree <- ape::read.tree(text = attr(result, "clusters")$tissue)
 #' # plot(phylo_tree)
 #' # print(phylo_tree)
-#' }
 get_clustered_median_exon_expression <- function(gencodeIds,
                                                  datasetId = "gtex_v8",
                                                  tissueSiteDetailIds = NULL,

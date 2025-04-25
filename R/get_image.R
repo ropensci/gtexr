@@ -9,8 +9,7 @@
 #' @export
 #' @family Histology Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_image()
 #'
 #' # filter by `tissueSampleId`
@@ -19,7 +18,6 @@
 #'
 #' # note that `pathologyNotesCategories` (if present) is a list column
 #' print(result$pathologyNotesCategories)
-#' }
 get_image <- function(tissueSampleIds = NULL,
                       page = 0,
                       itemsPerPage = getOption("gtexr.itemsPerPage"),

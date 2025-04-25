@@ -36,14 +36,14 @@ A tibble. Or a list if \code{.return_raw = TRUE}.
 \href{https://gtexportal.org/api/v2/redoc#tag/Dynamic-Association-Endpoints/operation/calculate_splicing_quantitative_trait_loci_api_v2_association_dynsqtl_get}{GTEx Portal API documentation}.
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # perform request - returns a tibble with a single row
 calculate_splicing_quantitative_trait_loci(
   tissueSiteDetailId = "Whole_Blood",
   phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
   variantId = "chr1_14677_G_A_b38"
 )
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Dynamic Association Endpoints: 

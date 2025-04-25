@@ -16,10 +16,8 @@
 #' @export
 #' @family Datasets Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_annotation()
-#' }
 get_annotation <- function(datasetId = "gtex_v8",
                            page = 0,
                            itemsPerPage = getOption("gtexr.itemsPerPage"),

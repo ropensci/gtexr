@@ -15,8 +15,7 @@
 #' @export
 #' @family Dynamic Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # perform request
 #' calculate_isqtls(
 #'   cellType = "Neutrophils",
@@ -24,7 +23,6 @@
 #'   phenotypeId = "chr1:15947:16607:clu_40980:ENSG00000227232.5",
 #'   variantId = "chr1_1099341_T_C_b38"
 #' )
-#' }
 calculate_isqtls <-
   function(cellType,
            tissueSiteDetailId,

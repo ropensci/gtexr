@@ -26,7 +26,7 @@ A tibble. Or a list if \code{.return_raw = TRUE}.
 This endpoint takes a path parameter "featureId".
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # gene symbol
 get_genomic_features("brca1")
 
@@ -38,7 +38,7 @@ get_genomic_features("rs1815739")
 
 # GTEx variant ID
 get_genomic_features("chr11_66561023_G_GTTA_b38")
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Reference Genome Endpoints: 

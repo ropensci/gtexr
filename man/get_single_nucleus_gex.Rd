@@ -48,7 +48,7 @@ Retrieve Single Nucleus Gene Expression Data for a given Gene.
 \href{https://gtexportal.org/api/v2/redoc#tag/Expression-Data-Endpoints/operation/get_single_nucleus_gex_api_v2_expression_singleNucleusGeneExpression_get}{GTEx Portal API documentation}
 }
 \examples{
-\dontrun{
+\dontshow{if (identical(Sys.getenv("NOT_CRAN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Search for one or more genes - returns a tibble with one row per tissue.
 # Column "cellTypes" now contains a tibble of expression summary data, with
 # one row for each cell type
@@ -74,7 +74,7 @@ response$cellTypes[[2]]
 # when `excludeDataArray = FALSE`, expression values are stored in "data"
 # e.g. for Breast_Mammary_Tissue, Epithelial cell (luminal):
 response$cellTypes[[2]]$data[[1]]
-}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Expression Data Endpoints: 

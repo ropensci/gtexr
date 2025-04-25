@@ -19,8 +19,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # search by gene
 #' get_multi_tissue_eqtls(gencodeId = "ENSG00000132693.12")
 #'
@@ -29,7 +28,6 @@
 #'                             variantId = "chr1_159476920_T_C_b38")
 #'
 #' x$tissues[[1]]
-#' }
 get_multi_tissue_eqtls <- function(gencodeId,
                                    variantId = NULL,
                                    datasetId = "gtex_v8",

@@ -11,10 +11,8 @@
 #' @export
 #' @family Admin Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' get_news_item()
-#' }
 get_news_item <- function(page = 0,
                           itemsPerPage = getOption("gtexr.itemsPerPage"),
                           .verbose = getOption("gtexr.verbose"),

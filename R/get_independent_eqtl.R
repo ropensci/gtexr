@@ -15,8 +15,7 @@
 #' @export
 #' @family Static Association Endpoints
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf identical(Sys.getenv("NOT_CRAN"), "true")
 #' # search by gene
 #' get_independent_eqtl(gencodeIds = c(
 #'   "ENSG00000132693.12",
@@ -34,7 +33,6 @@
 #'     "Thyroid"
 #'   )
 #' )
-#' }
 get_independent_eqtl <- function(gencodeIds,
                                  tissueSiteDetailIds = NULL,
                                  datasetId = "gtex_v8",
