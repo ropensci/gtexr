@@ -11,7 +11,7 @@ on:
   # Run on every push to main
   push:
     branches:
-      - ropensci-software-review
+      - main
 
 jobs:
   pkgcheck:
