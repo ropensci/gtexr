@@ -15,7 +15,7 @@ authors:
       surname: Warwick
     orcid: 0000-0002-0800-2890
     email: alasdair.warwick.19@ucl.ac.uk
-    affiliation: [ 1, 2 ]
+    affiliation: "1, 2"
   - name:
       given-names: Benjamin
       surname: Zuckerman
@@ -25,17 +25,17 @@ authors:
       given-names: Chuin Ying
       surname: Ung
     orcid: 0000-0001-8487-4589
-    affiliation: 5
+    affiliation: 4
   - name:
       given-names: Robert
       surname: Luben
     orcid: 0000-0002-5088-6343
-    affiliation: [ 2, 4 ]
+    affiliation: "2, 5"
   - name:
       given-names: Abraham
       surname: Olvera-Barrios
     orcid: 0000-0002-3305-4465
-    affiliation: [ 2, 4 ]
+    affiliation: "2, 5"
 bibliography: paper.bib
 affiliations:
 - name: University College London Institute of Cardiovascular Science, London, UK
@@ -44,9 +44,9 @@ affiliations:
   index: 2
 - name: Centre for Rheumatic Diseases, King's College London, London, UK
   index: 3
-- name: University College London Institute of Ophthalmology, London, UK
-  index: 4
 - name: Guy's and St Thomas' NHS Foundation Trust
+  index: 4
+- name: University College London Institute of Ophthalmology, London, UK
   index: 5
 ---
 
