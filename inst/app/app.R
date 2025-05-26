@@ -22,6 +22,37 @@ library(DT)
 
 # Set up ------------------------------------------------------------------
 
+extract_inner_expr <- function(expr) {
+  # Parse from character if needed
+  if (is.character(expr)) expr <- parse(text = expr)[[1]]
+
+  # Recursively find the last braced block `{ ... }`
+  find_last_braced_expr <- function(x) {
+    if (is.call(x) && identical(x[[1]], as.name("{"))) {
+      return(x)
+    } else if (is.call(x)) {
+      for (i in seq_along(x)) {
+        res <- find_last_braced_expr(x[[i]])
+        if (!is.null(res)) return(res)
+      }
+    }
+    return(NULL)
+  }
+
+  inner_block <- find_last_braced_expr(expr)
+
+  if (!is.null(inner_block)) {
+    body_exprs <- as.list(inner_block[-1])
+    if (length(body_exprs) == 1) {
+      return(body_exprs[[1]])
+    } else {
+      return(body_exprs)
+    }
+  } else {
+    return(expr)
+  }
+}
+
 gtexr_arguments_metadata <- gtexr:::gtexr_arguments()
 
 # obtain and categorise list of gtexr functions programmatically
@@ -78,8 +109,10 @@ gtexr_functions_metadata <- gtexr_docs |>
       paste(sep = "", collapse = "") |>
       rlang::parse_exprs()
 
-    examples[[1]]
+    examples[[1]] |>
+      extract_inner_expr()
   }) |>
+  purrr::map_if(is.list, \(.x) .x[[1]]) |>
   tibble::enframe(name = "fn_name",
                   value = "fn_example") |>
   dplyr::mutate("fn_example_args" = purrr::map(.data[["fn_example"]], \(first_example) {
