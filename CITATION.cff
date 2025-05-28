@@ -1,0 +1,54 @@
+cff-version: "1.2.0"
+authors:
+- email: alasdair.warwick.19@ucl.ac.uk
+  family-names: Warwick
+  given-names: Alasdair Neil
+  orcid: "https://orcid.org/0000-0002-0800-2890"
+- family-names: Zuckerman
+  given-names: Benjamin
+  orcid: "https://orcid.org/0000-0002-0077-6074"
+- family-names: Ung
+  given-names: Chuin Ying
+  orcid: "https://orcid.org/0000-0001-8487-4589"
+- family-names: Luben
+  given-names: Robert
+  orcid: "https://orcid.org/0000-0002-5088-6343"
+- family-names: Olvera-Barrios
+  given-names: Abraham
+  orcid: "https://orcid.org/0000-0002-3305-4465"
+doi: 10.5281/zenodo.15521906
+message: If you use this software, please cite our article in the
+  Journal of Open Source Software.
+preferred-citation:
+  authors:
+  - email: alasdair.warwick.19@ucl.ac.uk
+    family-names: Warwick
+    given-names: Alasdair Neil
+    orcid: "https://orcid.org/0000-0002-0800-2890"
+  - family-names: Zuckerman
+    given-names: Benjamin
+    orcid: "https://orcid.org/0000-0002-0077-6074"
+  - family-names: Ung
+    given-names: Chuin Ying
+    orcid: "https://orcid.org/0000-0001-8487-4589"
+  - family-names: Luben
+    given-names: Robert
+    orcid: "https://orcid.org/0000-0002-5088-6343"
+  - family-names: Olvera-Barrios
+    given-names: Abraham
+    orcid: "https://orcid.org/0000-0002-3305-4465"
+  date-published: 2025-05-28
+  doi: 10.21105/joss.08249
+  issn: 2475-9066
+  issue: 109
+  journal: Journal of Open Source Software
+  publisher:
+    name: Open Journals
+  start: 8249
+  title: "gtexr: A convenient R interface to the Genotype-Tissue
+    Expression (GTEx) Portal API"
+  type: article
+  url: "https://joss.theoj.org/papers/10.21105/joss.08249"
+  volume: 10
+title: "gtexr: A convenient R interface to the Genotype-Tissue
+  Expression (GTEx) Portal API"

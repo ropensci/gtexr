@@ -1,6 +1,38 @@
 citHeader("To cite gtexr in publications use:")
 
 bibentry(
+  key = "gtexr_paper",
+  bibtype  = "Article",
+  title    = "{gtexr: A convenient R interface to the Genotype-Tissue
+    Expression (GTEx) Portal API}",
+  author = c(
+    person(given = "Alasdair",
+           family = "Warwick",
+           role = c("aut", "cre", "cph"),
+           email = "alasdair.warwick.19@ucl.ac.uk",
+           comment = c(ORCID = "0000-0002-0800-2890")),
+    person("Benjamin", "Zuckerman", role = "aut",
+           comment = c(ORCID = "0000-0002-0077-6074")),
+    person("Chuin Ying", "Ung", role = "aut",
+           comment = c(ORCID = "0000-0001-8487-4589")),
+    person("Robert", "Luben", role = "aut",
+           comment = c(ORCID = "0000-0002-5088-6343")),
+    person("Abraham", "Olvera-Barrios", role = "aut",
+           comment = c(ORCID = "0000-0002-3305-4465"))
+    ),
+  journal   = "Journal of Open Source Software",
+  publisher = "Open Journals",
+  year      = "2025",
+  month     = "05",
+  volume    = "10",
+  number    = "109",
+  pages     = "8249",
+  doi       = "10.21105/joss.08249",
+  issn      = "2475-9066",
+  note     = paste0("gigs v", meta$Version)
+)
+
+bibentry(
   key = "gtexr",
   bibtype  = "Manual",
   title    = "Query the GTEx Portal API",

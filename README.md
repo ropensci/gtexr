@@ -15,10 +15,13 @@ shinyapps.io](https://github.com/ropensci/gtexr/actions/workflows/shinyapps-depl
 status](https://www.r-pkg.org/badges/version/gtexr)](https://CRAN.R-project.org/package=gtexr)
 [![CRAN
 downloads](https://cranlogs.r-pkg.org/badges/gtexr)](https://CRAN.R-project.org/package=gtexr)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/gtexr)](https://CRAN.R-project.org/package=gtexr)
 [![Repo
 Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Status at rOpenSci Software Peer
 Review](https://badges.ropensci.org/684_status.svg)](https://github.com/ropensci/software-review/issues/684)
+[![status](https://joss.theoj.org/papers/cacfc67c0fd0bd3ff269e68ef8ad795c/status.svg)](https://joss.theoj.org/papers/cacfc67c0fd0bd3ff269e68ef8ad795c)
 
 <!-- badges: end -->
 
