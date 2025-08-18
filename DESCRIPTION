@@ -1,6 +1,6 @@
 Package: gtexr
 Title: Query the GTEx Portal API
-Version: 0.2.0.9001
+Version: 0.2.1
 Authors@R: c(
     person(given = "Alasdair",
            family = "Warwick",
